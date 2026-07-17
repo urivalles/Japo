@@ -1,2 +1,2 @@
-# Viatge-al-Jap-
+# Japó
 Viatge al Japó
