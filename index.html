@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japó 2026 | El meu Viatge Personalitzat</title>
+    <meta name="description" content="Aplicació interactiva per organitzar el meu viatge personalitzat al Japó de l'agost de 2026, incloent el Kumano Kodo i la ruta compartida amb en Banana.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Leaflet CSS for Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- Sidebar Navigation (Desktop) -->
+        <aside class="sidebar" id="app-sidebar">
+            <div class="sidebar-brand">
+                <i class="fa-solid fa-torii-gate brand-icon"></i>
+                <span class="brand-text">Japó 2026</span>
+            </div>
+            <nav class="sidebar-nav">
+                <button class="nav-btn active" data-target="itinerary" id="btn-nav-itinerary">
+                    <i class="fa-regular fa-calendar-days"></i>
+                    <span>Itinerari</span>
+                </button>
+                <button class="nav-btn" data-target="map" id="btn-nav-map">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <span>Mapa</span>
+                </button>
+                <button class="nav-btn" data-target="budget" id="btn-nav-budget">
+                    <i class="fa-solid fa-wallet"></i>
+                    <span>Pressupost</span>
+                </button>
+                <button class="nav-btn" data-target="videos" id="btn-nav-videos">
+                    <i class="fa-solid fa-video"></i>
+                    <span>Vídeos i Info</span>
+                </button>
+                <button class="nav-btn" data-target="tasks" id="btn-nav-tasks">
+                    <i class="fa-solid fa-list-check"></i>
+                    <span>Tasques</span>
+                </button>
+            </nav>
+            <div class="sidebar-footer">
+                <p>Viatge: 5 - 28 Agost</p>
+                <small>Antigravity Pair Dev</small>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="app-header">
+                <div class="header-title">
+                    <h1 id="main-title">Planificació de Viatge</h1>
+                    <p class="subtitle" id="main-subtitle">Control de ruta, pressupost i notes personals</p>
+                </div>
+                <div class="countdown-badge" id="countdown-container">
+                    <span id="countdown-days">--</span> dies pel viatge
+                </div>
+            </header>
+
+            <!-- Sections Container -->
+            <div class="sections-container">
+                
+                <!-- 1. ITINERARY SECTION -->
+                <section class="content-section active" id="section-itinerary">
+                    <div class="section-header">
+                        <h2>📅 Cronograma del Viatge</h2>
+                        <p>Descobreix la teva ruta personalitzada pel Japó: trams en solitari (verd/blau) i trams compartits amb en Banana (rosa).</p>
+                    </div>
+                    <div class="itinerary-filters">
+                        <button class="filter-btn active" data-filter="all" id="btn-filter-all">Tot el viatge</button>
+                        <button class="filter-btn" data-filter="overlap" id="btn-filter-overlap">Només coincidències</button>
+                        <button class="filter-btn" data-filter="kumano" id="btn-filter-kumano">Kumano Kodo</button>
+                    </div>
+                    <div class="itinerary-timeline" id="timeline-container">
+                        <!-- JS generated day-by-day items -->
+                    </div>
+                </section>
+
+                <!-- 2. MAP SECTION -->
+                <section class="content-section" id="section-map">
+                    <div class="section-header">
+                        <h2>🗺️ Mapa de la Ruta</h2>
+                        <p>Explora de forma interactiva els punts clau del viatge. Fes clic als marcadors per a més detalls.</p>
+                    </div>
+                    <div class="map-card glass-panel">
+                        <div id="map-element"></div>
+                    </div>
+                    <div class="map-legend glass-panel">
+                        <div class="legend-item"><span class="legend-dot dot-kumano"></span> Kumano Kodo (Ruta pròpia)</div>
+                        <div class="legend-item"><span class="legend-dot dot-banana"></span> Ruta sol (Fuji i Kyoto)</div>
+                        <div class="legend-item"><span class="legend-dot dot-shared"></span> Trams compartits amb en Banana</div>
+                    </div>
+                </section>
+
+                <!-- 3. BUDGET SECTION -->
+                <section class="content-section" id="section-budget">
+                    <div class="section-header">
+                        <h2>💰 Control del Pressupost</h2>
+                        <p>Objectiu de despeses màximes: <strong>1.500 €</strong>.</p>
+                    </div>
+                    <div class="budget-grid">
+                        <!-- Progress Card -->
+                        <div class="budget-card progress-card glass-panel">
+                            <h3>Estat de Despeses</h3>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" id="budget-progress-bar"></div>
+                            </div>
+                            <div class="progress-labels">
+                                <span class="total-spent" id="budget-spent-text">0 € gastats</span>
+                                <span class="total-limit">Límit: 1.500 €</span>
+                            </div>
+                            <div class="budget-status-message" id="budget-status-message">
+                                Estàs dins del pressupost estimat!
+                            </div>
+                        </div>
+
+                        <!-- Form to Add/Edit Expense -->
+                        <div class="budget-card form-card glass-panel">
+                            <h3>Afegir / Editar Despesa</h3>
+                            <form id="expense-form">
+                                <div class="form-group">
+                                    <label for="expense-category">Categoria</label>
+                                    <select id="expense-category" required>
+                                        <option value="Vols">Vols ✈️</option>
+                                        <option value="Allotjament">Allotjament 🏨</option>
+                                        <option value="Transport">Transport 🚄</option>
+                                        <option value="Menjar i oci">Menjar i Oci 🍜</option>
+                                        <option value="Altres">Altres 🎒</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="expense-concept">Concepte</label>
+                                    <input type="text" id="expense-concept" placeholder="Ex: Vol BCN - Tòquio" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="expense-amount">Import (€)</label>
+                                    <input type="number" id="expense-amount" placeholder="Ex: 850" min="0" required>
+                                </div>
+                                <button type="submit" class="submit-btn" id="btn-add-expense">Desar Despesa</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Expense List Table -->
+                    <div class="expense-list-container glass-panel">
+                        <h3>Desglosament de Despeses</h3>
+                        <div class="table-responsive">
+                            <table class="expense-table">
+                                <thead>
+                                    <tr>
+                                        <th>Categoria</th>
+                                        <th>Concepte</th>
+                                        <th>Import</th>
+                                        <th>Acció</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="expense-table-body">
+                                    <!-- JS populated rows -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. VIDEOS AND RESOURCES SECTION -->
+                <section class="content-section" id="section-videos">
+                    <div class="section-header">
+                        <h2>🎥 Vídeos de YouTube i Recursos</h2>
+                        <p>Guarda i organitza enllaços a parts específiques de vídeos interessants de YouTube.</p>
+                    </div>
+                    <div class="resources-grid">
+                        <!-- Add Video Card -->
+                        <div class="video-card form-card glass-panel">
+                            <h3>Afegir Nou Recurs</h3>
+                            <form id="video-form">
+                                <div class="form-group">
+                                    <label for="video-title">Títol del Vídeo / Nom</label>
+                                    <input type="text" id="video-title" placeholder="Ex: Guia pràctica Kumano Kodo" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="video-url">Enllaç de YouTube</label>
+                                    <input type="url" id="video-url" placeholder="Ex: https://www.youtube.com/watch?v=XXXXX" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="video-timestamp">Minut concret (opcional)</label>
+                                    <input type="text" id="video-timestamp" placeholder="Ex: 12:45 o 1h15m">
+                                </div>
+                                <div class="form-group">
+                                    <label for="video-notes">Notes / Apunts</label>
+                                    <textarea id="video-notes" placeholder="Ex: Detalla on agafar el bus cap a la 5a estació..." rows="3"></textarea>
+                                </div>
+                                <button type="submit" class="submit-btn" id="btn-add-video">Afegir Recurs</button>
+                            </form>
+                        </div>
+
+                        <!-- Videos List Container -->
+                        <div class="video-list-container">
+                            <div class="video-cards-grid" id="video-cards-container">
+                                <!-- JS generated video cards -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 5. TASKS CHECKLIST SECTION -->
+                <section class="content-section" id="section-tasks">
+                    <div class="section-header">
+                        <h2>📋 Tasques Pendents</h2>
+                        <p>Mantén controlades les reserves i accions imprescindibles abans de marxar.</p>
+                    </div>
+                    <div class="tasks-card glass-panel">
+                        <div class="add-task-bar">
+                            <input type="text" id="new-task-input" placeholder="Nova tasca... (ex: Contractar assegurança mèdica)">
+                            <button id="btn-add-task"><i class="fa-solid fa-plus"></i> Afegir</button>
+                        </div>
+                        <ul class="tasks-list" id="tasks-list-container">
+                            <!-- JS generated tasks -->
+                        </ul>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+        
+        <!-- Mobile Navigation Bar -->
+        <nav class="mobile-nav" id="app-mobile-nav">
+            <button class="mobile-nav-btn active" data-target="itinerary" id="btn-mob-itinerary">
+                <i class="fa-regular fa-calendar-days"></i>
+                <span>Itinerari</span>
+            </button>
+            <button class="mobile-nav-btn" data-target="map" id="btn-mob-map">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <span>Mapa</span>
+            </button>
+            <button class="mobile-nav-btn" data-target="budget" id="btn-mob-budget">
+                <i class="fa-solid fa-wallet"></i>
+                <span>Preu</span>
+            </button>
+            <button class="mobile-nav-btn" data-target="videos" id="btn-mob-videos">
+                <i class="fa-solid fa-video"></i>
+                <span>Vídeos</span>
+            </button>
+            <button class="mobile-nav-btn" data-target="tasks" id="btn-mob-tasks">
+                <i class="fa-solid fa-list-check"></i>
+                <span>Tasques</span>
+            </button>
+        </nav>
+        
+    </div>
+
+    <!-- Leaflet JS for Map -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <!-- Custom JS -->
+    <script src="app.js"></script>
+</body>
+</html>
