@@ -50,6 +50,22 @@
                     <i class="fa-solid fa-list-check"></i>
                     <span>Tasques</span>
                 </button>
+                <button class="nav-btn" data-target="luggage" id="btn-nav-luggage">
+                    <i class="fa-solid fa-suitcase"></i>
+                    <span>Maleta</span>
+                </button>
+                <button class="nav-btn" data-target="shopping" id="btn-nav-shopping">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>Compres</span>
+                </button>
+                <button class="nav-btn" data-target="places" id="btn-nav-places">
+                    <i class="fa-solid fa-compass"></i>
+                    <span>Possibles Llocs</span>
+                </button>
+                <button class="nav-btn" data-target="observations" id="btn-nav-observations">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span>Observacions</span>
+                </button>
             </nav>
             <div class="sidebar-footer">
                 <p>Viatge: 5 - 28 Agost</p>
@@ -231,6 +247,74 @@
                     </div>
                 </section>
 
+                <!-- 6. LUGGAGE SECTION -->
+                <section class="content-section" id="section-luggage">
+                    <div class="section-header">
+                        <h2>🧳 Llista de la Maleta</h2>
+                        <p>Prepara el teu equipatge per al viatge i les caminades pel Kumano Kodo.</p>
+                    </div>
+                    <div class="tasks-card glass-panel">
+                        <div class="add-task-bar">
+                            <input type="text" id="new-luggage-input" placeholder="Afegir a la maleta... (ex: Calçat de trekking)">
+                            <button id="btn-add-luggage"><i class="fa-solid fa-plus"></i> Afegir</button>
+                        </div>
+                        <ul class="tasks-list" id="luggage-list-container">
+                            <!-- JS generated luggage items -->
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 7. SHOPPING SECTION -->
+                <section class="content-section" id="section-shopping">
+                    <div class="section-header">
+                        <h2>🛍️ Idees de Compres i Souvenirs</h2>
+                        <p>Records barats, autèntics i de valor que realment val la pena comprar al Japó.</p>
+                    </div>
+                    <div class="tasks-card glass-panel">
+                        <div class="add-task-bar">
+                            <input type="text" id="new-shopping-input" placeholder="Afegir idea de record... (ex: Campaneta Furin)">
+                            <button id="btn-add-shopping"><i class="fa-solid fa-plus"></i> Afegir</button>
+                        </div>
+                        <ul class="tasks-list" id="shopping-list-container">
+                            <!-- JS generated shopping items -->
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 8. OTHER PLACES SECTION -->
+                <section class="content-section" id="section-places">
+                    <div class="section-header">
+                        <h2>🧭 Altres Llocs a Visitar</h2>
+                        <p>Extensions de ruta i excursions recomanades a fer des de les teves bases (Tòquio, Kyoto, Osaka).</p>
+                    </div>
+                    <div class="tasks-card glass-panel">
+                        <div class="add-task-bar">
+                            <input type="text" id="new-place-input" placeholder="Afegir lloc... (ex: Kamakura)">
+                            <button id="btn-add-place"><i class="fa-solid fa-plus"></i> Afegir</button>
+                        </div>
+                        <ul class="tasks-list" id="places-list-container">
+                            <!-- JS generated places -->
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 9. OBSERVATIONS SECTION -->
+                <section class="content-section" id="section-observations">
+                    <div class="section-header">
+                        <h2>ℹ️ Observacions i Consells de Viatge</h2>
+                        <p>Apunts, reflexions i consells clau per al dia a dia durant el viatge al Japó.</p>
+                    </div>
+                    <div class="tasks-card glass-panel">
+                        <div class="add-task-bar">
+                            <input type="text" id="new-observation-input" placeholder="Afegir consell/observació... (ex: Dur sempre efectiu)">
+                            <button id="btn-add-observation"><i class="fa-solid fa-plus"></i> Afegir</button>
+                        </div>
+                        <ul class="tasks-list" id="observations-list-container">
+                            <!-- JS generated observations -->
+                        </ul>
+                    </div>
+                </section>
+
             </div>
         </main>
         
@@ -255,6 +339,22 @@
             <button class="mobile-nav-btn" data-target="tasks" id="btn-mob-tasks">
                 <i class="fa-solid fa-list-check"></i>
                 <span>Tasques</span>
+            </button>
+            <button class="mobile-nav-btn" data-target="luggage" id="btn-mob-luggage">
+                <i class="fa-solid fa-suitcase"></i>
+                <span>Maleta</span>
+            </button>
+            <button class="mobile-nav-btn" data-target="shopping" id="btn-mob-shopping">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span>Compres</span>
+            </button>
+            <button class="mobile-nav-btn" data-target="places" id="btn-mob-places">
+                <i class="fa-solid fa-compass"></i>
+                <span>Visites</span>
+            </button>
+            <button class="mobile-nav-btn" data-target="observations" id="btn-mob-observations">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>Notes</span>
             </button>
         </nav>
         

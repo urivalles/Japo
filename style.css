@@ -913,9 +913,16 @@ body {
     border-top: 1px solid var(--border-glass);
     height: 60px;
     z-index: 100;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
     padding: 0 10px;
+    overflow-x: auto;
+    gap: 8px;
+    scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+.mobile-nav::-webkit-scrollbar {
+    display: none; /* Hide scrollbar Chrome/Safari/Opera */
 }
 
 .mobile-nav-btn {
@@ -929,7 +936,8 @@ body {
     cursor: pointer;
     font-size: 10px;
     font-weight: 500;
-    flex-grow: 1;
+    flex-shrink: 0;
+    min-width: 65px;
     padding: 8px 0;
     transition: color var(--transition-speed) ease;
 }
@@ -947,7 +955,6 @@ body {
     font-weight: 600;
 }
 
-/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;

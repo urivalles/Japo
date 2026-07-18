@@ -21,7 +21,8 @@ Vacances des de l'1 d'agost. Opcions valorades: Camino de Santiago, Transpirenai
 | Vol BCN–Tòquio (idealment "open jaw": entrada Tòquio, sortida Osaka/Kansai) | 700-950 € |
 | ~22 dies × 30-40 €/dia (hostel + menjar + transport curt) | 650-800 € |
 | Trens/busos llargs imprescindibles | ~100-150 € |
-| **Total** | **~1.450-1.550 €** |
+| Targeta SIM per a dades/internet al Japó | ~100 € |
+| **Total** | **~1.550-1.650 €** |
 
 Ajustat però factible amb hostels dorm, menjar barat (konbini, gyudon) i evitant trajectes cars innecessaris (com Hiroshima–Tòquio, 119 €, si es pot sortir per Osaka en lloc de tornar a Tòquio).
 
@@ -56,3 +57,9 @@ Ajustat però factible amb hostels dorm, menjar barat (konbini, gyudon) i evitan
 - Confirmar quins dies exactes hi ha marge per a la parella.
 - Mirar allotjaments concrets pel tram del Kumano Kodo.
 - Revisar quins trams del pla original d'en Banana val la pena reservar junts (free tours, algun tren) vs anar per lliure.
+- Comprar la targeta SIM/eSIM per a internet al Japó (~100 €).
+- Preparar la maleta/equipatge tenint en compte les caminades pel Kumano Kodo.
+- Investigar opcions de targetes i comptes sense comissions (Revolut, Wise o obrir algun compte en línia amb promoció). Comprovar l'ús de la targeta N26 a través dels següents enllaços:
+  - [Guia N26 per a pagar al Japó](https://n26.com/es-es/pagar-con-tarjeta-en-japon)
+  - [Anàlisi de N26 al Japó (Japonpedia)](https://japonpedia.com/tarjeta-n26-japon/)
+  - [Experiència pràctica de pagament a l'estranger (Comiviajeros)](https://comiviajeros.com/tarjeta-n26-pagar-extranjero/)
