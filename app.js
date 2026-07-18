@@ -12,7 +12,7 @@ const DEFAULT_ITINERARY = [
         ],
         accommodation: '✈️ Vol internacional (a bord)',
         type: 'kumano',
-        badge: 'titon',
+        badge: 'uri',
         coords: [35.7767, 140.3864] // Tokyo Narita
     },
     {
@@ -27,7 +27,7 @@ const DEFAULT_ITINERARY = [
         ],
         accommodation: '🏨 Hostel a Tanabe',
         type: 'kumano',
-        badge: 'titon',
+        badge: 'uri',
         coords: [33.7285, 135.3768]
     },
     {
@@ -42,7 +42,7 @@ const DEFAULT_ITINERARY = [
         ],
         accommodation: '🏨 Minshuku local (Tsugizakura)',
         type: 'kumano',
-        badge: 'titon',
+        badge: 'uri',
         coords: [33.8055, 135.6122]
     },
     {
@@ -57,7 +57,7 @@ const DEFAULT_ITINERARY = [
         ],
         accommodation: '🏨 Minshuku / Guesthouse a Hongu',
         type: 'kumano',
-        badge: 'titon',
+        badge: 'uri',
         coords: [33.8403, 135.7738]
     },
     {
@@ -72,7 +72,7 @@ const DEFAULT_ITINERARY = [
         ],
         accommodation: '🏨 Ryokan / Minshuku a Yunomine Onsen',
         type: 'kumano',
-        badge: 'titon',
+        badge: 'uri',
         coords: [33.8315, 135.7578]
     },
     {
@@ -87,7 +87,7 @@ const DEFAULT_ITINERARY = [
         ],
         accommodation: '🏨 Lodge / Minshuku a Koguchi',
         type: 'kumano',
-        badge: 'titon',
+        badge: 'uri',
         coords: [33.7228, 135.8450]
     },
     {
@@ -102,7 +102,7 @@ const DEFAULT_ITINERARY = [
         ],
         accommodation: '🏨 Guesthouse a Katsuura',
         type: 'kumano',
-        badge: 'titon',
+        badge: 'uri',
         coords: [33.6750, 135.8856]
     },
     {
@@ -117,7 +117,7 @@ const DEFAULT_ITINERARY = [
         ],
         accommodation: '🏨 IMANO TOKYO HOSTEL (Shinjuku)',
         type: 'kumano',
-        badge: 'titon',
+        badge: 'uri',
         coords: [35.6938, 139.7032]
     },
     {
@@ -170,12 +170,12 @@ const DEFAULT_ITINERARY = [
         weekday: 'Diumenge',
         title: 'Mont Fuji (Versió lleugera a Kawaguchiko)',
         activities: [
-            '<strong>Titon (Tu)</strong>: Opció lleugera. Viatge cap als llacs de <strong>Kawaguchiko</strong> per veure el Mont Fuji reflectit al llac, estalviant la duresa física i el cost de fer nit a dalt.',
+            '<strong>Uri (Tu)</strong>: Opció lleugera. Viatge cap als llacs de <strong>Kawaguchiko</strong> per veure el Mont Fuji reflectit al llac, estalviant la duresa física i el cost de fer nit a dalt.',
             '<strong>Banana</strong>: Puja en bus a la 5a estació de Fujinomiya per fer el cim i dormir al refugi (Fujikan Hut a 3.740m).'
         ],
-        accommodation: '🏨 Cabin House Yado Fujinomiya (Titon)',
+        accommodation: '🏨 Cabin House Yado Fujinomiya (Uri)',
         type: 'banana',
-        badge: 'titon',
+        badge: 'uri',
         coords: [35.5010, 138.7583] // Kawaguchiko
     },
     {
@@ -184,12 +184,12 @@ const DEFAULT_ITINERARY = [
         weekday: 'Dilluns',
         title: 'Viatge cap a Kyoto (Solo)',
         activities: [
-            '<strong>Titon (Tu)</strong>: Viatge directe cap a <strong>Kyoto</strong> per començar el tram en solitari (saltant-te Hakone i Nagoya per centrar-te en un ritme més relaxat i cultural).',
+            '<strong>Uri (Tu)</strong>: Viatge directe cap a <strong>Kyoto</strong> per començar el tram en solitari (saltant-te Hakone i Nagoya per centrar-te en un ritme més relaxat i cultural).',
             'Check-in al guesthouse i primers passeigs de reconeixement de la capital tradicional.'
         ],
-        accommodation: '🏨 Hostel / Guesthouse a Kyoto (Titon)',
+        accommodation: '🏨 Hostel / Guesthouse a Kyoto (Uri)',
         type: 'banana',
-        badge: 'titon',
+        badge: 'uri',
         coords: [35.0116, 135.7681]
     },
     {
@@ -198,13 +198,13 @@ const DEFAULT_ITINERARY = [
         weekday: 'Dimarts',
         title: 'Kyoto sol: Santuaris i carrerons històrics',
         activities: [
-            '<strong>Titon (Tu)</strong>: Exploració de Kyoto al teu propi ritme.',
+            '<strong>Uri (Tu)</strong>: Exploració de Kyoto al teu propi ritme.',
             'Free tours per a conèixer gent als barris històrics (Gion, Higashiyama) i fer un viatge més social amb altres viatgers.',
             'Tarda-nit: Sopar barat o passeig pels canals il·luminats.'
         ],
-        accommodation: '🏨 Hostel / Guesthouse a Kyoto (Titon)',
+        accommodation: '🏨 Hostel / Guesthouse a Kyoto (Uri)',
         type: 'banana',
-        badge: 'titon',
+        badge: 'uri',
         coords: [35.0116, 135.7681]
     },
     {
@@ -213,12 +213,12 @@ const DEFAULT_ITINERARY = [
         weekday: 'Dimecres',
         title: 'Kyoto sol: Racons tranquils i cultura local',
         activities: [
-            '<strong>Titon (Tu)</strong>: Visita a temples menys transitats (com el Tofuku-ji), el bonic camí de la filosofia o el canal de Shirakawa.',
+            '<strong>Uri (Tu)</strong>: Visita a temples menys transitats (com el Tofuku-ji), el bonic camí de la filosofia o el canal de Shirakawa.',
             'Mantenint un pressupost ajustat i cuinant o menjant gyudon o konbini.'
         ],
-        accommodation: '🏨 Hostel / Guesthouse a Kyoto (Titon)',
+        accommodation: '🏨 Hostel / Guesthouse a Kyoto (Uri)',
         type: 'banana',
-        badge: 'titon',
+        badge: 'uri',
         coords: [35.0116, 135.7681]
     },
     {
@@ -227,7 +227,7 @@ const DEFAULT_ITINERARY = [
         weekday: 'Dijous',
         title: 'Rebuda d\'en Banana a Kyoto',
         activities: [
-            '<strong>Titon (Tu)</strong>: Ja coneixes Kyoto i fas de "guia" rebent en Banana (ell arriba des de Shirakawa-go).',
+            '<strong>Uri (Tu)</strong>: Ja coneixes Kyoto i fas de "guia" rebent en Banana (ell arriba des de Shirakawa-go).',
             'Check-in al nou allotjament compartit i sopar pel barri de Pontocho.'
         ],
         accommodation: '🏨 Shijo Guesthouse Hive (Compartit)',
@@ -319,9 +319,9 @@ const DEFAULT_ITINERARY = [
             'Tarda: Tren de tornada a la zona d\'Osaka/Kansai (establir allotjament proper a l\'aeroport).',
             '<strong>Estalvi clau:</strong> No tornem a Tòquio, evitant un viatge de 119€ i un dia sencer perdut.'
         ],
-        accommodation: '🏨 Hostel proper a l\'aeroport de Kansai o Osaka (Titon)',
+        accommodation: '🏨 Hostel proper a l\'aeroport de Kansai o Osaka (Uri)',
         type: 'overlap',
-        badge: 'titon',
+        badge: 'uri',
         coords: [34.6687, 135.5013] // Osaka area near Kansai Airport
     },
     {
@@ -330,12 +330,12 @@ const DEFAULT_ITINERARY = [
         weekday: 'Dijous',
         title: 'Vol de tornada cap a Barcelona (Open-Jaw)',
         activities: [
-            '<strong>Titon (Tu)</strong>: Vol de tornada cap a Barcelona (BCN) sortint directament des de l\'Aeroport de Kansai (KIX).',
+            '<strong>Uri (Tu)</strong>: Vol de tornada cap a Barcelona (BCN) sortint directament des de l\'Aeroport de Kansai (KIX).',
             'Final de l\'itinerari al Japó, volant de tornada sense haver de tornar a pujar a Tòquio.'
         ],
         accommodation: '✈️ Vol internacional (a bord)',
         type: 'banana',
-        badge: 'titon',
+        badge: 'uri',
         coords: [34.4320, 135.2304] // Kansai Airport
     },
     {
@@ -344,11 +344,11 @@ const DEFAULT_ITINERARY = [
         weekday: 'Divendres',
         title: 'Arribada a Barcelona',
         activities: [
-            '<strong>Titon (Tu)</strong>: Arribada a Barcelona (BCN) i fi del viatge. Retorn a casa.'
+            '<strong>Uri (Tu)</strong>: Arribada a Barcelona (BCN) i fi del viatge. Retorn a casa.'
         ],
         accommodation: '🏠 Casa teva',
         type: 'overlap',
-        badge: 'titon',
+        badge: 'uri',
         coords: null
     }
 ];
@@ -443,13 +443,13 @@ const DEFAULT_SHOPPING = [
 ];
 
 const DEFAULT_PLACES = [
-    { id: 'p1', text: '🙋‍♂️ [Titon] Nara: Parc ple de cérvols lliures (els cérvols sagrats que demanen menjar reverenciant-te) i el temple Todai-ji.', completed: false },
-    { id: 'p-osaka', text: '🙋‍♂️ [Titon] Osaka: Banys termals / Onsen on et pots vestir amb yukata o kimono (ex: parc temàtic de banys Spa World o onsens tradicionals per comprovar si mola).', completed: false },
-    { id: 'p2', text: '💡 [Antigravity] Kamakura: El Gran Buda de bronze a l\'aire lliure (Daibutsu) i temples històrics de bosc (excursió fàcil des de Tòquio).', completed: false },
-    { id: 'p3', text: '💡 [Antigravity] Nikko: Mausoleus daurats dels shoguns Tokugawa, cascada Kegon i naturalesa alpina espectacular (excursió des de Tòquio).', completed: false },
-    { id: 'p4', text: '💡 [Antigravity] Himeji: El cèlebre castell de la Garça Blanca, el castell feudal original més espectacular i millor conservat de tot el Japó.', completed: false },
-    { id: 'p5', text: '💡 [Antigravity] Uji: Bressol del te verd matcha històric i el temple Byodoin (l\'edifici imprès a la moneda de 10 iens). Prop de Kyoto.', completed: false },
-    { id: 'p6', text: '💡 [Antigravity] Koyasan: El mont sagrat budista, dormir en un temple gestionat pels monjos (shukubo) i recórrer el cementiri místic d\'Okunoin.', completed: false }
+    { id: 'p1', text: '🙋‍♂️ [Uri] Nara: Parc ple de cérvols lliures (els cérvols sagrats que demanen menjar reverenciant-te) i el temple Todai-ji.', completed: false },
+    { id: 'p-osaka', text: '🙋‍♂️ [Uri] Osaka: Banys termals / Onsen on et pots vestir amb yukata o kimono (ex: parc temàtic de banys Spa World o onsens tradicionals per comprovar si mola).', completed: false },
+    { id: 'p2', text: '💡 [IA] Kamakura: El Gran Buda de bronze a l\'aire lliure (Daibutsu) i temples històrics de bosc (excursió fàcil des de Tòquio).', completed: false },
+    { id: 'p3', text: '💡 [IA] Nikko: Mausoleus daurats dels shoguns Tokugawa, cascada Kegon i naturalesa alpina espectacular (excursió des de Tòquio).', completed: false },
+    { id: 'p4', text: '💡 [IA] Himeji: El cèlebre castell de la Garça Blanca, el castell feudal original més espectacular i millor conservat de tot el Japó.', completed: false },
+    { id: 'p5', text: '💡 [IA] Uji: Bressol del te verd matcha històric i el temple Byodoin (l\'edifici imprès a la moneda de 10 iens). Prop de Kyoto.', completed: false },
+    { id: 'p6', text: '💡 [IA] Koyasan: El mont sagrat budista, dormir en un temple gestionat pels monjos (shukubo) i recórrer el cementiri místic d\'Okunoin.', completed: false }
 ];
 
 const DEFAULT_OBSERVATIONS = [
@@ -566,8 +566,8 @@ function loadState() {
 
     // Forçar l'actualització dels llocs per diferenciar recomanacions i afegir l'Osaka onsen
     const hasOsakaOnsen = state.places.some(item => item.id === 'p-osaka');
-    const hasTitonPrefix = state.places.some(item => item.text.includes('[Titon]'));
-    if (!hasOsakaOnsen || !hasTitonPrefix) {
+    const hasUriPrefix = state.places.some(item => item.text.includes('[Uri]'));
+    if (!hasOsakaOnsen || !hasUriPrefix) {
         state.places = DEFAULT_PLACES;
         saveState('places');
     }
@@ -673,8 +673,8 @@ function renderItinerary() {
 
         const badgeHtml = day.badge === 'shared' 
             ? `<span class="badge badge-shared"><i class="fa-solid fa-users"></i> Compartit</span>`
-            : day.badge === 'titon'
-                ? `<span class="badge badge-titon"><i class="fa-solid fa-user"></i> Titon (Tu)</span>`
+            : day.badge === 'uri'
+                ? `<span class="badge badge-uri"><i class="fa-solid fa-user"></i> Uri (Tu)</span>`
                 : `<span class="badge badge-banana"><i class="fa-solid fa-user-astronaut"></i> Banana</span>`;
 
         let activitiesHtml = '';
