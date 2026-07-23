@@ -24,12 +24,14 @@
     --accent-green: #50fa7b;     /* Uri Solo */
     --accent-purple: #8b5cf6;    /* Tokyo Neon */
     --accent-blue: #06b6d4;      /* Shinkansen Blue */
-    --accent-red: #ef4444;       /* Torii Gate Red */
+    --accent-red: #e63946;       /* Torii Gate Vermilion Red */
+    --accent-gold: #ffd700;      /* Kin-haku Gold */
     
     /* Shadow & Glow */
     --shadow-soft: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     --glow-pink: 0 0 15px rgba(255, 121, 198, 0.3);
     --glow-green: 0 0 15px rgba(80, 250, 123, 0.3);
+    --glow-red: 0 0 15px rgba(230, 57, 70, 0.4);
     
     /* System Sizes */
     --sidebar-width: 260px;
@@ -39,11 +41,29 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-deep);
+    font-family: 'Zen Kaku Gothic New', 'Inter', sans-serif;
+    background-color: #08090d;
+    background-image: 
+        radial-gradient(circle at 15% 20%, rgba(230, 57, 70, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(80, 250, 123, 0.04) 0%, transparent 40%),
+        url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.015'%3E%3Cpath d='M0 0h80v80H0z' fill='none'/%3E%3Cpath d='M40 40c0-11.046-8.954-20-20-20S0 28.954 0 40s8.954 20 20 20 20-8.954 20-20zm40 0c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z'/%3E%3C/g%3E%3C/svg%3E");
     color: var(--text-main);
     overflow-x: hidden;
     line-height: 1.6;
+}
+
+h1, h2, h3, .brand-text {
+    font-family: 'Noto Serif JP', 'Inter', serif;
+}
+
+.kanji-subtitle {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.75em;
+    color: var(--accent-red);
+    opacity: 0.85;
+    margin-left: 8px;
+    font-weight: 400;
+    letter-spacing: 2px;
 }
 
 /* Scrollbar customization */
@@ -89,9 +109,9 @@ body {
 }
 
 .brand-icon {
-    font-size: 24px;
-    color: var(--accent-pink);
-    filter: drop-shadow(0 0 6px var(--accent-pink));
+    font-size: 26px;
+    color: var(--accent-red);
+    filter: drop-shadow(0 0 8px var(--accent-red));
 }
 
 .brand-text {

@@ -6,10 +6,10 @@
     <title>Japó 2026 | El meu Viatge Personalitzat</title>
     <meta name="description" content="Aplicació interactiva per organitzar el meu viatge personalitzat al Japó de l'agost de 2026. Pla Estratègic V5 d'en Uri.">
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Inter & Noto Serif JP & Zen Kaku Gothic New -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@400;600;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
     
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -27,7 +27,10 @@
         <aside class="sidebar" id="app-sidebar">
             <div class="sidebar-brand">
                 <i class="fa-solid fa-torii-gate brand-icon"></i>
-                <span class="brand-text">Japó 2026</span>
+                <div style="display: flex; flex-direction: column;">
+                    <span class="brand-text">Japó 2026</span>
+                    <span style="font-size: 10px; color: var(--accent-red); font-family: 'Noto Serif JP', serif; letter-spacing: 2px;">日本旅行</span>
+                </div>
             </div>
             <nav class="sidebar-nav">
                 <button class="nav-btn active" data-target="itinerary" id="btn-nav-itinerary">
@@ -77,7 +80,7 @@
         <main class="main-content">
             <header class="app-header">
                 <div class="header-title">
-                    <h1 id="main-title">Planificació de Viatge</h1>
+                    <h1 id="main-title" style="font-family: 'Noto Serif JP', serif;">Planificació de Viatge <span style="font-size: 0.6em; color: var(--accent-red); font-weight: 400; margin-left: 8px;">日本</span></h1>
                     <p class="subtitle" id="main-subtitle">Control de ruta, pressupost i notes personals</p>
                 </div>
                 <div class="countdown-badge" id="countdown-container">
@@ -91,8 +94,8 @@
                 <!-- 1. ITINERARY SECTION -->
                 <section class="content-section active" id="section-itinerary">
                     <div class="section-header">
-                        <h2>📅 Cronograma del Viatge</h2>
-                        <p>Descobreix la teva ruta personalitzada pel Japó: trams en solitari (verd/blau) i trams compartits amb en Banana (rosa).</p>
+                        <h2>📅 Cronograma del Viatge <span class="kanji-subtitle">日程</span></h2>
+                        <p>Descobreix la teva ruta personalitzada pel Japó: trams en solitari (verd/groc) i trams compartits amb en Banana (taronja).</p>
                     </div>
                     <div class="itinerary-filters">
                         <button class="filter-btn active" data-filter="all" id="btn-filter-all">Tot el viatge</button>
@@ -107,7 +110,7 @@
                 <!-- 2. MAP SECTION -->
                 <section class="content-section" id="section-map">
                     <div class="section-header">
-                        <h2>🗺️ Mapa de la Ruta</h2>
+                        <h2>🗺️ Mapa de la Ruta <span class="kanji-subtitle">地図</span></h2>
                         <p>El teu mapa personalitzat de Google My Maps com a protagonista, i la comparativa interactiva a sota.</p>
                     </div>
 
@@ -157,7 +160,7 @@
                 <section class="content-section" id="section-budget">
                     <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px;">
                         <div>
-                            <h2>💰 Control del Pressupost</h2>
+                            <h2>💰 Control del Pressupost <span class="kanji-subtitle">予算</span></h2>
                             <p>Objectiu de despeses màximes: <strong id="budget-header-limit">2.500 €</strong>.</p>
                         </div>
                         <button id="btn-edit-budget-limit" style="background: rgba(80, 250, 123, 0.15); color: var(--accent-green); border: 1px solid var(--accent-green); padding: 8px 14px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; transition: all 0.2s;"><i class="fa-solid fa-pen-to-square"></i> Canviar Límit</button>
@@ -241,7 +244,7 @@
                 <!-- 4. VIDEOS AND RESOURCES SECTION -->
                 <section class="content-section" id="section-videos">
                     <div class="section-header">
-                        <h2>🎥 Vídeos de YouTube i Recursos</h2>
+                        <h2>🎥 Vídeos de YouTube i Recursos <span class="kanji-subtitle">動画</span></h2>
                         <p>Guarda i organitza enllaços a parts específiques de vídeos interessants de YouTube.</p>
                     </div>
                     <div class="resources-grid">
@@ -281,7 +284,7 @@
                 <!-- 5. TASKS CHECKLIST SECTION -->
                 <section class="content-section" id="section-tasks">
                     <div class="section-header">
-                        <h2>📋 Tasques Pendents</h2>
+                        <h2>📋 Tasques Pendents <span class="kanji-subtitle">作業</span></h2>
                         <p>Mantén controlades les reserves i accions imprescindibles abans de marxar.</p>
                     </div>
                     <div class="tasks-card glass-panel">
@@ -298,8 +301,8 @@
                 <!-- 6. LUGGAGE SECTION -->
                 <section class="content-section" id="section-luggage">
                     <div class="section-header">
-                        <h2>🧳 Llista de la Maleta</h2>
-                        <p>Prepara el teu equipatge per al viatge i les caminades pel Kumano Kodo.</p>
+                        <h2>🧳 Equipatge i Maleta <span class="kanji-subtitle">荷物</span></h2>
+                        <p>Llista de comprovar tot el que necessites emportar-te al Japó.</p>
                     </div>
                     <div class="tasks-card glass-panel">
                         <div class="add-task-bar">
@@ -312,11 +315,11 @@
                     </div>
                 </section>
 
-                <!-- 7. SHOPPING SECTION -->
+                <!-- 7. SHOPPING LIST SECTION -->
                 <section class="content-section" id="section-shopping">
                     <div class="section-header">
-                        <h2>🛍️ Idees de Compres i Souvenirs</h2>
-                        <p>Records barats, autèntics i de valor que realment val la pena comprar al Japó.</p>
+                        <h2>🛍️ Llista de Compres <span class="kanji-subtitle">買物</span></h2>
+                        <p>Souvenirs, regals i compres especials a fer durant el viatge.</p>
                     </div>
                     <div class="tasks-card glass-panel">
                         <div class="add-task-bar">
@@ -332,7 +335,7 @@
                 <!-- 8. OTHER PLACES SECTION -->
                 <section class="content-section" id="section-places">
                     <div class="section-header">
-                        <h2>🧭 Altres Llocs a Visitar</h2>
+                        <h2>🧭 Altres Llocs a Visitar <span class="kanji-subtitle">名所</span></h2>
                         <p>Extensions de ruta i excursions recomanades a fer des de les teves bases (Tòquio, Kyoto, Osaka).</p>
                     </div>
                     <div class="tasks-card glass-panel">
@@ -349,7 +352,7 @@
                 <!-- 9. OBSERVATIONS SECTION -->
                 <section class="content-section" id="section-observations">
                     <div class="section-header">
-                        <h2>ℹ️ Observacions i Consells de Viatge</h2>
+                        <h2>ℹ️ Observacions i Consells <span class="kanji-subtitle">備忘録</span></h2>
                         <p>Apunts, reflexions i consells clau per al dia a dia durant el viatge al Japó.</p>
                     </div>
                     <div class="tasks-card glass-panel">
