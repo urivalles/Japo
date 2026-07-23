@@ -5,25 +5,25 @@
     padding: 0;
 }
 
-:root {
-    /* Japanese Traditional Red & White Color Palette (朱色 Shu-iro & 雪色 Yuki-iro) */
-    --bg-deep: #f7f5ef;          /* Wabi-Sabi Cream Washi Paper */
-    --bg-dark: #ffffff;          /* Pure Snow White */
-    --bg-card: #ffffff;          /* White Card Surface */
-    --bg-card-hover: #fdfbf7;    /* Subtle Warm Hover */
-    --border-glass: rgba(214, 48, 49, 0.15); /* Vermilion Red Border */
+    /* The 4 Traditional Colors of Japan (四つの伝統色) */
+    --accent-red: #d63031;       /* 1. Torii Vermilion Red (朱色 Shu-iro) */
+    --bg-deep: #f7f5ef;          /* 2. Pure Washi Off-White (雪色 Yuki-iro) */
+    --sumi-black: #111318;       /* 3. Sumi Ink Charcoal Black (墨色 Sumi-iro) */
+    --indigo-navy: #1b2a4a;      /* 4. Indigo Navy Blue (藍染 Aizan) */
+    
+    --bg-dark: #ffffff;
+    --bg-card: #ffffff;
+    --bg-card-hover: #fdfbf7;
+    --border-glass: rgba(214, 48, 49, 0.15);
     --border-glass-focus: rgba(214, 48, 49, 0.5);
     
-    --text-main: #1e272e;        /* Sumi Ink Dark Charcoal */
-    --text-muted: #636e72;       /* Slate Charcoal Muted Text */
+    --text-main: #1e272e;
+    --text-muted: #636e72;
     
-    /* Traditional Accent Colors */
-    --accent-red: #d63031;       /* Japanese Torii Vermilion Red (Shu-iro) */
-    --accent-crimson: #c0392b;   /* Deep Crimson Red */
-    --accent-green: #10b981;     /* Bamboo / Jade Green (Uri) */
-    --accent-yellow: #f59e0b;    /* Kin-haku Gold / Yellow (Banana) */
-    --accent-orange: #f97316;    /* Warm Orange */
-    --accent-pink: #d63031;      /* Replaced Pink with Torii Red */
+    /* Route Colors */
+    --accent-green: #10b981;     /* Bamboo Green (Uri) */
+    --accent-yellow: #f59e0b;    /* Kin-haku Gold (Banana) */
+    --accent-pink: #d63031;      /* Torii Red */
     --accent-purple: #8e44ad;    /* Imperial Purple */
     --accent-blue: #0984e3;      /* Indigo Blue */
     
