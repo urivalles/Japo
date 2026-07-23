@@ -387,7 +387,7 @@ const DEFAULT_VIDEOS = [
         title: 'Com utilitzar el servei Ta-Q-Bin (Yamato Transport)',
         url: 'https://www.youtube.com/watch?v=132K5J1K91c',
         timestamp: '02:00',
-        notes: 'Com enviar la teva maleta gran des de Takayama directament a l'hostel de Kyoto per viatjar lleuger a Shirakawa-go i Kanazawa.'
+        notes: 'Com enviar la teva maleta gran des de Takayama directament a l\'hostel de Kyoto per viatjar lleuger a Shirakawa-go i Kanazawa.'
     },
     {
         id: '3',
