@@ -751,9 +751,9 @@ function initMap() {
 
     // Draw markers
     coordsList.forEach(point => {
-        let color = '#ff79c6'; // Shared
-        if (point.type === 'uri') color = '#50fa7b';
-        if (point.type === 'banana') color = '#06b6d4';
+        let color = '#ffb86c'; // Shared Orange
+        if (point.type === 'uri') color = '#50fa7b'; // Uri Green
+        if (point.type === 'banana') color = '#f1fa8c'; // Banana Yellow
 
         const marker = L.circleMarker(point.coords, {
             radius: 8,
@@ -788,7 +788,7 @@ function initMap() {
 
         const marker = L.circleMarker(shirakawaPoint.coords, {
             radius: 8,
-            fillColor: '#ff79c6',
+            fillColor: '#ffb86c',
             color: '#ffffff',
             weight: 2,
             opacity: 0.9,
@@ -799,7 +799,7 @@ function initMap() {
             <div class="map-popup-content">
                 <h3>Dia 15: Shirakawa-go (Excursió conjunta)</h3>
                 <p><strong>Data:</strong> 2026-08-20</p>
-                <p>Tipus de ruta: <span style="color:#ff79c6; font-weight:bold;">OVERLAP</span></p>
+                <p>Tipus de ruta: <span style="color:#ffb86c; font-weight:bold;">OVERLAP</span></p>
             </div>
         `);
         mapMarkers.push(marker);
@@ -825,7 +825,7 @@ function initMap() {
         [35.0116, 135.7681]  // Kyoto (rejoins Banana)
     ];
 
-    // 2. Shared / Overlap Segments (Vibrant Sakura Pink #ff79c6, solid, weight 5)
+    // 2. Shared / Overlap Segments (Vibrant Orange #ffb86c, solid, weight 5)
     const sharedSegment1 = [
         [35.6938, 139.7032], // Shinjuku
         [35.6580, 139.7016], // Shibuya
@@ -845,7 +845,7 @@ function initMap() {
         [34.4320, 135.2304]  // KIX
     ];
 
-    // 3. Banana Solo Segments (Cyan Blue #06b6d4, SOLID line - NO dashes!, weight 4)
+    // 3. Banana Solo Segments (Banana Yellow #f1fa8c, SOLID line - NO dashes!, weight 4)
     const bananaSoloSegment1 = [
         [35.2238, 138.6133], // Fujinomiya
         [35.2536, 139.1553], // Odawara
@@ -862,13 +862,13 @@ function initMap() {
     L.polyline(uriSolo1, { color: '#50fa7b', weight: 4, opacity: 0.95 }).addTo(map);
     L.polyline(uriSolo2, { color: '#50fa7b', weight: 4, opacity: 0.95 }).addTo(map);
 
-    // Draw Banana Solo Lines (Cyan Blue - SOLID, NO DASHES!)
-    L.polyline(bananaSoloSegment1, { color: '#06b6d4', weight: 4, opacity: 0.95 }).addTo(map);
-    L.polyline(bananaSoloSegment2, { color: '#06b6d4', weight: 4, opacity: 0.95 }).addTo(map);
+    // Draw Banana Solo Lines (Banana Yellow - SOLID)
+    L.polyline(bananaSoloSegment1, { color: '#f1fa8c', weight: 4, opacity: 0.95 }).addTo(map);
+    L.polyline(bananaSoloSegment2, { color: '#f1fa8c', weight: 4, opacity: 0.95 }).addTo(map);
 
-    // Draw Shared Lines (Pink Sakura - Thick & Glowing)
-    L.polyline(sharedSegment1, { color: '#ff79c6', weight: 5, opacity: 1.0 }).addTo(map);
-    L.polyline(sharedSegment2, { color: '#ff79c6', weight: 5, opacity: 1.0 }).addTo(map);
+    // Draw Shared Lines (Orange - Thick & Glowing)
+    L.polyline(sharedSegment1, { color: '#ffb86c', weight: 5, opacity: 1.0 }).addTo(map);
+    L.polyline(sharedSegment2, { color: '#ffb86c', weight: 5, opacity: 1.0 }).addTo(map);
 
     // Zoom map fit bounds
     const allCoords = coordsList.map(p => p.coords);
