@@ -651,10 +651,9 @@ function initTabSwitching() {
     });
 }
 
-// Countdown timer with epic festive mode and auto-hide post trip
+// Countdown timer: Intense mode before flight, ON TOUR! Disfruta URI!! once flight is taken
 function initCountdown() {
     const targetDate = new Date('2026-08-05T00:00:00');
-    const endDate = new Date('2026-08-28T23:59:59');
     const today = new Date();
     
     const countText = document.getElementById('countdown-days');
@@ -665,19 +664,14 @@ function initCountdown() {
     const diffTime = targetDate - today;
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     
-    if (today > endDate) {
-        // Once the trip is finished, delete/hide the badge completely
-        badge.style.display = 'none';
-    } else if (today >= targetDate && today <= endDate) {
-        // During the trip
-        badge.innerHTML = "🌸 Gaudint del Viatge al Japó! 🇯🇵⛩️";
-        badge.className = "countdown-badge trip-active";
-    } else if (diffDays === 0) {
-        // Day of departure: Super cool celebration message!
-        badge.innerHTML = "🎉 SE'N ANEM CAP AL JAPÓ!! 🇯🇵✈️🌸⛩️";
-        badge.className = "countdown-badge trip-today";
-    } else if (diffDays > 0) {
-        if (countText) countText.innerText = diffDays;
+    if (today >= targetDate) {
+        // Once flight is taken & during trip: ON TOUR! Disfruta URI!!
+        badge.innerHTML = "🇯🇵 ON TOUR! Disfruta URI!! ✈️⛩️";
+        badge.className = "countdown-badge trip-ontour";
+    } else {
+        // Intense vibrant countdown
+        badge.className = "countdown-badge intense-countdown";
+        if (countText) countText.innerText = diffDays > 0 ? diffDays : 0;
     }
 }
 
