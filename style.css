@@ -1268,9 +1268,10 @@ h1, h2, h3, .brand-text {
     .unified-app-header {
         display: flex;
         align-items: center;
-        justify-content: flex-start;
-        gap: 14px;
-        padding: 14px 16px;
+        gap: 12px;
+        padding: 12px;
+        width: 100%;
+        overflow: hidden;
     }
 
     .header-image-container {
@@ -1280,33 +1281,42 @@ h1, h2, h3, .brand-text {
     }
 
     .header-2floor-image {
-        width: 85px;
-        height: 85px;
-        border-radius: 14px;
+        width: 76px;
+        height: 76px;
+        border-radius: 12px;
         object-fit: cover;
     }
 
     .header-text-container {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 4px;
-        width: 100%;
+        justify-content: space-between;
+        align-items: stretch;
+        gap: 2px;
+        flex-grow: 1;
+        min-width: 0;
     }
 
     .header-floor-1 {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 0;
         width: 100%;
     }
 
     .header-floor-1 h1 {
-        font-size: 16px;
+        font-size: 15px;
         line-height: 1.2;
         margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Hide Japanese Kanji subtitles on mobile for ultra clean 1-line fit */
+    .kanji-subtitle-main,
+    .kanji-subtitle {
+        display: none !important;
     }
 
     .header-floor-2 {
@@ -1316,9 +1326,12 @@ h1, h2, h3, .brand-text {
     }
 
     .header-floor-2 h2 {
-        font-size: 14px;
+        font-size: 13.5px;
         line-height: 1.2;
         margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     /* Hide divider line on mobile */
@@ -1329,16 +1342,17 @@ h1, h2, h3, .brand-text {
     /* Mobile: Badge centered horizontally in space right of image with equal vertical gaps */
     #countdown-container {
         display: inline-flex !important;
-        font-size: 11px;
-        padding: 4px 14px;
-        margin: 6px auto !important;
+        font-size: 10.5px;
+        padding: 3px 10px;
+        margin: 4px auto !important;
         border-radius: 20px;
         align-self: center !important;
         text-align: center;
-        box-shadow: 0 0 14px rgba(29, 78, 216, 0.4), 0 0 8px rgba(214, 48, 49, 0.4);
+        white-space: nowrap;
+        box-shadow: 0 0 12px rgba(29, 78, 216, 0.4), 0 0 6px rgba(214, 48, 49, 0.4);
     }
     
     #countdown-container span {
-        font-size: 12.5px;
+        font-size: 11.5px;
     }
 }
