@@ -952,16 +952,22 @@ h1, h2, h3, .brand-text {
     text-shadow: 0 0 8px rgba(255, 215, 0, 0.9);
 }
 
-.countdown-badge.trip-ontour {
+.countdown-badge.trip-ontour,
+.countdown-badge.trip-ontour-daily {
     background: linear-gradient(135deg, #d63031 0%, #111318 45%, #1d4ed8 100%);
     color: #ffffff !important;
     border: 2px solid #ffd700;
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(214, 48, 49, 0.7);
-    font-weight: 800;
-    font-size: 14px;
+    font-weight: 700;
+    font-size: 13.5px;
     padding: 8px 18px;
-    letter-spacing: 0.8px;
+    letter-spacing: 0.5px;
     animation: pulseOnTour 2s infinite alternate ease-in-out;
+}
+
+.countdown-badge.trip-ontour-daily strong {
+    color: #ffd700;
+    font-weight: 800;
 }
 
 @keyframes pulseOnTour {

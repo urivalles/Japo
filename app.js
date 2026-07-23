@@ -766,9 +766,10 @@ function initTabSwitching() {
     });
 }
 
-// Countdown timer: Intense mode before flight, ON TOUR! Disfruta URI!! once flight is taken
+// Countdown timer: Intense mode before flight, and Daily Secret Wisdom in top badge during the trip!
 function initCountdown() {
     const targetDate = new Date('2026-08-05T00:00:00');
+    const endDate = new Date('2026-08-28T23:59:59');
     const today = new Date();
     
     const countText = document.getElementById('countdown-days');
@@ -776,15 +777,30 @@ function initCountdown() {
     
     if (!badge) return;
 
+    // YYYY-MM-DD date formatter for local day match
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const dd = String(today.getDate()).padStart(2, '0');
+    const todayStr = `${yyyy}-${mm}-${dd}`;
+
     const diffTime = targetDate - today;
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     
-    if (today >= targetDate) {
-        // Once flight is taken & during trip: ON TOUR! Disfruta URI!!
-        badge.innerHTML = "🇯🇵 ON TOUR! Disfruta URI!! ✈️⛩️";
+    if (today >= targetDate && today <= endDate) {
+        // During trip: Dynamically load today's Secret Wisdom Quote in the top badge!
+        const todayDay = DEFAULT_ITINERARY.find(d => d.date === todayStr);
+        if (todayDay && todayDay.secretWisdom) {
+            badge.innerHTML = `🔮 ${todayDay.dayLabel}: <strong>${todayDay.secretWisdom.kanji} (${todayDay.secretWisdom.romaji})</strong> — "${todayDay.secretWisdom.translation}"`;
+            badge.className = "countdown-badge trip-ontour-daily";
+        } else {
+            badge.innerHTML = "🇯🇵 ON TOUR! Disfruta URI!! ✈️⛩️";
+            badge.className = "countdown-badge trip-ontour";
+        }
+    } else if (today > endDate) {
+        badge.innerHTML = "🌸 Viatge al Japó completat! Memòries per sempre! 🇯🇵⛩️";
         badge.className = "countdown-badge trip-ontour";
     } else {
-        // Intense vibrant countdown
+        // Intense vibrant countdown before flight
         badge.className = "countdown-badge intense-countdown";
         if (countText) countText.innerText = diffDays > 0 ? diffDays : 0;
     }
