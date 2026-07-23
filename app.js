@@ -805,10 +805,9 @@ function initMap() {
         mapMarkers.push(marker);
     }
 
-    // Define explicit polyline segments for clear visualization
-    
-    // 1. Uri Solo Segments (Green #50fa7b, solid, weight 4)
-    const uriSolo1 = [
+    // --- PARALLEL DOUBLE LINE ROUTE SYSTEM ---
+    // Uri's full route (Green #50fa7b)
+    const uriFullRoute = [
         [35.7111, 139.7770], // Ueno
         [35.7147, 139.7967], // Asakusa
         [35.3192, 139.5467], // Kamakura
@@ -816,26 +815,13 @@ function initMap() {
         [36.7645, 139.4912], // Mt Nantai
         [36.7845, 139.4448], // Senjogahara
         [36.7581, 139.5989], // Nikko Toshogu
-        [35.6938, 139.7032]  // Shinjuku (rejoins Banana)
-    ];
-
-    const uriSolo2 = [
-        [36.2562, 136.9042], // Shirakawa-go (separates after joint visit)
-        [36.5613, 136.6562], // Kanazawa
-        [35.0116, 135.7681]  // Kyoto (rejoins Banana)
-    ];
-
-    // 2. Shared / Overlap Segments (Vibrant Orange #ffb86c, solid, weight 5)
-    const sharedSegment1 = [
-        [35.6938, 139.7032], // Shinjuku
+        [35.6938, 139.7032], // Shinjuku (meets Banana)
         [35.6580, 139.7016], // Shibuya
         [35.2238, 138.6133], // Fujinomiya
         [35.3606, 138.7274], // Mt Fuji
         [36.1461, 137.2520], // Takayama
-        [36.2562, 136.9042]  // Shirakawa-go (Uri & Banana travel together!)
-    ];
-
-    const sharedSegment2 = [
+        [36.2562, 136.9042], // Shirakawa-go
+        [36.5613, 136.6562], // Kanazawa
         [35.0116, 135.7681], // Kyoto
         [34.9671, 135.7727], // Fushimi
         [34.6687, 135.5013], // Namba Osaka
@@ -845,30 +831,35 @@ function initMap() {
         [34.4320, 135.2304]  // KIX
     ];
 
-    // 3. Banana Solo Segments (Banana Yellow #f1fa8c, SOLID line - NO dashes!, weight 4)
-    const bananaSoloSegment1 = [
+    // Banana's full route (Yellow #f1fa8c) - Offset slightly (+0.008, +0.008) so it runs parallel side-by-side
+    const OFFSET_LAT = 0.007;
+    const OFFSET_LNG = 0.007;
+
+    const bananaFullRouteRaw = [
+        [35.6938, 139.7032], // Shinjuku (starts)
+        [35.6580, 139.7016], // Shibuya
         [35.2238, 138.6133], // Fujinomiya
-        [35.2536, 139.1553], // Odawara
-        [35.1815, 136.9066], // Nagoya
-        [36.1461, 137.2520]  // Takayama
+        [35.3606, 138.7274], // Mt Fuji
+        [35.2536, 139.1553], // Odawara (Banana solo)
+        [35.1815, 136.9066], // Nagoya (Banana solo)
+        [36.1461, 137.2520], // Takayama
+        [36.2562, 136.9042], // Shirakawa-go
+        [35.0116, 135.7681], // Kyoto
+        [34.9671, 135.7727], // Fushimi
+        [34.6687, 135.5013], // Namba Osaka
+        [34.6525, 135.5063], // Shinsekai
+        [34.2965, 132.3206], // Miyajima
+        [34.3927, 132.4526], // Hiroshima Peace Park
+        [34.4320, 135.2304]  // KIX
     ];
 
-    const bananaSoloSegment2 = [
-        [36.2562, 136.9042], // Shirakawa-go (separates)
-        [35.0116, 135.7681]  // Kyoto (direct travel)
-    ];
+    const bananaFullRouteOffset = bananaFullRouteRaw.map(pt => [pt[0] + OFFSET_LAT, pt[1] + OFFSET_LNG]);
 
-    // Draw Uri Solo Lines (Green)
-    L.polyline(uriSolo1, { color: '#50fa7b', weight: 4, opacity: 0.95 }).addTo(map);
-    L.polyline(uriSolo2, { color: '#50fa7b', weight: 4, opacity: 0.95 }).addTo(map);
+    // Draw Uri Line (Solid Green #50fa7b, weight 4)
+    L.polyline(uriFullRoute, { color: '#50fa7b', weight: 4, opacity: 0.95 }).addTo(map);
 
-    // Draw Banana Solo Lines (Banana Yellow - SOLID)
-    L.polyline(bananaSoloSegment1, { color: '#f1fa8c', weight: 4, opacity: 0.95 }).addTo(map);
-    L.polyline(bananaSoloSegment2, { color: '#f1fa8c', weight: 4, opacity: 0.95 }).addTo(map);
-
-    // Draw Shared Lines (Orange - Thick & Glowing)
-    L.polyline(sharedSegment1, { color: '#ffb86c', weight: 5, opacity: 1.0 }).addTo(map);
-    L.polyline(sharedSegment2, { color: '#ffb86c', weight: 5, opacity: 1.0 }).addTo(map);
+    // Draw Banana Line Parallel (Solid Yellow #f1fa8c, weight 4)
+    L.polyline(bananaFullRouteOffset, { color: '#f1fa8c', weight: 4, opacity: 0.95 }).addTo(map);
 
     // Zoom map fit bounds
     const allCoords = coordsList.map(p => p.coords);
