@@ -261,8 +261,9 @@ h1, h2, h3, .brand-text {
 
 .header-divider-line {
     width: 100%;
-    height: 2px;
-    background: linear-gradient(to right, var(--indigo-navy), rgba(27, 42, 74, 0.15));
+    height: 2.5px;
+    background: linear-gradient(90deg, #1d4ed8 0%, rgba(29, 78, 216, 0.4) 70%, rgba(29, 78, 216, 0.05) 100%);
+    box-shadow: 0 0 8px rgba(29, 78, 216, 0.4);
     margin: 4px 0;
 }
 
@@ -1121,17 +1122,31 @@ h1, h2, h3, .brand-text {
     
     .main-content {
         margin-left: 0;
-        padding: 20px;
+        padding: 14px;
         padding-bottom: 80px; /* Space for mobile nav */
     }
     
-    .app-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
+    .unified-app-header {
+        gap: 12px;
+        padding: 12px;
     }
-    
-    .countdown-badge {
-        width: fit-content;
+
+    .header-2floor-image {
+        width: 75px;
+        height: 75px;
+        border-radius: 12px;
+    }
+
+    .header-floor-1 h1 {
+        font-size: 17px;
+    }
+
+    .header-floor-2 h2 {
+        font-size: 15px;
+    }
+
+    /* Hide countdown badge completely on mobile so header fits cleanly without overlapping */
+    #countdown-container {
+        display: none !important;
     }
 }
