@@ -1,12 +1,16 @@
 {
   "name": "Japó 2026 - Planificació de Viatge",
   "short_name": "Japó 2026",
+  "id": "japo-2026-pwa",
   "description": "Aplicació de planificació de viatge al Japó per a Uri i Banana",
   "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
+  "display_override": ["standalone", "fullscreen", "minimal-ui"],
   "orientation": "portrait-primary",
   "background_color": "#f7f5ef",
   "theme_color": "#111318",
+  "prefer_related_applications": false,
   "icons": [
     {
       "src": "assets/icons/icon-192.png",
