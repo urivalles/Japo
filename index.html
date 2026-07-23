@@ -36,11 +36,7 @@
                 </button>
                 <button class="nav-btn" data-target="map" id="btn-nav-map">
                     <i class="fa-solid fa-map-location-dot"></i>
-                    <span>Mapa (OSM)</span>
-                </button>
-                <button class="nav-btn" data-target="mymaps" id="btn-nav-mymaps">
-                    <i class="fa-solid fa-map"></i>
-                    <span>My Maps</span>
+                    <span>Mapa</span>
                 </button>
                 <button class="nav-btn" data-target="budget" id="btn-nav-budget">
                     <i class="fa-solid fa-wallet"></i>
@@ -111,41 +107,45 @@
                 <!-- 2. MAP SECTION -->
                 <section class="content-section" id="section-map">
                     <div class="section-header">
-                        <h2>🗺️ Mapa de la Ruta (OSM)</h2>
-                        <p>Explora de forma interactiva els punts clau del viatge. Comparativa entre la teva ruta i la d'en Banana.</p>
-                    </div>
-                    <div class="map-card glass-panel">
-                        <div id="map-element"></div>
-                    </div>
-                    
-                    <!-- Google Maps external link button -->
-                    <div class="map-actions-container">
-                        <a href="https://www.google.es/maps/@36.478049,137.100974,6.03z?entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="map-google-link glass-panel">
-                            <i class="fa-solid fa-map-location-dot map-link-icon"></i>
-                            <div class="map-link-text">
-                                <span class="map-link-title">Veure Ruta a Google Maps</span>
-                                <span class="map-link-subtitle">Obre el mapa interactiu original amb tots els detalls de la ruta al Japó</span>
-                            </div>
-                            <i class="fa-solid fa-chevron-right map-link-arrow"></i>
-                        </a>
+                        <h2>🗺️ Mapa de la Ruta</h2>
+                        <p>El teu mapa personalitzat de Google My Maps com a protagonista, i la comparativa interactiva a sota.</p>
                     </div>
 
-                    <div class="map-legend glass-panel">
-                        <div class="legend-item"><span class="legend-dot dot-uri"></span> Uri (Ruta en solitari)</div>
-                        <div class="legend-item"><span class="legend-dot dot-banana"></span> Banana (Ruta en solitari)</div>
-                        <div class="legend-item"><span class="legend-dot dot-shared"></span> Trams compartits</div>
-                    </div>
-                </section>
-
-                <!-- 2.5 MY MAPS SECTION -->
-                <section class="content-section" id="section-mymaps">
-                    <div class="section-header">
-                        <h2>📍 El meu Google My Maps</h2>
-                        <p>Visualitza directament el teu mapa interactiu de Google amb totes les capes desades.</p>
-                    </div>
-                    <div class="mymaps-container glass-panel" style="padding: 10px; border-radius: 12px; height: 550px; display: flex; flex-direction: column;">
+                    <!-- 1. Protagonist: Google My Maps Embed -->
+                    <div class="mymaps-container glass-panel" style="padding: 10px; border-radius: 12px; height: 550px; display: flex; flex-direction: column; margin-bottom: 30px;">
+                        <h3 style="padding: 8px 12px 12px 12px; font-size: 1.05rem; color: var(--accent-pink); margin: 0; display: flex; align-items: center; gap: 8px;">
+                            <i class="fa-solid fa-map"></i> El meu Google My Maps (Uri)
+                        </h3>
                         <div class="iframe-wrapper" style="flex-grow: 1; border-radius: 8px; overflow: hidden; position: relative;">
                             <iframe src="https://www.google.com/maps/d/embed?mid=1B8KSm-28hW7zZK62unDwtzawqhW5RFw" width="100%" height="100%" style="border:0; position: absolute; top:0; left:0;"></iframe>
+                        </div>
+                    </div>
+                    
+                    <!-- 2. OpenStreetMap (Leaflet) underneath -->
+                    <div class="osm-container" style="margin-top: 20px;">
+                        <h3 style="margin-bottom: 12px; font-size: 1.05rem; color: var(--accent-green); display: flex; align-items: center; gap: 8px;">
+                            <i class="fa-solid fa-map-location-dot"></i> Mapa Comparatiu (OpenStreetMap)
+                        </h3>
+                        <div class="map-card glass-panel">
+                            <div id="map-element"></div>
+                        </div>
+                        
+                        <!-- Google Maps external link button -->
+                        <div class="map-actions-container">
+                            <a href="https://www.google.es/maps/@36.478049,137.100974,6.03z?entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="map-google-link glass-panel">
+                                <i class="fa-solid fa-map-location-dot map-link-icon"></i>
+                                <div class="map-link-text">
+                                    <span class="map-link-title">Veure Ruta a Google Maps</span>
+                                    <span class="map-link-subtitle">Obre el mapa interactiu original amb tots els detalls de la ruta al Japó</span>
+                                </div>
+                                <i class="fa-solid fa-chevron-right map-link-arrow"></i>
+                            </a>
+                        </div>
+
+                        <div class="map-legend glass-panel">
+                            <div class="legend-item"><span class="legend-dot dot-uri"></span> Uri (Ruta en solitari)</div>
+                            <div class="legend-item"><span class="legend-dot dot-banana"></span> Banana (Ruta en solitari)</div>
+                            <div class="legend-item"><span class="legend-dot dot-shared"></span> Trams compartits</div>
                         </div>
                     </div>
                 </section>
@@ -372,10 +372,6 @@
             <button class="mobile-nav-btn" data-target="map" id="btn-mob-map">
                 <i class="fa-solid fa-map-location-dot"></i>
                 <span>Mapa</span>
-            </button>
-            <button class="mobile-nav-btn" data-target="mymaps" id="btn-mob-mymaps">
-                <i class="fa-solid fa-map"></i>
-                <span>MyMaps</span>
             </button>
             <button class="mobile-nav-btn" data-target="budget" id="btn-mob-budget">
                 <i class="fa-solid fa-wallet"></i>
