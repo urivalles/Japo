@@ -587,6 +587,18 @@ function saveState(key) {
 // --- RENDERING FUNCTIONS ---
 
 // Tab Switching
+const SECTION_META = {
+    itinerary: { title: 'Cronograma del Viatge', kanji: '日程', icon: 'assets/icons/bonsai.jpg' },
+    map: { title: 'Mapa de la Ruta', kanji: '地図', icon: 'assets/icons/fuji.jpg' },
+    budget: { title: 'Control del Pressupost', kanji: '予算', icon: 'assets/icons/manekineko.jpg' },
+    videos: { title: 'Vídeos de YouTube i Recursos', kanji: '動画', icon: 'assets/icons/lantern.jpg' },
+    tasks: { title: 'Tasques Pendents', kanji: '作業', icon: 'assets/icons/crane.jpg' },
+    luggage: { title: 'Equipatge i Maleta', kanji: '荷物', icon: 'assets/icons/bamboo.jpg' },
+    shopping: { title: 'Llista de Compres', kanji: '買物', icon: 'assets/icons/koicarp.jpg' },
+    places: { title: 'Altres Llocs a Visitar', kanji: '名所', icon: 'assets/icons/panda.jpg' },
+    observations: { title: 'Observacions i Consells', kanji: '備忘録', icon: 'assets/icons/sakura.jpg' }
+};
+
 function initTabSwitching() {
     const navButtons = document.querySelectorAll('.nav-btn, .mobile-nav-btn');
     const sections = document.querySelectorAll('.content-section');
@@ -595,6 +607,16 @@ function initTabSwitching() {
         btn.addEventListener('click', () => {
             const target = btn.getAttribute('data-target');
             state.currentTab = target;
+
+            // Dynamic 2-Floor Header Update
+            const meta = SECTION_META[target] || SECTION_META.itinerary;
+            const img = document.getElementById('header-section-image');
+            const title = document.getElementById('header-section-title');
+            const kanji = document.getElementById('header-section-kanji');
+
+            if (img) img.src = meta.icon;
+            if (title) title.textContent = meta.title;
+            if (kanji) kanji.textContent = meta.kanji;
 
             // Update UI buttons active state
             navButtons.forEach(b => {

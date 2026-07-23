@@ -78,12 +78,27 @@
 
         <!-- Main Content Area -->
         <main class="main-content">
-            <header class="app-header" style="margin-bottom: 20px; padding-bottom: 12px;">
-                <div class="header-title">
-                    <h1 id="main-title" style="font-family: 'Noto Serif JP', serif; font-size: 24px;">Planificació de Viatge <span style="font-size: 0.6em; color: var(--accent-red); font-weight: 400; margin-left: 8px;">日本</span></h1>
+            <!-- 2-Floor Unified Header: Image on left (spanning both floors), line separator starting right of image -->
+            <header class="unified-app-header">
+                <div class="header-image-container">
+                    <img src="assets/icons/bonsai.jpg" id="header-section-image" class="header-2floor-image" alt="Bonsai">
                 </div>
-                <div class="countdown-badge" id="countdown-container" style="padding: 4px 12px; font-size: 13px;">
-                    <span id="countdown-days" style="font-size: 15px;">--</span> dies pel viatge
+                <div class="header-text-container">
+                    <!-- Floor 1 (Top) -->
+                    <div class="header-floor-1">
+                        <h1>Planificació de Viatge <span class="kanji-subtitle-main">日本</span></h1>
+                        <div class="countdown-badge" id="countdown-container">
+                            <span id="countdown-days">--</span> dies pel viatge
+                        </div>
+                    </div>
+                    
+                    <!-- Line Separator (Starts after image on left) -->
+                    <div class="header-divider-line"></div>
+                    
+                    <!-- Floor 2 (Bottom) -->
+                    <div class="header-floor-2">
+                        <h2><span id="header-section-title">Cronograma del Viatge</span> <span class="kanji-subtitle" id="header-section-kanji">日程</span></h2>
+                    </div>
                 </div>
             </header>
 
@@ -92,10 +107,6 @@
                 
                 <!-- 1. ITINERARY SECTION -->
                 <section class="content-section active" id="section-itinerary">
-                    <div class="section-header-clean">
-                        <img src="assets/icons/bonsai.jpg" class="section-title-badge" alt="Bonsai">
-                        <h2>Cronograma del Viatge <span class="kanji-subtitle">日程</span></h2>
-                    </div>
                     <div class="itinerary-filters">
                         <button class="filter-btn active" data-filter="all" id="btn-filter-all">Tot el viatge</button>
                         <button class="filter-btn" data-filter="overlap" id="btn-filter-overlap">Només coincidències</button>
@@ -108,10 +119,6 @@
 
                 <!-- 2. MAP SECTION -->
                 <section class="content-section" id="section-map">
-                    <div class="section-header-clean">
-                        <img src="assets/icons/fuji.jpg" class="section-title-badge" alt="Mount Fuji">
-                        <h2>Mapa de la Ruta <span class="kanji-subtitle">地図</span></h2>
-                    </div>
 
                     <!-- 1. Protagonist: Google My Maps Embed -->
                     <div class="mymaps-container glass-panel" style="padding: 10px; border-radius: 12px; height: 1000px; display: flex; flex-direction: column; margin-bottom: 30px;">
@@ -145,13 +152,6 @@
 
                 <!-- 3. BUDGET SECTION -->
                 <section class="content-section" id="section-budget">
-                    <div class="section-header-clean" style="justify-content: space-between;">
-                        <div style="display: flex; align-items: center; gap: 14px;">
-                            <img src="assets/icons/manekineko.jpg" class="section-title-badge" alt="Maneki-neko">
-                            <h2>Control del Pressupost <span class="kanji-subtitle">予算</span></h2>
-                        </div>
-                        <button id="btn-edit-budget-limit" style="background: rgba(214, 48, 49, 0.08); color: var(--accent-red); border: 1px solid var(--accent-red); padding: 8px 14px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; font-weight: 600;"><i class="fa-solid fa-pen-to-square"></i> Canviar Límit</button>
-                    </div>
                     <div class="budget-grid">
                         <!-- Progress Card -->
                         <div class="budget-card progress-card glass-panel">
@@ -230,10 +230,6 @@
 
                 <!-- 4. VIDEOS AND RESOURCES SECTION -->
                 <section class="content-section" id="section-videos">
-                    <div class="section-header-clean">
-                        <img src="assets/icons/lantern.jpg" class="section-title-badge" alt="Red Lantern">
-                        <h2>Vídeos de YouTube i Recursos <span class="kanji-subtitle">動画</span></h2>
-                    </div>
                     <div class="resources-grid">
                         <!-- Add Video Card -->
                         <div class="video-card form-card glass-panel">
@@ -270,10 +266,6 @@
 
                 <!-- 5. TASKS CHECKLIST SECTION -->
                 <section class="content-section" id="section-tasks">
-                    <div class="section-header-clean">
-                        <img src="assets/icons/crane.jpg" class="section-title-badge" alt="Japanese Crane">
-                        <h2>Tasques Pendents <span class="kanji-subtitle">作業</span></h2>
-                    </div>
                     <div class="tasks-card glass-panel">
                         <div class="add-task-bar">
                             <input type="text" id="new-task-input" placeholder="Nova tasca... (ex: Contractar assegurança mèdica)">
@@ -287,10 +279,6 @@
 
                 <!-- 6. LUGGAGE SECTION -->
                 <section class="content-section" id="section-luggage">
-                    <div class="section-header-clean">
-                        <img src="assets/icons/bamboo.jpg" class="section-title-badge" alt="Bamboo">
-                        <h2>Equipatge i Maleta <span class="kanji-subtitle">荷物</span></h2>
-                    </div>
                     <div class="tasks-card glass-panel">
                         <div class="add-task-bar">
                             <input type="text" id="new-luggage-input" placeholder="Afegir a la maleta... (ex: Calçat de trekking)">
@@ -304,10 +292,6 @@
 
                 <!-- 7. SHOPPING LIST SECTION -->
                 <section class="content-section" id="section-shopping">
-                    <div class="section-header-clean">
-                        <img src="assets/icons/koicarp.jpg" class="section-title-badge" alt="Koi Carp">
-                        <h2>Llista de Compres <span class="kanji-subtitle">買物</span></h2>
-                    </div>
                     <div class="tasks-card glass-panel">
                         <div class="add-task-bar">
                             <input type="text" id="new-shopping-input" placeholder="Afegir idea de record... (ex: Campaneta Furin)">
@@ -321,10 +305,6 @@
 
                 <!-- 8. OTHER PLACES SECTION -->
                 <section class="content-section" id="section-places">
-                    <div class="section-header-clean">
-                        <img src="assets/icons/panda.jpg" class="section-title-badge" alt="Panda">
-                        <h2>Altres Llocs a Visitar <span class="kanji-subtitle">名所</span></h2>
-                    </div>
                     <div class="tasks-card glass-panel">
                         <div class="add-task-bar">
                             <input type="text" id="new-place-input" placeholder="Afegir lloc... (ex: Kamakura)">
@@ -338,10 +318,6 @@
 
                 <!-- 9. OBSERVATIONS SECTION -->
                 <section class="content-section" id="section-observations">
-                    <div class="section-header-clean">
-                        <img src="assets/icons/sakura.jpg" class="section-title-badge" alt="Sakura">
-                        <h2>Observacions i Consells <span class="kanji-subtitle">備忘録</span></h2>
-                    </div>
                     <div class="tasks-card glass-panel">
                         <div class="add-task-bar">
                             <input type="text" id="new-observation-input" placeholder="Afegir consell/observació... (ex: Dur sempre efectiu)">
