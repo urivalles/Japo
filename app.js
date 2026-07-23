@@ -831,9 +831,9 @@ function initMap() {
         [34.4320, 135.2304]  // KIX
     ];
 
-    // Banana's full route (Yellow #f1fa8c) - Offset slightly (+0.008, +0.008) so it runs parallel side-by-side
-    const OFFSET_LAT = 0.007;
-    const OFFSET_LNG = 0.007;
+    // Banana's full route (Yellow #f59e0b) - Tighter offset (+0.003, +0.003) so lines run close parallel side-by-side
+    const OFFSET_LAT = 0.003;
+    const OFFSET_LNG = 0.003;
 
     const bananaFullRouteRaw = [
         [35.6938, 139.7032], // Shinjuku (starts)
@@ -855,11 +855,11 @@ function initMap() {
 
     const bananaFullRouteOffset = bananaFullRouteRaw.map(pt => [pt[0] + OFFSET_LAT, pt[1] + OFFSET_LNG]);
 
-    // Draw Uri Line (Solid Green #50fa7b, weight 4)
-    L.polyline(uriFullRoute, { color: '#50fa7b', weight: 4, opacity: 0.95 }).addTo(map);
+    // Draw Uri Line (Solid Green #10b981, thin weight 2.5)
+    L.polyline(uriFullRoute, { color: '#10b981', weight: 2.5, opacity: 0.9 }).addTo(map);
 
-    // Draw Banana Line Parallel (Solid Yellow #f1fa8c, weight 4)
-    L.polyline(bananaFullRouteOffset, { color: '#f1fa8c', weight: 4, opacity: 0.95 }).addTo(map);
+    // Draw Banana Line Parallel (Solid Yellow #f59e0b, thin weight 2.5)
+    L.polyline(bananaFullRouteOffset, { color: '#f59e0b', weight: 2.5, opacity: 0.9 }).addTo(map);
 
     // Zoom map fit bounds
     const allCoords = coordsList.map(p => p.coords);
