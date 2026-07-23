@@ -920,6 +920,51 @@ h1, h2, h3, .brand-text {
     margin-bottom: 24px;
 }
 
+.countdown-badge {
+    background: rgba(27, 42, 74, 0.08);
+    border: 1.5px solid var(--indigo-navy);
+    color: var(--indigo-navy);
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(27, 42, 74, 0.12);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.countdown-badge.trip-today {
+    background: linear-gradient(135deg, #d63031 0%, #1d4ed8 100%);
+    color: #ffffff !important;
+    border: 2px solid #ffd700;
+    box-shadow: 0 0 20px rgba(214, 48, 49, 0.6), 0 0 10px rgba(255, 215, 0, 0.8);
+    font-weight: 800;
+    font-size: 14px;
+    padding: 8px 18px;
+    animation: pulseFestive 1.5s infinite alternate ease-in-out;
+}
+
+.countdown-badge.trip-active {
+    background: linear-gradient(135deg, #1d4ed8 0%, #d63031 100%);
+    color: #ffffff !important;
+    border: 1.5px solid #ffffff;
+    box-shadow: 0 0 14px rgba(29, 78, 216, 0.5);
+    font-weight: 700;
+}
+
+@keyframes pulseFestive {
+    from {
+        transform: scale(1);
+        box-shadow: 0 0 12px rgba(214, 48, 49, 0.5);
+    }
+    to {
+        transform: scale(1.04);
+        box-shadow: 0 0 24px rgba(255, 215, 0, 0.9), 0 0 35px rgba(214, 48, 49, 0.8);
+    }
+}
+
 .add-task-bar input {
     flex-grow: 1;
     background-color: rgba(0, 0, 0, 0.2);
@@ -1137,16 +1182,31 @@ h1, h2, h3, .brand-text {
         border-radius: 12px;
     }
 
+    .header-floor-1 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
     .header-floor-1 h1 {
-        font-size: 17px;
+        font-size: 16px;
+        line-height: 1.2;
     }
 
     .header-floor-2 h2 {
-        font-size: 15px;
+        font-size: 14px;
     }
 
-    /* Hide countdown badge completely on mobile so header fits cleanly without overlapping */
+    /* Mobile clean placement for countdown badge below title */
     #countdown-container {
-        display: none !important;
+        display: inline-flex !important;
+        font-size: 11px;
+        padding: 3px 8px;
+        margin-top: 2px;
+        border-radius: 12px;
+    }
+    
+    #countdown-container span {
+        font-size: 12px;
     }
 }

@@ -651,30 +651,33 @@ function initTabSwitching() {
     });
 }
 
-// Countdown timer
+// Countdown timer with epic festive mode and auto-hide post trip
 function initCountdown() {
     const targetDate = new Date('2026-08-05T00:00:00');
+    const endDate = new Date('2026-08-28T23:59:59');
     const today = new Date();
-    const diffTime = targetDate - today;
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     
     const countText = document.getElementById('countdown-days');
     const badge = document.getElementById('countdown-container');
     
-    if (diffDays > 0) {
-        countText.innerText = diffDays;
+    if (!badge) return;
+
+    const diffTime = targetDate - today;
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    
+    if (today > endDate) {
+        // Once the trip is finished, delete/hide the badge completely
+        badge.style.display = 'none';
+    } else if (today >= targetDate && today <= endDate) {
+        // During the trip
+        badge.innerHTML = "🌸 Gaudint del Viatge al Japó! 🇯🇵⛩️";
+        badge.className = "countdown-badge trip-active";
     } else if (diffDays === 0) {
-        badge.innerHTML = "🎉 Avui marxes al Japó!";
-        badge.style.background = "rgba(255, 121, 198, 0.15)";
-        badge.style.borderColor = "var(--accent-pink)";
-        badge.style.color = "var(--accent-pink)";
-        badge.style.boxShadow = "var(--glow-pink)";
-    } else {
-        badge.innerHTML = "🇯🇵 Gaudint del viatge!";
-        badge.style.background = "rgba(80, 250, 123, 0.15)";
-        badge.style.borderColor = "var(--accent-green)";
-        badge.style.color = "var(--accent-green)";
-        badge.style.boxShadow = "var(--glow-green)";
+        // Day of departure: Super cool celebration message!
+        badge.innerHTML = "🎉 SE'N ANEM CAP AL JAPÓ!! 🇯🇵✈️🌸⛩️";
+        badge.className = "countdown-badge trip-today";
+    } else if (diffDays > 0) {
+        if (countText) countText.innerText = diffDays;
     }
 }
 
