@@ -835,7 +835,7 @@ function renderItinerary() {
 
         const secretHtml = day.secretWisdom ? `
             <div class="secret-wisdom-wrapper">
-                <button class="btn-reveal-secret" data-day="${day.dayLabel}">
+                <button class="btn-reveal-secret" data-day="${day.dayLabel}" data-date="${day.date}">
                     <i class="fa-solid fa-scroll"></i> 🔮 Desvelar Consell Secret del Dia <span class="secret-tag">秘密</span>
                 </button>
                 <div class="secret-wisdom-card hidden" id="secret-${day.dayLabel}">
@@ -868,20 +868,45 @@ function renderItinerary() {
         container.appendChild(item);
     });
 
-    // Attach click listeners to secret wisdom reveal buttons
+    // Attach click listeners with date lock checking
     document.querySelectorAll('.btn-reveal-secret').forEach(btn => {
         btn.addEventListener('click', () => {
             const dayId = btn.getAttribute('data-day');
+            const dayDate = btn.getAttribute('data-date');
             const card = document.getElementById(`secret-${dayId}`);
-            if (card) {
-                const isHidden = card.classList.contains('hidden');
-                if (isHidden) {
-                    card.classList.remove('hidden');
-                    btn.innerHTML = `<i class="fa-solid fa-book-open"></i> 📜 Consell Revelat <span class="secret-tag">秘密</span>`;
-                } else {
-                    card.classList.add('hidden');
-                    btn.innerHTML = `<i class="fa-solid fa-scroll"></i> 🔮 Desvelar Consell Secret del Dia <span class="secret-tag">秘密</span>`;
-                }
+            if (!card) return;
+
+            // Check if day is unlocked (today >= dayDate)
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const dd = String(today.getDate()).padStart(2, '0');
+            const todayStr = `${yyyy}-${mm}-${dd}`;
+
+            const isUnlocked = todayStr >= dayDate;
+
+            if (!isUnlocked) {
+                // Future day is locked!
+                const d = new Date(dayDate);
+                const formattedDate = `${d.getDate()}/${d.getMonth() + 1}`;
+                card.innerHTML = `
+                    <div style="text-align: center; padding: 6px 0; color: var(--accent-red); font-weight: 700; font-size: 0.9rem;">
+                        🔒 Aquest consell es desbloquejarà el ${dayId} (${formattedDate})!
+                    </div>
+                `;
+                card.classList.remove('hidden');
+                btn.innerHTML = `<i class="fa-solid fa-lock"></i> 🔒 Consell Bloquejat <span class="secret-tag">秘密</span>`;
+                return;
+            }
+
+            // Unlocked day (today or past day)
+            const isHidden = card.classList.contains('hidden');
+            if (isHidden) {
+                card.classList.remove('hidden');
+                btn.innerHTML = `<i class="fa-solid fa-book-open"></i> 📜 Consell Revelat <span class="secret-tag">秘密</span>`;
+            } else {
+                card.classList.add('hidden');
+                btn.innerHTML = `<i class="fa-solid fa-scroll"></i> 🔮 Desvelar Consell Secret del Dia <span class="secret-tag">秘密</span>`;
             }
         });
     });
