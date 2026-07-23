@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Japó 2026 | El meu Viatge Personalitzat</title>
-    <meta name="description" content="Aplicació interactiva per organitzar el meu viatge personalitzat al Japó de l'agost de 2026. Pla Estratègic V5 d'en Titon.">
+    <meta name="description" content="Aplicació interactiva per organitzar el meu viatge personalitzat al Japó de l'agost de 2026. Pla Estratègic V5 d'en Uri.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,10 +54,26 @@
                     <i class="fa-solid fa-list-check"></i>
                     <span>Tasques</span>
                 </button>
+                <button class="nav-btn" data-target="luggage" id="btn-nav-luggage">
+                    <i class="fa-solid fa-suitcase"></i>
+                    <span>Maleta</span>
+                </button>
+                <button class="nav-btn" data-target="shopping" id="btn-nav-shopping">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>Compres</span>
+                </button>
+                <button class="nav-btn" data-target="places" id="btn-nav-places">
+                    <i class="fa-solid fa-compass"></i>
+                    <span>Possibles Llocs</span>
+                </button>
+                <button class="nav-btn" data-target="observations" id="btn-nav-observations">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span>Observacions</span>
+                </button>
             </nav>
             <div class="sidebar-footer">
                 <p>Viatge: 5 - 28 Agost</p>
-                <small>Antigravity Pair Dev</small>
+                <small>IA Pair Dev</small>
             </div>
         </aside>
 
@@ -85,7 +101,7 @@
                     <div class="itinerary-filters">
                         <button class="filter-btn active" data-filter="all" id="btn-filter-all">Tot el viatge</button>
                         <button class="filter-btn" data-filter="overlap" id="btn-filter-overlap">Només coincidències</button>
-                        <button class="filter-btn" data-filter="titon" id="btn-filter-titon">Titon (Solitari)</button>
+                        <button class="filter-btn" data-filter="uri" id="btn-filter-uri">Uri (Solitari)</button>
                     </div>
                     <div class="itinerary-timeline" id="timeline-container">
                         <!-- JS generated day-by-day items -->
@@ -101,8 +117,21 @@
                     <div class="map-card glass-panel">
                         <div id="map-element"></div>
                     </div>
+                    
+                    <!-- Google Maps external link button -->
+                    <div class="map-actions-container">
+                        <a href="https://www.google.es/maps/@36.478049,137.100974,6.03z?entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="map-google-link glass-panel">
+                            <i class="fa-solid fa-map-location-dot map-link-icon"></i>
+                            <div class="map-link-text">
+                                <span class="map-link-title">Veure Ruta a Google Maps</span>
+                                <span class="map-link-subtitle">Obre el mapa interactiu original amb tots els detalls de la ruta al Japó</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-right map-link-arrow"></i>
+                        </a>
+                    </div>
+
                     <div class="map-legend glass-panel">
-                        <div class="legend-item"><span class="legend-dot dot-titon"></span> Titon (Ruta en solitari)</div>
+                        <div class="legend-item"><span class="legend-dot dot-uri"></span> Uri (Ruta en solitari)</div>
                         <div class="legend-item"><span class="legend-dot dot-banana"></span> Banana (Ruta en solitari)</div>
                         <div class="legend-item"><span class="legend-dot dot-shared"></span> Trams compartits</div>
                     </div>
@@ -253,6 +282,74 @@
                     </div>
                 </section>
 
+                <!-- 6. LUGGAGE SECTION -->
+                <section class="content-section" id="section-luggage">
+                    <div class="section-header">
+                        <h2>🧳 Llista de la Maleta</h2>
+                        <p>Prepara el teu equipatge per al viatge i les caminades pel Kumano Kodo.</p>
+                    </div>
+                    <div class="tasks-card glass-panel">
+                        <div class="add-task-bar">
+                            <input type="text" id="new-luggage-input" placeholder="Afegir a la maleta... (ex: Calçat de trekking)">
+                            <button id="btn-add-luggage"><i class="fa-solid fa-plus"></i> Afegir</button>
+                        </div>
+                        <ul class="tasks-list" id="luggage-list-container">
+                            <!-- JS generated luggage items -->
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 7. SHOPPING SECTION -->
+                <section class="content-section" id="section-shopping">
+                    <div class="section-header">
+                        <h2>🛍️ Idees de Compres i Souvenirs</h2>
+                        <p>Records barats, autèntics i de valor que realment val la pena comprar al Japó.</p>
+                    </div>
+                    <div class="tasks-card glass-panel">
+                        <div class="add-task-bar">
+                            <input type="text" id="new-shopping-input" placeholder="Afegir idea de record... (ex: Campaneta Furin)">
+                            <button id="btn-add-shopping"><i class="fa-solid fa-plus"></i> Afegir</button>
+                        </div>
+                        <ul class="tasks-list" id="shopping-list-container">
+                            <!-- JS generated shopping items -->
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 8. OTHER PLACES SECTION -->
+                <section class="content-section" id="section-places">
+                    <div class="section-header">
+                        <h2>🧭 Altres Llocs a Visitar</h2>
+                        <p>Extensions de ruta i excursions recomanades a fer des de les teves bases (Tòquio, Kyoto, Osaka).</p>
+                    </div>
+                    <div class="tasks-card glass-panel">
+                        <div class="add-task-bar">
+                            <input type="text" id="new-place-input" placeholder="Afegir lloc... (ex: Kamakura)">
+                            <button id="btn-add-place"><i class="fa-solid fa-plus"></i> Afegir</button>
+                        </div>
+                        <ul class="tasks-list" id="places-list-container">
+                            <!-- JS generated places -->
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 9. OBSERVATIONS SECTION -->
+                <section class="content-section" id="section-observations">
+                    <div class="section-header">
+                        <h2>ℹ️ Observacions i Consells de Viatge</h2>
+                        <p>Apunts, reflexions i consells clau per al dia a dia durant el viatge al Japó.</p>
+                    </div>
+                    <div class="tasks-card glass-panel">
+                        <div class="add-task-bar">
+                            <input type="text" id="new-observation-input" placeholder="Afegir consell/observació... (ex: Dur sempre efectiu)">
+                            <button id="btn-add-observation"><i class="fa-solid fa-plus"></i> Afegir</button>
+                        </div>
+                        <ul class="tasks-list" id="observations-list-container">
+                            <!-- JS generated observations -->
+                        </ul>
+                    </div>
+                </section>
+
             </div>
         </main>
         
@@ -281,6 +378,22 @@
             <button class="mobile-nav-btn" data-target="tasks" id="btn-mob-tasks">
                 <i class="fa-solid fa-list-check"></i>
                 <span>Tasques</span>
+            </button>
+            <button class="mobile-nav-btn" data-target="luggage" id="btn-mob-luggage">
+                <i class="fa-solid fa-suitcase"></i>
+                <span>Maleta</span>
+            </button>
+            <button class="mobile-nav-btn" data-target="shopping" id="btn-mob-shopping">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span>Compres</span>
+            </button>
+            <button class="mobile-nav-btn" data-target="places" id="btn-mob-places">
+                <i class="fa-solid fa-compass"></i>
+                <span>Visites</span>
+            </button>
+            <button class="mobile-nav-btn" data-target="observations" id="btn-mob-observations">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>Notes</span>
             </button>
         </nav>
         

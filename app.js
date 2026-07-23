@@ -11,8 +11,8 @@ const DEFAULT_ITINERARY = [
             'Nit a bord.'
         ],
         accommodation: '✈️ Vol internacional (a bord)',
-        type: 'titon',
-        badge: 'titon',
+        type: 'uri',
+        badge: 'uri',
         coords: [41.2974, 2.0833] // BCN
     },
     {
@@ -26,8 +26,8 @@ const DEFAULT_ITINERARY = [
             'Check-in, sopar de ramen i primer descans.'
         ],
         accommodation: '🏨 Hostel Ueno / Asakusa',
-        type: 'titon',
-        badge: 'titon',
+        type: 'uri',
+        badge: 'uri',
         coords: [35.7111, 139.7770] // Ueno
     },
     {
@@ -40,8 +40,8 @@ const DEFAULT_ITINERARY = [
             'Al vespre: Festival Hachioji Matsuri (carrosses, fanals i tambors Taiko).'
         ],
         accommodation: '🏨 Hostel Ueno / Asakusa',
-        type: 'titon',
-        badge: 'titon',
+        type: 'uri',
+        badge: 'uri',
         coords: [35.7147, 139.7967] // Asakusa
     },
     {
@@ -54,8 +54,8 @@ const DEFAULT_ITINERARY = [
             'Passejada vora la platja, bosc humit i peix fresc.'
         ],
         accommodation: '🏨 Hostel Ueno / Asakusa',
-        type: 'titon',
-        badge: 'titon',
+        type: 'uri',
+        badge: 'uri',
         coords: [35.3192, 139.5467] // Kamakura
     },
     {
@@ -69,8 +69,8 @@ const DEFAULT_ITINERARY = [
             'Tarda: Check-in a la guesthouse. Visita al Bosc de Bambú de Wakayama Farm i la Cova Subterrània d\'Oya.'
         ],
         accommodation: '🏨 Guesthouse Estació Utsunomiya',
-        type: 'titon',
-        badge: 'titon',
+        type: 'uri',
+        badge: 'uri',
         coords: [36.5551, 139.8826] // Utsunomiya
     },
     {
@@ -83,8 +83,8 @@ const DEFAULT_ITINERARY = [
             'Ascensió al Mont Nantai (2.486 m). Volcà sagrat, estil Pedraforca.'
         ],
         accommodation: '🏨 Guesthouse Estació Utsunomiya',
-        type: 'titon',
-        badge: 'titon',
+        type: 'uri',
+        badge: 'uri',
         coords: [36.7645, 139.4912] // Mt Nantai
     },
     {
@@ -98,8 +98,8 @@ const DEFAULT_ITINERARY = [
             'Sopar de gyozas tradicionals a Utsunomiya.'
         ],
         accommodation: '🏨 Guesthouse Estació Utsunomiya',
-        type: 'titon',
-        badge: 'titon',
+        type: 'uri',
+        badge: 'uri',
         coords: [36.7845, 139.4448] // Senjogahara
     },
     {
@@ -112,8 +112,8 @@ const DEFAULT_ITINERARY = [
             'Camí de les estàtues Jizo de Kanmangafuchi.'
         ],
         accommodation: '🏨 Guesthouse Estació Utsunomiya',
-        type: 'titon',
-        badge: 'titon',
+        type: 'uri',
+        badge: 'uri',
         coords: [36.7581, 139.5989] // Nikko Toshogu
     },
     {
@@ -177,12 +177,12 @@ const DEFAULT_ITINERARY = [
         weekday: 'Dilluns',
         title: 'Arribada a Takayama i Ta-Q-Bin',
         activities: [
-            'Titon: Viatge a Takayama. Enviament de maleta gran a Kyoto via Ta-Q-Bin.',
+            'Uri: Viatge a Takayama. Enviament de maleta gran a Kyoto via Ta-Q-Bin.',
             'Banana: Viatja sol cap a Odawara.'
         ],
-        accommodation: '🏨 GUESTHOUSE OUKA (Titon)',
-        type: 'titon',
-        badge: 'titon',
+        accommodation: '🏨 GUESTHOUSE OUKA (Uri)',
+        type: 'uri',
+        badge: 'uri',
         coords: [36.1461, 137.2520] // Takayama
     },
     {
@@ -204,9 +204,9 @@ const DEFAULT_ITINERARY = [
         activities: [
             'Pau, mercats matinals i natura pels voltants de Takayama.'
         ],
-        accommodation: '🏨 GUESTHOUSE OUKA (Titon)',
-        type: 'titon',
-        badge: 'titon',
+        accommodation: '🏨 GUESTHOUSE OUKA (Uri)',
+        type: 'uri',
+        badge: 'uri',
         coords: [36.1461, 137.2520]
     },
     {
@@ -226,7 +226,7 @@ const DEFAULT_ITINERARY = [
         weekday: 'Dimecres',
         title: 'Retrobament a Takayama',
         activities: [
-            'Banana arriba a Takayama per retrobar-se amb Titon.',
+            'Banana arriba a Takayama per retrobar-se amb Uri.',
             'Visita conjunta per la ciutat.'
         ],
         accommodation: '🏨 GUESTHOUSE OUKA (Compartit)',
@@ -241,11 +241,11 @@ const DEFAULT_ITINERARY = [
         title: 'Shirakawa-go i Separació',
         activities: [
             'Bus a Shirakawa-go junts (1h de trajecte).',
-            'Separació a les 15:00 h: Titon cap a Kanazawa, Banana cap a Kyoto.'
+            'Separació a les 15:00 h: Uri cap a Kanazawa, Banana cap a Kyoto.'
         ],
-        accommodation: '🏨 BLUE HOUR KANAZAWA (Titon)',
-        type: 'titon',
-        badge: 'titon',
+        accommodation: '🏨 BLUE HOUR KANAZAWA (Uri)',
+        type: 'uri',
+        badge: 'uri',
         coords: [36.5613, 136.6562] // Kanazawa
     },
     {
@@ -351,8 +351,8 @@ const DEFAULT_ITINERARY = [
             'Vol de tornada cap a BCN a les 15:15 h (Shenzhen Airlines).'
         ],
         accommodation: '✈️ Vol',
-        type: 'titon',
-        badge: 'titon',
+        type: 'uri',
+        badge: 'uri',
         coords: [34.4320, 135.2304] // KIX
     }
 ];
@@ -399,6 +399,52 @@ const DEFAULT_TASKS = [
     { id: '5', text: 'Contractar eSIM de dades per al mòbil (ex: Ubigi o Holafly)', completed: false }
 ];
 
+const DEFAULT_LUGGAGE = [
+    { id: 'l1', text: 'Motxilla de senderisme principal (30-40L)', completed: false },
+    { id: 'l2', text: 'Cal├ºat de trekking / trail running ja usat (crucial pel Kumano)', completed: false },
+    { id: 'l3', text: 'Paravents / Impermeable lleuger (plou sovint a Kumano)', completed: false },
+    { id: 'l4', text: 'Roba t├¿cnica transpirable (per a la calor i humitat de l\'agost)', completed: false },
+    { id: 'l5', text: 'Tovallola de microfibra de secat r├ápid', completed: false },
+    { id: 'l6', text: 'Farmaciola b├ásica (tiretes, antiinflamatoris, vaselina pels peus)', completed: false },
+    { id: 'l7', text: 'Adaptador d\'endoll tipus A (Jap├│)', completed: false },
+    { id: 'l8', text: 'Passaport en vigor i c├▓pia f├¡sica/digital', completed: false },
+    { id: 'l9', text: '1 o 2 maletes de cabina petites (idealment nom├®s 1 si ├®s possible)', completed: false },
+    { id: 'l10', text: 'Motxilla petita de dia (15-20L) per al senderisme a Kumano', completed: false },
+    { id: 'l11', text: 'Cantimplora o bossa d\'aigua (m├¡nim 1.5L, fa molta calor)', completed: false },
+    { id: 'l12', text: 'Bastons de trekking per a les baixades de pedra a Kumano', completed: false },
+    { id: 'l13', text: 'Roba interior i samarretes de secat r├ápid per rentar a m├á', completed: false },
+    { id: 'l14', text: 'Gorra i ulleres de sol pel sol intens d\'agost', completed: false },
+    { id: 'l15', text: 'Protector solar resistent a la suor i repel┬Àlent de mosquits fort', completed: false }
+];
+
+const DEFAULT_SHOPPING = [
+    { id: 's1', text: 'Goshuincho i segells cal┬Àligr├áfics (Shuin) als temples (~15 Ôé¼ llibreta, ~3-4 Ôé¼ cada segell)', completed: false },
+    { id: 's2', text: 'Tenugui (Mocador de cot├│ tradicional molt vers├átil, ~5-10 Ôé¼)', completed: false },
+    { id: 's3', text: 'Hashi (Bastonets de fusta personalitzats gravats amb el teu nom, ~10-15 Ôé¼)', completed: false },
+    { id: 's4', text: 'Furin (Campaneta de vent tradicional japonesa de vidre o ferro, ~5-10 Ôé¼)', completed: false },
+    { id: 's5', text: 'Llibretes o quaderns de papereria japonesa (Midori, Apica, ~3-7 Ôé¼)', completed: false },
+    { id: 's6', text: 'Pegats de mentol per als peus (Kyusoku Jikan, molt ├║til pel Kumano Kodo, ~5 Ôé¼)', completed: false },
+    { id: 's7', text: 'T├® verd o Matcha local comprat directament en cooperatives rurals (~5-10 Ôé¼)', completed: false }
+];
+
+const DEFAULT_PLACES = [
+    { id: 'p1', text: '­ƒÖïÔÇìÔÖé´©Å [Uri] Nara: Parc ple de c├®rvols lliures (els c├®rvols sagrats que demanen menjar reverenciant-te) i el temple Todai-ji.', completed: false },
+    { id: 'p-osaka', text: '­ƒÖïÔÇìÔÖé´©Å [Uri] Osaka: Banys termals / Onsen on et pots vestir amb yukata o kimono (ex: parc tem├átic de banys Spa World o onsens tradicionals per comprovar si mola).', completed: false },
+    { id: 'p2', text: '­ƒÆí [IA] Kamakura: El Gran Buda de bronze a l\'aire lliure (Daibutsu) i temples hist├▓rics de bosc (excursi├│ f├ácil des de T├▓quio).', completed: false },
+    { id: 'p3', text: '­ƒÆí [IA] Nikko: Mausoleus daurats dels shoguns Tokugawa, cascada Kegon i naturalesa alpina espectacular (excursi├│ des de T├▓quio).', completed: false },
+    { id: 'p4', text: '­ƒÆí [IA] Himeji: El c├¿lebre castell de la Gar├ºa Blanca, el castell feudal original m├®s espectacular i millor conservat de tot el Jap├│.', completed: false },
+    { id: 'p5', text: '­ƒÆí [IA] Uji: Bressol del te verd matcha hist├▓ric i el temple Byodoin (l\'edifici impr├¿s a la moneda de 10 iens). Prop de Kyoto.', completed: false },
+    { id: 'p6', text: '­ƒÆí [IA] Koyasan: El mont sagrat budista, dormir en un temple gestionat pels monjos (shukubo) i rec├│rrer el cementiri m├¡stic d\'Okunoin.', completed: false }
+];
+
+const DEFAULT_OBSERVATIONS = [
+    { id: 'o1', text: 'ÔÜá´©Å No et deixis enredar per botigues/museus de figuretes i merxandatge (anime/manga), que n\'hi ha milers a tot arreu. El primer v├¡deo llarg de T├▓quio n\'estava ple. Tot i aix├¡, segur que t\'hi acabar├ás trobant igualment!', completed: false },
+    { id: 'o2', text: '­ƒÆí Consell: No cal deixar propina als restaurants al Jap├│; de fet, est├á mal vist i et perseguiran si te la deixes.', completed: false },
+    { id: 'o3', text: '­ƒÆí Consell: Porta sempre una bossa petita a sobre per guardar les teves escombraries (gaireb├® no hi ha papereres p├║bliques al carrer).', completed: false },
+    { id: 'o4', text: '­ƒÆí Consell: Respecta el silenci al transport p├║blic (posa el tel├¿fon en silenci├│s i evita parlar fort).', completed: false },
+    { id: 'o5', text: '­ƒÆí Consell: Porta sempre diners en efectiu a sobre, ja que molts llocs rurals, temples o petits onsens no accepten targeta.', completed: false }
+];
+
 // --- APP STATE ---
 
 let state = {
@@ -406,7 +452,11 @@ let state = {
     itineraryFilter: 'all',
     expenses: [],
     videos: [],
-    tasks: []
+    tasks: [],
+    luggage: [],
+    shopping: [],
+    places: [],
+    observations: []
 };
 
 // Map variable
@@ -420,12 +470,102 @@ function loadState() {
     state.expenses = JSON.parse(localStorage.getItem('japo_expenses')) || DEFAULT_EXPENSES;
     state.videos = JSON.parse(localStorage.getItem('japo_videos')) || DEFAULT_VIDEOS;
     state.tasks = JSON.parse(localStorage.getItem('japo_tasks')) || DEFAULT_TASKS;
+    state.luggage = JSON.parse(localStorage.getItem('japo_luggage')) || DEFAULT_LUGGAGE;
+    state.shopping = JSON.parse(localStorage.getItem('japo_shopping')) || DEFAULT_SHOPPING;
+    state.places = JSON.parse(localStorage.getItem('japo_places')) || DEFAULT_PLACES;
+    state.observations = JSON.parse(localStorage.getItem('japo_observations')) || DEFAULT_OBSERVATIONS;
+
+    // Assegurar que la SIM card est├á present si l'usuari ja tenia dades guardades
+    const hasSimExpense = state.expenses.some(exp => exp.concept.toLowerCase().includes('sim'));
+    if (!hasSimExpense) {
+        state.expenses.push({ id: 'sim-card-exp', category: 'Altres', concept: 'Targeta SIM internet Jap├│', amount: 100 });
+        saveState('expenses');
+    }
+
+    const hasSimTask = state.tasks.some(task => task.text.toLowerCase().includes('sim'));
+    if (!hasSimTask) {
+        state.tasks.push({ id: 'sim-card-task', text: 'Comprar targeta SIM / eSIM per a internet al Jap├│ (~100 Ôé¼)', completed: false });
+        saveState('tasks');
+    }
+
+    // Afegir les noves tasques de maleta si no hi s├│n
+    const hasLuggageStrategy = state.tasks.some(task => task.id === 'luggage-strategy-task');
+    if (!hasLuggageStrategy) {
+        state.tasks.push({ id: 'luggage-strategy-task', text: 'Decidir combinaci├│ de maletes (idealment 1 maleta de cabina + 1 motxilla per caminar)', completed: false });
+        state.tasks.push({ id: 'takkyubin-service-task', text: 'Consultar funcionament i preus del servei d\'enviament de maletes (Takkyubin / Yamato) per al Kumano', completed: false });
+        saveState('tasks');
+    }
+
+    // Afegir la tasca dels bancs si no hi ├®s
+    const hasBankTask = state.tasks.some(task => task.id === 'bank-commissions-task');
+    if (!hasBankTask) {
+        state.tasks.push({ id: 'bank-commissions-task', text: 'Buscar targeta/banc sense comissions pel viatge (revisar Revolut, Wise o un compte de promoci├│ local)', completed: false });
+        saveState('tasks');
+    }
+
+    // Afegir recursos de N26 si no hi s├│n
+    const hasN26Resources = state.videos.some(vid => vid.id === 'n26-1');
+    if (!hasN26Resources) {
+        const n26Items = [
+            {
+                id: 'n26-1',
+                title: 'Guia N26: Pagar amb targeta al Jap├│',
+                url: 'https://n26.com/es-es/pagar-con-tarjeta-en-japon',
+                timestamp: '',
+                notes: 'Informaci├│ oficial sobre l\'├║s, tipus de canvi i comissions de la targeta N26 al Jap├│.'
+            },
+            {
+                id: 'n26-2',
+                title: 'Japonpedia: Targeta N26 al Jap├│',
+                url: 'https://japonpedia.com/tarjeta-n26-japon/',
+                timestamp: '',
+                notes: 'Guia pr├áctica de viatgers sobre l\'├║s de N26 en caixers i comer├ºos japonesos.'
+            },
+            {
+                id: 'n26-3',
+                title: 'Comiviajeros: Com funciona N26 a l\'estranger',
+                url: 'https://comiviajeros.com/tarjeta-n26-pagar-extranjero/',
+                timestamp: '',
+                notes: 'Comparativa i experi├¿ncies pr├áctiques d\'├║s de la targeta de viatge N26.'
+            }
+        ];
+        state.videos.push(...n26Items);
+        saveState('videos');
+    }
+
+    // Afegir els nous elements de maleta si no hi s├│n
+    const hasNewLuggageItems = state.luggage.some(item => item.id === 'l9');
+    if (!hasNewLuggageItems) {
+        const itemsToAdd = [
+            { id: 'l9', text: '1 o 2 maletes de cabina petites (idealment nom├®s 1 si ├®s possible)', completed: false },
+            { id: 'l10', text: 'Motxilla petita de dia (15-20L) per al senderisme a Kumano', completed: false },
+            { id: 'l11', text: 'Cantimplora o bossa d\'aigua (m├¡nim 1.5L, fa molta calor)', completed: false },
+            { id: 'l12', text: 'Bastons de trekking per a les baixades de pedra a Kumano', completed: false },
+            { id: 'l13', text: 'Roba interior i samarretes de secat r├ápid per rentar a m├á', completed: false },
+            { id: 'l14', text: 'Gorra i ulleres de sol pel sol intens d\'agost', completed: false },
+            { id: 'l15', text: 'Protector solar resistent a la suor i repel┬Àlent de mosquits fort', completed: false }
+        ];
+        state.luggage.push(...itemsToAdd);
+        saveState('luggage');
+    }
+
+    // For├ºar l'actualitzaci├│ dels llocs per diferenciar recomanacions i afegir l'Osaka onsen
+    const hasOsakaOnsen = state.places.some(item => item.id === 'p-osaka');
+    const hasUriPrefix = state.places.some(item => item.text.includes('[Uri]'));
+    if (!hasOsakaOnsen || !hasUriPrefix) {
+        state.places = DEFAULT_PLACES;
+        saveState('places');
+    }
 }
 
 function saveState(key) {
     if (key === 'expenses' || !key) localStorage.setItem('japo_expenses', JSON.stringify(state.expenses));
     if (key === 'videos' || !key) localStorage.setItem('japo_videos', JSON.stringify(state.videos));
     if (key === 'tasks' || !key) localStorage.setItem('japo_tasks', JSON.stringify(state.tasks));
+    if (key === 'luggage' || !key) localStorage.setItem('japo_luggage', JSON.stringify(state.luggage));
+    if (key === 'shopping' || !key) localStorage.setItem('japo_shopping', JSON.stringify(state.shopping));
+    if (key === 'places' || !key) localStorage.setItem('japo_places', JSON.stringify(state.places));
+    if (key === 'observations' || !key) localStorage.setItem('japo_observations', JSON.stringify(state.observations));
 }
 
 // --- RENDERING FUNCTIONS ---
@@ -508,7 +648,7 @@ function renderItinerary() {
     const filteredData = DEFAULT_ITINERARY.filter(day => {
         if (state.itineraryFilter === 'all') return true;
         if (state.itineraryFilter === 'overlap') return day.type === 'overlap';
-        if (state.itineraryFilter === 'titon') return day.type === 'titon';
+        if (state.itineraryFilter === 'uri') return day.type === 'uri';
         return true;
     });
 
@@ -518,8 +658,8 @@ function renderItinerary() {
 
         const badgeHtml = day.badge === 'shared' 
             ? `<span class="badge badge-shared"><i class="fa-solid fa-users"></i> Compartit</span>`
-            : day.badge === 'titon'
-                ? `<span class="badge badge-titon"><i class="fa-solid fa-user"></i> Titon (Tu)</span>`
+            : day.badge === 'uri'
+                ? `<span class="badge badge-uri"><i class="fa-solid fa-user"></i> Uri (Tu)</span>`
                 : `<span class="badge badge-banana"><i class="fa-solid fa-user-astronaut"></i> Banana</span>`;
 
         let activitiesHtml = '';
@@ -595,7 +735,7 @@ function initMap() {
     // Draw markers
     coordsList.forEach(point => {
         let color = '#ff79c6'; // Shared
-        if (point.type === 'titon') color = '#50fa7b';
+        if (point.type === 'uri') color = '#50fa7b';
         if (point.type === 'banana') color = '#06b6d4';
 
         const marker = L.circleMarker(point.coords, {
@@ -618,7 +758,7 @@ function initMap() {
     });
 
     // Draw lines joining path
-    const titonPath = coordsList.filter(p => p.type === 'titon' || p.type === 'overlap').map(p => p.coords);
+    const titonPath = coordsList.filter(p => p.type === 'uri' || p.type === 'overlap').map(p => p.coords);
     const bananaPath = coordsList.filter(p => p.type === 'banana' || p.type === 'overlap').map(p => p.coords);
 
     if (titonPath.length > 0) {
@@ -921,3 +1061,361 @@ document.addEventListener('DOMContentLoaded', () => {
     renderTasks();
     initTaskForm();
 });
+
+
+// 6. Luggage Module
+function renderLuggage() {
+    const container = document.getElementById('luggage-list-container');
+    if (!container) return;
+    container.innerHTML = '';
+
+    // Sort luggage: uncompleted first
+    const sortedLuggage = [...state.luggage].sort((a, b) => a.completed - b.completed);
+
+    sortedLuggage.forEach(item => {
+        const li = document.createElement('li');
+        li.className = `task-item ${item.completed ? 'completed' : ''}`;
+        
+        li.innerHTML = `
+            <div class="task-checkbox-container" data-id="${item.id}">
+                <div class="task-checkbox">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <span class="task-text">${item.text}</span>
+            </div>
+            <button class="btn-delete-task btn-delete-luggage" data-id="${item.id}" title="Eliminar de la maleta">
+                <i class="fa-regular fa-trash-can"></i>
+            </button>
+        `;
+        container.appendChild(li);
+    });
+
+    // Toggle complete status
+    container.querySelectorAll('.task-checkbox-container').forEach(el => {
+        el.addEventListener('click', () => {
+            const id = el.getAttribute('data-id');
+            const item = state.luggage.find(t => t.id === id);
+            if (item) {
+                item.completed = !item.completed;
+                saveState('luggage');
+                renderLuggage();
+            }
+        });
+    });
+
+    // Delete luggage item
+    container.querySelectorAll('.btn-delete-luggage').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Avoid triggering check toggle
+            const id = btn.getAttribute('data-id');
+            state.luggage = state.luggage.filter(t => t.id !== id);
+            saveState('luggage');
+            renderLuggage();
+        });
+    });
+}
+
+function initLuggageForm() {
+    const input = document.getElementById('new-luggage-input');
+    const btn = document.getElementById('btn-add-luggage');
+    if (!input || !btn) return;
+
+    const handleAddLuggage = () => {
+        const text = input.value.trim();
+        if (!text) return;
+
+        const newItem = {
+            id: Date.now().toString(),
+            text,
+            completed: false
+        };
+
+        state.luggage.push(newItem);
+        saveState('luggage');
+        renderLuggage();
+
+        input.value = '';
+    };
+
+    btn.addEventListener('click', handleAddLuggage);
+    input.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') handleAddLuggage();
+    });
+}
+
+// 7. Shopping Module
+function renderShopping() {
+    const container = document.getElementById('shopping-list-container');
+    if (!container) return;
+    container.innerHTML = '';
+
+    // Sort shopping: uncompleted first
+    const sortedShopping = [...state.shopping].sort((a, b) => a.completed - b.completed);
+
+    sortedShopping.forEach(item => {
+        const li = document.createElement('li');
+        li.className = `task-item ${item.completed ? 'completed' : ''}`;
+        
+        li.innerHTML = `
+            <div class="task-checkbox-container" data-id="${item.id}">
+                <div class="task-checkbox">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <span class="task-text">${item.text}</span>
+            </div>
+            <button class="btn-delete-task btn-delete-shopping" data-id="${item.id}" title="Eliminar de la llista">
+                <i class="fa-regular fa-trash-can"></i>
+            </button>
+        `;
+        container.appendChild(li);
+    });
+
+    // Toggle complete status
+    container.querySelectorAll('.task-checkbox-container').forEach(el => {
+        el.addEventListener('click', () => {
+            const id = el.getAttribute('data-id');
+            const item = state.shopping.find(t => t.id === id);
+            if (item) {
+                item.completed = !item.completed;
+                saveState('shopping');
+                renderShopping();
+            }
+        });
+    });
+
+    // Delete shopping item
+    container.querySelectorAll('.btn-delete-shopping').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Avoid triggering check toggle
+            const id = btn.getAttribute('data-id');
+            state.shopping = state.shopping.filter(t => t.id !== id);
+            saveState('shopping');
+            renderShopping();
+        });
+    });
+}
+
+function initShoppingForm() {
+    const input = document.getElementById('new-shopping-input');
+    const btn = document.getElementById('btn-add-shopping');
+    if (!input || !btn) return;
+
+    const handleAddShopping = () => {
+        const text = input.value.trim();
+        if (!text) return;
+
+        const newItem = {
+            id: Date.now().toString(),
+            text,
+            completed: false
+        };
+
+        state.shopping.push(newItem);
+        saveState('shopping');
+        renderShopping();
+
+        input.value = '';
+    };
+
+    btn.addEventListener('click', handleAddShopping);
+    input.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') handleAddShopping();
+    });
+}
+
+// 8. Places Module
+function renderPlaces() {
+    const container = document.getElementById('places-list-container');
+    if (!container) return;
+    container.innerHTML = '';
+
+    // Sort places: uncompleted first
+    const sortedPlaces = [...state.places].sort((a, b) => a.completed - b.completed);
+
+    sortedPlaces.forEach(item => {
+        const li = document.createElement('li');
+        li.className = `task-item ${item.completed ? 'completed' : ''}`;
+        
+        li.innerHTML = `
+            <div class="task-checkbox-container" data-id="${item.id}">
+                <div class="task-checkbox">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <span class="task-text">${item.text}</span>
+            </div>
+            <button class="btn-delete-task btn-delete-place" data-id="${item.id}" title="Eliminar de la llista">
+                <i class="fa-regular fa-trash-can"></i>
+            </button>
+        `;
+        container.appendChild(li);
+    });
+
+    // Toggle complete status
+    container.querySelectorAll('.task-checkbox-container').forEach(el => {
+        el.addEventListener('click', () => {
+            const id = el.getAttribute('data-id');
+            const item = state.places.find(t => t.id === id);
+            if (item) {
+                item.completed = !item.completed;
+                saveState('places');
+                renderPlaces();
+            }
+        });
+    });
+
+    // Delete place item
+    container.querySelectorAll('.btn-delete-place').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Avoid triggering check toggle
+            const id = btn.getAttribute('data-id');
+            state.places = state.places.filter(t => t.id !== id);
+            saveState('places');
+            renderPlaces();
+        });
+    });
+}
+
+function initPlacesForm() {
+    const input = document.getElementById('new-place-input');
+    const btn = document.getElementById('btn-add-place');
+    if (!input || !btn) return;
+
+    const handleAddPlace = () => {
+        const text = input.value.trim();
+        if (!text) return;
+
+        const newItem = {
+            id: Date.now().toString(),
+            text,
+            completed: false
+        };
+
+        state.places.push(newItem);
+        saveState('places');
+        renderPlaces();
+
+        input.value = '';
+    };
+
+    btn.addEventListener('click', handleAddPlace);
+    input.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') handleAddPlace();
+    });
+}
+
+// 9. Observations Module
+function renderObservations() {
+    const container = document.getElementById('observations-list-container');
+    if (!container) return;
+    container.innerHTML = '';
+
+    // Sort observations: uncompleted first
+    const sortedObservations = [...state.observations].sort((a, b) => a.completed - b.completed);
+
+    sortedObservations.forEach(item => {
+        const li = document.createElement('li');
+        li.className = `task-item ${item.completed ? 'completed' : ''}`;
+        
+        li.innerHTML = `
+            <div class="task-checkbox-container" data-id="${item.id}">
+                <div class="task-checkbox">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <span class="task-text">${item.text}</span>
+            </div>
+            <button class="btn-delete-task btn-delete-observation" data-id="${item.id}" title="Eliminar de la llista">
+                <i class="fa-regular fa-trash-can"></i>
+            </button>
+        `;
+        container.appendChild(li);
+    });
+
+    // Toggle complete status
+    container.querySelectorAll('.task-checkbox-container').forEach(el => {
+        el.addEventListener('click', () => {
+            const id = el.getAttribute('data-id');
+            const item = state.observations.find(t => t.id === id);
+            if (item) {
+                item.completed = !item.completed;
+                saveState('observations');
+                renderObservations();
+            }
+        });
+    });
+
+    // Delete observation item
+    container.querySelectorAll('.btn-delete-observation').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Avoid triggering check toggle
+            const id = btn.getAttribute('data-id');
+            state.observations = state.observations.filter(t => t.id !== id);
+            saveState('observations');
+            renderObservations();
+        });
+    });
+}
+
+function initObservationsForm() {
+    const input = document.getElementById('new-observation-input');
+    const btn = document.getElementById('btn-add-observation');
+    if (!input || !btn) return;
+
+    const handleAddObservation = () => {
+        const text = input.value.trim();
+        if (!text) return;
+
+        const newItem = {
+            id: Date.now().toString(),
+            text,
+            completed: false
+        };
+
+        state.observations.push(newItem);
+        saveState('observations');
+        renderObservations();
+
+        input.value = '';
+    };
+
+    btn.addEventListener('click', handleAddObservation);
+    input.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') handleAddObservation();
+    });
+}
+
+// --- INIT APP ---
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadState();
+    
+    // Core Layout
+    initTabSwitching();
+    initCountdown();
+    
+    // Modules
+    renderItinerary();
+    initItineraryFilters();
+    
+    renderBudget();
+    initBudgetForm();
+    
+    renderVideos();
+    initVideoForm();
+    
+    renderTasks();
+    initTaskForm();
+
+    renderLuggage();
+    initLuggageForm();
+
+    renderShopping();
+    initShoppingForm();
+
+    renderPlaces();
+    initPlacesForm();
+
+    renderObservations();
+    initObservationsForm();
+});
+
+
