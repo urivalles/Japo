@@ -251,6 +251,52 @@ h1, h2, h3, .brand-text {
     background: var(--bg-card-hover);
 }
 
+/* Section Banner Image Cards */
+.section-banner {
+    position: relative;
+    height: 160px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: flex-end;
+    padding: 24px;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(214, 48, 49, 0.2);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.section-banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(180deg, rgba(17, 19, 24, 0.3) 0%, rgba(17, 19, 24, 0.85) 100%);
+    z-index: 1;
+}
+
+.section-banner-content {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+}
+
+.section-banner-content h2 {
+    font-size: 24px;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-banner-content p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    margin: 0;
+}
+
 /* Content Sections Visibility */
 .content-section {
     display: none;
