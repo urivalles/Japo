@@ -274,12 +274,12 @@ h1, h2, h3, .brand-text {
 }
 
 .section-title-badge {
-    width: 46px;
-    height: 46px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--accent-red);
-    box-shadow: 0 4px 12px rgba(214, 48, 49, 0.18);
+    border: 3px solid var(--accent-red);
+    box-shadow: 0 6px 16px rgba(214, 48, 49, 0.2);
     flex-shrink: 0;
 }
 
@@ -467,21 +467,21 @@ h1, h2, h3, .brand-text {
 }
 
 .badge.badge-uri {
-    background: rgba(80, 250, 123, 0.12);
-    border: 1px solid rgba(80, 250, 123, 0.25);
-    color: var(--accent-green);
+    background: rgba(214, 48, 49, 0.12);
+    border: 1px solid rgba(214, 48, 49, 0.3);
+    color: var(--accent-red);
 }
 
 .badge.badge-banana {
-    background: rgba(241, 250, 140, 0.15);
-    border: 1px solid rgba(241, 250, 140, 0.3);
-    color: var(--accent-yellow);
+    background: rgba(17, 19, 24, 0.12);
+    border: 1px solid rgba(17, 19, 24, 0.3);
+    color: var(--sumi-black);
 }
 
 .badge.badge-shared {
-    background: rgba(255, 184, 108, 0.15);
-    border: 1px solid rgba(255, 184, 108, 0.3);
-    color: var(--accent-orange);
+    background: rgba(27, 42, 74, 0.12);
+    border: 1px solid rgba(27, 42, 74, 0.3);
+    color: var(--indigo-navy);
 }
 
 .day-title {
@@ -608,23 +608,18 @@ h1, h2, h3, .brand-text {
 }
 
 .dot-uri {
-    background-color: var(--accent-green);
-    box-shadow: 0 0 5px var(--accent-green);
+    background-color: var(--accent-red);
+    box-shadow: 0 0 6px rgba(214, 48, 49, 0.4);
 }
 
 .dot-banana {
-    background-color: var(--accent-yellow);
-    box-shadow: 0 0 6px var(--accent-yellow);
+    background-color: var(--sumi-black);
+    box-shadow: 0 0 6px rgba(17, 19, 24, 0.4);
 }
 
 .dot-shared {
-    background-color: var(--accent-orange);
-    box-shadow: 0 0 6px var(--accent-orange);
-}
-
-.dot-shared {
-    background-color: var(--accent-pink);
-    box-shadow: 0 0 6px var(--accent-pink);
+    background-color: var(--indigo-navy);
+    box-shadow: 0 0 6px rgba(27, 42, 74, 0.4);
 }
 
 /* Leaflet Custom styling */

@@ -751,17 +751,17 @@ function initMap() {
 
     // Draw markers
     coordsList.forEach(point => {
-        let color = '#ffb86c'; // Shared Orange
-        if (point.type === 'uri') color = '#50fa7b'; // Uri Green
-        if (point.type === 'banana') color = '#f1fa8c'; // Banana Yellow
+        let color = '#1b2a4a'; // Shared Navy Blue
+        if (point.type === 'uri') color = '#d63031'; // Uri Red
+        if (point.type === 'banana') color = '#111318'; // Banana Black
 
         const marker = L.circleMarker(point.coords, {
-            radius: 8,
+            radius: 7,
             fillColor: color,
             color: '#ffffff',
             weight: 2,
             opacity: 0.9,
-            fillOpacity: 0.8
+            fillOpacity: 0.9
         }).addTo(map);
 
         marker.bindPopup(`
@@ -787,27 +787,27 @@ function initMap() {
         coordsList.push(shirakawaPoint);
 
         const marker = L.circleMarker(shirakawaPoint.coords, {
-            radius: 8,
-            fillColor: '#ffb86c',
+            radius: 7,
+            fillColor: '#1b2a4a',
             color: '#ffffff',
             weight: 2,
             opacity: 0.9,
-            fillOpacity: 0.8
+            fillOpacity: 0.9
         }).addTo(map);
 
         marker.bindPopup(`
             <div class="map-popup-content">
                 <h3>Dia 15: Shirakawa-go (Excursió conjunta)</h3>
                 <p><strong>Data:</strong> 2026-08-20</p>
-                <p>Tipus de ruta: <span style="color:#ffb86c; font-weight:bold;">OVERLAP</span></p>
+                <p>Tipus de ruta: <span style="color:#1b2a4a; font-weight:bold;">OVERLAP</span></p>
             </div>
         `);
         mapMarkers.push(marker);
     }
 
-    // --- PARALLEL DOUBLE LINE ROUTE SYSTEM ---
-    // Uri's full route (Green #50fa7b)
-    const uriFullRoute = [
+    // --- EXACT COLOR ROUTE SEGMENTS ---
+    // 1. Uri Solo Segments (Red #d63031, weight 3)
+    const uriSolo1 = [
         [35.7111, 139.7770], // Ueno
         [35.7147, 139.7967], // Asakusa
         [35.3192, 139.5467], // Kamakura
@@ -815,35 +815,39 @@ function initMap() {
         [36.7645, 139.4912], // Mt Nantai
         [36.7845, 139.4448], // Senjogahara
         [36.7581, 139.5989], // Nikko Toshogu
-        [35.6938, 139.7032], // Shinjuku (meets Banana)
-        [35.6580, 139.7016], // Shibuya
-        [35.2238, 138.6133], // Fujinomiya
-        [35.3606, 138.7274], // Mt Fuji
-        [36.1461, 137.2520], // Takayama
-        [36.2562, 136.9042], // Shirakawa-go
+        [35.6938, 139.7032]  // Shinjuku (rejoins Banana)
+    ];
+
+    const uriSolo2 = [
+        [36.2562, 136.9042], // Shirakawa-go (separates)
         [36.5613, 136.6562], // Kanazawa
-        [35.0116, 135.7681], // Kyoto
-        [34.9671, 135.7727], // Fushimi
-        [34.6687, 135.5013], // Namba Osaka
-        [34.6525, 135.5063], // Shinsekai
-        [34.2965, 132.3206], // Miyajima
-        [34.3927, 132.4526], // Hiroshima Peace Park
-        [34.4320, 135.2304]  // KIX
+        [35.0116, 135.7681]  // Kyoto (rejoins Banana)
     ];
 
-    // Banana's full route (Yellow #f59e0b) - Tighter offset (+0.003, +0.003) so lines run close parallel side-by-side
-    const OFFSET_LAT = 0.003;
-    const OFFSET_LNG = 0.003;
+    // 2. Banana Solo Segments (Black #111318, weight 3)
+    const bananaSoloSegment1 = [
+        [35.2238, 138.6133], // Fujinomiya
+        [35.2536, 139.1553], // Odawara
+        [35.1815, 136.9066], // Nagoya
+        [36.1461, 137.2520]  // Takayama
+    ];
 
-    const bananaFullRouteRaw = [
-        [35.6938, 139.7032], // Shinjuku (starts)
+    const bananaSoloSegment2 = [
+        [36.2562, 136.9042], // Shirakawa-go
+        [35.0116, 135.7681]  // Kyoto
+    ];
+
+    // 3. Shared / Overlap Segments (Indigo Navy Blue #1b2a4a, weight 4)
+    const sharedSegment1 = [
+        [35.6938, 139.7032], // Shinjuku
         [35.6580, 139.7016], // Shibuya
         [35.2238, 138.6133], // Fujinomiya
         [35.3606, 138.7274], // Mt Fuji
-        [35.2536, 139.1553], // Odawara (Banana solo)
-        [35.1815, 136.9066], // Nagoya (Banana solo)
         [36.1461, 137.2520], // Takayama
-        [36.2562, 136.9042], // Shirakawa-go
+        [36.2562, 136.9042]  // Shirakawa-go
+    ];
+
+    const sharedSegment2 = [
         [35.0116, 135.7681], // Kyoto
         [34.9671, 135.7727], // Fushimi
         [34.6687, 135.5013], // Namba Osaka
@@ -853,13 +857,17 @@ function initMap() {
         [34.4320, 135.2304]  // KIX
     ];
 
-    const bananaFullRouteOffset = bananaFullRouteRaw.map(pt => [pt[0] + OFFSET_LAT, pt[1] + OFFSET_LNG]);
+    // Draw Uri Solo Lines (Red)
+    L.polyline(uriSolo1, { color: '#d63031', weight: 3, opacity: 0.95 }).addTo(map);
+    L.polyline(uriSolo2, { color: '#d63031', weight: 3, opacity: 0.95 }).addTo(map);
 
-    // Draw Uri Line (Solid Green #10b981, thin weight 2.5)
-    L.polyline(uriFullRoute, { color: '#10b981', weight: 2.5, opacity: 0.9 }).addTo(map);
+    // Draw Banana Solo Lines (Sumi Black)
+    L.polyline(bananaSoloSegment1, { color: '#111318', weight: 3, opacity: 0.95 }).addTo(map);
+    L.polyline(bananaSoloSegment2, { color: '#111318', weight: 3, opacity: 0.95 }).addTo(map);
 
-    // Draw Banana Line Parallel (Solid Yellow #f59e0b, thin weight 2.5)
-    L.polyline(bananaFullRouteOffset, { color: '#f59e0b', weight: 2.5, opacity: 0.9 }).addTo(map);
+    // Draw Shared Lines (Indigo Navy Blue)
+    L.polyline(sharedSegment1, { color: '#1b2a4a', weight: 4, opacity: 0.95 }).addTo(map);
+    L.polyline(sharedSegment2, { color: '#1b2a4a', weight: 4, opacity: 0.95 }).addTo(map);
 
     // Zoom map fit bounds
     const allCoords = coordsList.map(p => p.coords);
