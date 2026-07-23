@@ -940,8 +940,8 @@ function renderBudget() {
         const row = document.createElement('tr');
         const isPaid = exp.paid === true;
         const statusBadge = isPaid 
-            ? `<button class="btn-toggle-paid paid" data-id="${exp.id}" style="background: rgba(80, 250, 123, 0.15); color: var(--accent-green); border: 1px solid rgba(80, 250, 123, 0.3); padding: 4px 10px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; font-weight: 600;">✅ Pagat</button>`
-            : `<button class="btn-toggle-paid pending" data-id="${exp.id}" style="background: rgba(255, 121, 198, 0.15); color: var(--accent-pink); border: 1px solid rgba(255, 121, 198, 0.3); padding: 4px 10px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; font-weight: 600;">⏳ Pendent</button>`;
+            ? `<button class="btn-toggle-paid paid" data-id="${exp.id}" style="background: rgba(29, 78, 216, 0.12); color: var(--indigo-navy); border: 1px solid rgba(29, 78, 216, 0.35); padding: 4px 10px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; font-weight: 600;">☑️ Pagat</button>`
+            : `<button class="btn-toggle-paid pending" data-id="${exp.id}" style="background: rgba(214, 48, 49, 0.12); color: var(--accent-red); border: 1px solid rgba(214, 48, 49, 0.35); padding: 4px 10px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; font-weight: 600;">⏳ Pendent</button>`;
 
         row.innerHTML = `
             <td><span class="expense-category-cell">${getCategoryEmoji(exp.category)} ${exp.category}</span></td>
@@ -968,7 +968,7 @@ function renderBudget() {
     if (spentTextEl) spentTextEl.innerText = `${totalSpent.toLocaleString('ca-ES')} € gastats`;
 
     const paidTextEl = document.getElementById('budget-paid-text');
-    if (paidTextEl) paidTextEl.innerText = `✅ Pagat: ${totalPaid.toLocaleString('ca-ES')} €`;
+    if (paidTextEl) paidTextEl.innerText = `☑️ Pagat: ${totalPaid.toLocaleString('ca-ES')} €`;
 
     const pendingTextEl = document.getElementById('budget-pending-text');
     if (pendingTextEl) pendingTextEl.innerText = `⏳ Pendent: ${totalPending.toLocaleString('ca-ES')} €`;
@@ -983,12 +983,12 @@ function renderBudget() {
     if (statusMessage) {
         if (totalSpent > limit) {
             progressBar.style.background = 'var(--accent-red)';
-            progressBar.style.boxShadow = '0 0 10px rgba(239, 68, 68, 0.5)';
+            progressBar.style.boxShadow = '0 0 10px rgba(214, 48, 49, 0.5)';
             statusMessage.innerHTML = `⚠️ Compte! Has superat el pressupost per <strong>${(totalSpent - limit).toLocaleString('ca-ES')} €</strong>.`;
             statusMessage.className = 'budget-status-message warning';
         } else {
-            progressBar.style.background = 'linear-gradient(90deg, var(--accent-green), var(--accent-purple))';
-            progressBar.style.boxShadow = 'var(--glow-green)';
+            progressBar.style.background = 'linear-gradient(90deg, var(--indigo-navy), var(--accent-red))';
+            progressBar.style.boxShadow = '0 4px 12px rgba(29, 78, 216, 0.3)';
             statusMessage.innerHTML = `Estàs dins del pressupost estimat! Et queden <strong>${(limit - totalSpent).toLocaleString('ca-ES')} €</strong>.`;
             statusMessage.className = 'budget-status-message';
         }

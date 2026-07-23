@@ -679,10 +679,10 @@ h1, h2, h3, .brand-text {
 .progress-bar {
     height: 100%;
     width: 0%;
-    background: linear-gradient(90deg, var(--accent-green), var(--accent-purple));
+    background: linear-gradient(90deg, var(--indigo-navy), var(--accent-red));
     border-radius: 10px;
     transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: var(--glow-green);
+    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.3);
 }
 
 .progress-labels {
@@ -890,7 +890,7 @@ h1, h2, h3, .brand-text {
     align-items: center;
     gap: 6px;
     font-size: 12px;
-    color: var(--accent-purple);
+    color: var(--accent-red);
     text-decoration: none;
     font-weight: 600;
     transition: color var(--transition-speed) ease;
@@ -1007,9 +1007,9 @@ h1, h2, h3, .brand-text {
 }
 
 .task-item.completed .task-checkbox {
-    border-color: var(--accent-green);
-    background: var(--accent-green);
-    box-shadow: var(--glow-green);
+    border-color: var(--indigo-navy);
+    background: var(--indigo-navy);
+    box-shadow: 0 4px 10px rgba(29, 78, 216, 0.3);
 }
 
 .task-item.completed .task-checkbox i {
