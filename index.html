@@ -123,10 +123,13 @@
                     
                     <!-- 2. OpenStreetMap (Leaflet) underneath -->
                     <div class="osm-container" style="margin-top: 20px;">
-                        <h3 style="margin-bottom: 12px; font-size: 1.05rem; color: var(--accent-green); display: flex; align-items: center; gap: 8px;">
-                            <i class="fa-solid fa-map-location-dot"></i> Mapa Comparatiu (OpenStreetMap)
-                        </h3>
-                        <div class="map-card glass-panel">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
+                            <h3 style="font-size: 1.05rem; color: var(--accent-green); margin: 0; display: flex; align-items: center; gap: 8px;">
+                                <i class="fa-solid fa-map-location-dot"></i> Mapa Comparatiu (OpenStreetMap)
+                            </h3>
+                            <button id="btn-toggle-osm-size" style="background: rgba(80, 250, 123, 0.15); color: var(--accent-green); border: 1px solid var(--accent-green); padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; transition: all 0.2s;"><i class="fa-solid fa-expand"></i> Ampliar Mapa OSM</button>
+                        </div>
+                        <div class="map-card glass-panel" id="osm-map-card" style="transition: all 0.3s ease;">
                             <div id="map-element"></div>
                         </div>
                         

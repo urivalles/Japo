@@ -774,6 +774,37 @@ function initMap() {
         mapMarkers.push(marker);
     });
 
+    // Add Shirakawa-go marker explicitly if not in coordsList
+    const hasShirakawaMarker = coordsList.some(p => p.coords[0] === 36.2562 && p.coords[1] === 136.9042);
+    if (!hasShirakawaMarker) {
+        const shirakawaPoint = {
+            coords: [36.2562, 136.9042],
+            title: 'Shirakawa-go (Excursió conjunta)',
+            date: '2026-08-20',
+            type: 'overlap',
+            dayLabel: 'Dia 15'
+        };
+        coordsList.push(shirakawaPoint);
+
+        const marker = L.circleMarker(shirakawaPoint.coords, {
+            radius: 8,
+            fillColor: '#ff79c6',
+            color: '#ffffff',
+            weight: 2,
+            opacity: 0.9,
+            fillOpacity: 0.8
+        }).addTo(map);
+
+        marker.bindPopup(`
+            <div class="map-popup-content">
+                <h3>Dia 15: Shirakawa-go (Excursió conjunta)</h3>
+                <p><strong>Data:</strong> 2026-08-20</p>
+                <p>Tipus de ruta: <span style="color:#ff79c6; font-weight:bold;">OVERLAP</span></p>
+            </div>
+        `);
+        mapMarkers.push(marker);
+    }
+
     // Define explicit polyline segments for clear visualization
     
     // 1. Uri Solo Segments (Green #50fa7b, solid, weight 4)
@@ -789,7 +820,7 @@ function initMap() {
     ];
 
     const uriSolo2 = [
-        [36.1461, 137.2520], // Takayama (separates)
+        [36.2562, 136.9042], // Shirakawa-go (separates after joint visit)
         [36.5613, 136.6562], // Kanazawa
         [35.0116, 135.7681]  // Kyoto (rejoins Banana)
     ];
@@ -800,7 +831,8 @@ function initMap() {
         [35.6580, 139.7016], // Shibuya
         [35.2238, 138.6133], // Fujinomiya
         [35.3606, 138.7274], // Mt Fuji
-        [36.1461, 137.2520]  // Takayama
+        [36.1461, 137.2520], // Takayama
+        [36.2562, 136.9042]  // Shirakawa-go (Uri & Banana travel together!)
     ];
 
     const sharedSegment2 = [
@@ -813,20 +845,26 @@ function initMap() {
         [34.4320, 135.2304]  // KIX
     ];
 
-    // 3. Banana Solo Segment (Cyan Blue #06b6d4, SOLID line - NO dashes!, weight 4)
-    const bananaSoloSegment = [
+    // 3. Banana Solo Segments (Cyan Blue #06b6d4, SOLID line - NO dashes!, weight 4)
+    const bananaSoloSegment1 = [
         [35.2238, 138.6133], // Fujinomiya
         [35.2536, 139.1553], // Odawara
         [35.1815, 136.9066], // Nagoya
         [36.1461, 137.2520]  // Takayama
     ];
 
+    const bananaSoloSegment2 = [
+        [36.2562, 136.9042], // Shirakawa-go (separates)
+        [35.0116, 135.7681]  // Kyoto (direct travel)
+    ];
+
     // Draw Uri Solo Lines (Green)
     L.polyline(uriSolo1, { color: '#50fa7b', weight: 4, opacity: 0.95 }).addTo(map);
     L.polyline(uriSolo2, { color: '#50fa7b', weight: 4, opacity: 0.95 }).addTo(map);
 
-    // Draw Banana Solo Line (Cyan Blue - SOLID, NO DASHES!)
-    L.polyline(bananaSoloSegment, { color: '#06b6d4', weight: 4, opacity: 0.95 }).addTo(map);
+    // Draw Banana Solo Lines (Cyan Blue - SOLID, NO DASHES!)
+    L.polyline(bananaSoloSegment1, { color: '#06b6d4', weight: 4, opacity: 0.95 }).addTo(map);
+    L.polyline(bananaSoloSegment2, { color: '#06b6d4', weight: 4, opacity: 0.95 }).addTo(map);
 
     // Draw Shared Lines (Pink Sakura - Thick & Glowing)
     L.polyline(sharedSegment1, { color: '#ff79c6', weight: 5, opacity: 1.0 }).addTo(map);
@@ -837,6 +875,25 @@ function initMap() {
     if (allCoords.length > 0) {
         const bounds = L.polyline(allCoords).getBounds();
         map.fitBounds(bounds, { padding: [30, 30] });
+    }
+
+    // OSM Map expander button handler
+    const expandBtn = document.getElementById('btn-toggle-osm-size');
+    if (expandBtn) {
+        expandBtn.addEventListener('click', () => {
+            const mapEl = document.getElementById('map-element');
+            if (mapEl) {
+                const currentHeight = mapEl.style.height || '400px';
+                if (currentHeight === '400px' || !mapEl.style.height) {
+                    mapEl.style.height = '800px';
+                    expandBtn.innerHTML = '<i class="fa-solid fa-compress"></i> Reduir Mapa OSM';
+                } else {
+                    mapEl.style.height = '400px';
+                    expandBtn.innerHTML = '<i class="fa-solid fa-expand"></i> Ampliar Mapa OSM';
+                }
+                setTimeout(() => map.invalidateSize(), 200);
+            }
+        });
     }
 }
 
