@@ -359,35 +359,42 @@ const DEFAULT_ITINERARY = [
 ;
 
 const DEFAULT_EXPENSES = [
-    { id: '1', category: 'Vols', concept: 'Vol Open-Jaw BCN-Tòquio / Kansai-BCN (Estimat)', amount: 850 },
-    { id: 'h-ueno', category: 'Allotjament', concept: 'Hostel Ueno / Asakusa', amount: 55 },
-    { id: 'h-utsunomiya', category: 'Allotjament', concept: 'Guesthouse Utsunomiya', amount: 89 },
-    { id: 'h-shinjuku', category: 'Allotjament', concept: 'Hostel Shinjuku (Tòquio)', amount: 52 },
-    { id: 'h-fuji', category: 'Allotjament', concept: 'Hostel Fuji', amount: 53 },
-    { id: 'h-takayama', category: 'Allotjament', concept: 'Hostel Takayama', amount: 55 },
-    { id: 'h-kanazawa', category: 'Allotjament', concept: 'Hostel Kanazawa', amount: 17 },
-    { id: 'h-kyoto', category: 'Allotjament', concept: 'Hostel Kyoto', amount: 34 },
-    { id: 'h-osaka', category: 'Allotjament', concept: 'Hostel Osaka', amount: 27 },
-    { id: 'h-hiroshima', category: 'Allotjament', concept: 'Hostel Hiroshima', amount: 36 },
-    { id: '4', category: 'Transport', concept: 'Trens regionals i de muntanya', amount: 80 },
-    { id: '5', category: 'Transport', concept: 'Trens llargs Shinkansen', amount: 130 },
-    { id: '6', category: 'Menjar i oci', concept: 'Menjar diari (Konbinis / Gyudon)', amount: 250 }
+    { id: '1', category: 'Vols', concept: 'Vol Open-Jaw BCN-Tòquio / Kansai-BCN (Confirmat)', amount: 850, paid: true },
+    { id: 'h-ueno', category: 'Allotjament', concept: 'Hostel Ueno / Asakusa (06-09 Agost - 3 nits)', amount: 55, paid: true },
+    { id: 'h-utsunomiya', category: 'Allotjament', concept: 'Guesthouse Utsunomiya (09-13 Agost - 4 nits)', amount: 89, paid: true },
+    { id: 'h-shinjuku', category: 'Allotjament', concept: 'IMANO Tokyo Hostel Shinjuku (13-15 Agost)', amount: 52, paid: false },
+    { id: 'h-fuji', category: 'Allotjament', concept: 'Cabin House Yado Fujinomiya (15-17 Agost)', amount: 53, paid: false },
+    { id: 'h-takayama', category: 'Allotjament', concept: 'Guesthouse Ouka Takayama (17-20 Agost)', amount: 55, paid: false },
+    { id: 'h-kanazawa', category: 'Allotjament', concept: 'Blue Hour Kanazawa (20-21 Agost)', amount: 17, paid: false },
+    { id: 'h-kyoto', category: 'Allotjament', concept: 'Shijo Guesthouse Hive Kyoto (21-23 Agost)', amount: 34, paid: false },
+    { id: 'h-osaka', category: 'Allotjament', concept: 'Acro Capsule Namba Osaka (23-25 Agost)', amount: 27, paid: false },
+    { id: 'h-hiroshima', category: 'Allotjament', concept: 'Webase Hiroshima (25-27 Agost)', amount: 36, paid: false },
+    { id: 't-regional', category: 'Transport', concept: 'Trens regionals i busos V5 (Nikko, Nohi Bus, Thunderbird)', amount: 170, paid: false },
+    { id: 't-shinkansen', category: 'Transport', concept: 'Shinkansen Osaka-Hiroshima + Express KIX', amount: 140, paid: false },
+    { id: '6', category: 'Menjar i oci', concept: 'Menjar diari (Konbinis / Gyudon / Ramen)', amount: 250, paid: false }
 ];
 
 const DEFAULT_VIDEOS = [
     {
         id: '1',
-        title: 'Consells per a l\'ascensió al Mont Nantai (Nikko)',
-        url: 'https://www.youtube.com/watch?v=XXXXXXX',
-        timestamp: '02:15',
-        notes: 'Explica per on agafar el bus al Llac Chuzenji i el punt clau de les escales de pedra.'
+        title: 'Nikko i el volcà Mont Nantai (2.486m)',
+        url: 'https://www.youtube.com/watch?v=0h6Qz-Yx3wE',
+        timestamp: '03:15',
+        notes: 'Excursió de senderisme intens des de Nikko i el Llac Chuzenji. Molt recomanable ver el sender abans de pujar.'
     },
     {
         id: '2',
-        title: 'Enviament de maletes Ta-Q-Bin al Japó',
-        url: 'https://www.youtube.com/watch?v=XXXXXXX',
-        timestamp: '05:30',
-        notes: 'Guia pas a pas de com emplenar el formulari de Yamato Transport per enviar la maleta de Takayama a Kyoto.'
+        title: 'Com utilitzar el servei Ta-Q-Bin (Yamato Transport)',
+        url: 'https://www.youtube.com/watch?v=132K5J1K91c',
+        timestamp: '02:00',
+        notes: 'Com enviar la teva maleta gran des de Takayama directament a l'hostel de Kyoto per viatjar lleuger a Shirakawa-go i Kanazawa.'
+    },
+    {
+        id: '3',
+        title: 'Guia de Kanazawa: Mercat Omicho i Barri Geisha',
+        url: 'https://www.youtube.com/watch?v=JmBwQ1x9J2k',
+        timestamp: '05:45',
+        notes: 'Punts clau per visitar en les 24 hores que passaràs a Kanazawa abans de trobar-te a Kyoto.'
     }
 ];
 
@@ -401,48 +408,48 @@ const DEFAULT_TASKS = [
 
 const DEFAULT_LUGGAGE = [
     { id: 'l1', text: 'Motxilla de senderisme principal (30-40L)', completed: false },
-    { id: 'l2', text: 'Cal├ºat de trekking / trail running ja usat (crucial pel Kumano)', completed: false },
+    { id: 'l2', text: 'Calçat de trekking / trail running ja usat (crucial pel Kumano)', completed: false },
     { id: 'l3', text: 'Paravents / Impermeable lleuger (plou sovint a Kumano)', completed: false },
-    { id: 'l4', text: 'Roba t├¿cnica transpirable (per a la calor i humitat de l\'agost)', completed: false },
-    { id: 'l5', text: 'Tovallola de microfibra de secat r├ápid', completed: false },
-    { id: 'l6', text: 'Farmaciola b├ásica (tiretes, antiinflamatoris, vaselina pels peus)', completed: false },
-    { id: 'l7', text: 'Adaptador d\'endoll tipus A (Jap├│)', completed: false },
-    { id: 'l8', text: 'Passaport en vigor i c├▓pia f├¡sica/digital', completed: false },
-    { id: 'l9', text: '1 o 2 maletes de cabina petites (idealment nom├®s 1 si ├®s possible)', completed: false },
+    { id: 'l4', text: 'Roba tècnica transpirable (per a la calor i humitat de l\'agost)', completed: false },
+    { id: 'l5', text: 'Tovallola de microfibra de secat ràpid', completed: false },
+    { id: 'l6', text: 'Farmaciola bàsica (tiretes, antiinflamatoris, vaselina pels peus)', completed: false },
+    { id: 'l7', text: 'Adaptador d\'endoll tipus A (Japó)', completed: false },
+    { id: 'l8', text: 'Passaport en vigor i còpia física/digital', completed: false },
+    { id: 'l9', text: '1 o 2 maletes de cabina petites (idealment només 1 si és possible)', completed: false },
     { id: 'l10', text: 'Motxilla petita de dia (15-20L) per al senderisme a Kumano', completed: false },
-    { id: 'l11', text: 'Cantimplora o bossa d\'aigua (m├¡nim 1.5L, fa molta calor)', completed: false },
+    { id: 'l11', text: 'Cantimplora o bossa d\'aigua (mínim 1.5L, fa molta calor)', completed: false },
     { id: 'l12', text: 'Bastons de trekking per a les baixades de pedra a Kumano', completed: false },
-    { id: 'l13', text: 'Roba interior i samarretes de secat r├ápid per rentar a m├á', completed: false },
+    { id: 'l13', text: 'Roba interior i samarretes de secat ràpid per rentar a mà', completed: false },
     { id: 'l14', text: 'Gorra i ulleres de sol pel sol intens d\'agost', completed: false },
-    { id: 'l15', text: 'Protector solar resistent a la suor i repel┬Àlent de mosquits fort', completed: false }
+    { id: 'l15', text: 'Protector solar resistent a la suor i repel·lent de mosquits fort', completed: false }
 ];
 
 const DEFAULT_SHOPPING = [
-    { id: 's1', text: 'Goshuincho i segells cal┬Àligr├áfics (Shuin) als temples (~15 Ôé¼ llibreta, ~3-4 Ôé¼ cada segell)', completed: false },
-    { id: 's2', text: 'Tenugui (Mocador de cot├│ tradicional molt vers├átil, ~5-10 Ôé¼)', completed: false },
-    { id: 's3', text: 'Hashi (Bastonets de fusta personalitzats gravats amb el teu nom, ~10-15 Ôé¼)', completed: false },
-    { id: 's4', text: 'Furin (Campaneta de vent tradicional japonesa de vidre o ferro, ~5-10 Ôé¼)', completed: false },
-    { id: 's5', text: 'Llibretes o quaderns de papereria japonesa (Midori, Apica, ~3-7 Ôé¼)', completed: false },
-    { id: 's6', text: 'Pegats de mentol per als peus (Kyusoku Jikan, molt ├║til pel Kumano Kodo, ~5 Ôé¼)', completed: false },
-    { id: 's7', text: 'T├® verd o Matcha local comprat directament en cooperatives rurals (~5-10 Ôé¼)', completed: false }
+    { id: 's1', text: 'Goshuincho i segells cal·ligràfics (Shuin) als temples (~15 € llibreta, ~3-4 € cada segell)', completed: false },
+    { id: 's2', text: 'Tenugui (Mocador de cotó tradicional molt versàtil, ~5-10 €)', completed: false },
+    { id: 's3', text: 'Hashi (Bastonets de fusta personalitzats gravats amb el teu nom, ~10-15 €)', completed: false },
+    { id: 's4', text: 'Furin (Campaneta de vent tradicional japonesa de vidre o ferro, ~5-10 €)', completed: false },
+    { id: 's5', text: 'Llibretes o quaderns de papereria japonesa (Midori, Apica, ~3-7 €)', completed: false },
+    { id: 's6', text: 'Pegats de mentol per als peus (Kyusoku Jikan, molt útil pel senderisme, ~5 €)', completed: false },
+    { id: 's7', text: 'Te verd o Matcha local comprat directament en cooperatives rurals (~5-10 €)', completed: false }
 ];
 
 const DEFAULT_PLACES = [
-    { id: 'p1', text: '­ƒÖïÔÇìÔÖé´©Å [Uri] Nara: Parc ple de c├®rvols lliures (els c├®rvols sagrats que demanen menjar reverenciant-te) i el temple Todai-ji.', completed: false },
-    { id: 'p-osaka', text: '­ƒÖïÔÇìÔÖé´©Å [Uri] Osaka: Banys termals / Onsen on et pots vestir amb yukata o kimono (ex: parc tem├átic de banys Spa World o onsens tradicionals per comprovar si mola).', completed: false },
-    { id: 'p2', text: '­ƒÆí [IA] Kamakura: El Gran Buda de bronze a l\'aire lliure (Daibutsu) i temples hist├▓rics de bosc (excursi├│ f├ácil des de T├▓quio).', completed: false },
-    { id: 'p3', text: '­ƒÆí [IA] Nikko: Mausoleus daurats dels shoguns Tokugawa, cascada Kegon i naturalesa alpina espectacular (excursi├│ des de T├▓quio).', completed: false },
-    { id: 'p4', text: '­ƒÆí [IA] Himeji: El c├¿lebre castell de la Gar├ºa Blanca, el castell feudal original m├®s espectacular i millor conservat de tot el Jap├│.', completed: false },
-    { id: 'p5', text: '­ƒÆí [IA] Uji: Bressol del te verd matcha hist├▓ric i el temple Byodoin (l\'edifici impr├¿s a la moneda de 10 iens). Prop de Kyoto.', completed: false },
-    { id: 'p6', text: '­ƒÆí [IA] Koyasan: El mont sagrat budista, dormir en un temple gestionat pels monjos (shukubo) i rec├│rrer el cementiri m├¡stic d\'Okunoin.', completed: false }
+    { id: 'p1', text: '⛩️ [Uri] Nara: Parc ple de cérvols lliures (els cérvols sagrats que demanen menjar reverenciant-te) i el temple Todai-ji.', completed: false },
+    { id: 'p-osaka', text: '⛩️ [Uri] Osaka: Banys termals / Onsen on et pots vestir amb yukata o kimono (ex: parc temàtic de banys Spa World o onsens tradicionals per comprovar si mola).', completed: false },
+    { id: 'p2', text: '💡 [IA] Kamakura: El Gran Buda de bronze a l\'aire lliure (Daibutsu) i temples històrics de bosc (excursió fàcil des de Tòquio).', completed: false },
+    { id: 'p3', text: '💡 [IA] Nikko: Mausoleus daurats dels shoguns Tokugawa, cascada Kegon i natura alpina espectacular (excursió des de Tòquio).', completed: false },
+    { id: 'p4', text: '💡 [IA] Himeji: El cèlebre castell de la Garça Blanca, el castell feudal original més espectacular i millor conservat de tot el Japó.', completed: false },
+    { id: 'p5', text: '💡 [IA] Uji: Bressol del te verd matcha històric i el temple Byodoin (l\'edifici imprès a la moneda de 10 iens). Prop de Kyoto.', completed: false },
+    { id: 'p6', text: '💡 [IA] Koyasan: El mont sagrat budista, dormir en un temple gestionat pels monjos (shukubo) i recórrer el cementiri místic d\'Okunoin.', completed: false }
 ];
 
 const DEFAULT_OBSERVATIONS = [
-    { id: 'o1', text: 'ÔÜá´©Å No et deixis enredar per botigues/museus de figuretes i merxandatge (anime/manga), que n\'hi ha milers a tot arreu. El primer v├¡deo llarg de T├▓quio n\'estava ple. Tot i aix├¡, segur que t\'hi acabar├ás trobant igualment!', completed: false },
-    { id: 'o2', text: '­ƒÆí Consell: No cal deixar propina als restaurants al Jap├│; de fet, est├á mal vist i et perseguiran si te la deixes.', completed: false },
-    { id: 'o3', text: '­ƒÆí Consell: Porta sempre una bossa petita a sobre per guardar les teves escombraries (gaireb├® no hi ha papereres p├║bliques al carrer).', completed: false },
-    { id: 'o4', text: '­ƒÆí Consell: Respecta el silenci al transport p├║blic (posa el tel├¿fon en silenci├│s i evita parlar fort).', completed: false },
-    { id: 'o5', text: '­ƒÆí Consell: Porta sempre diners en efectiu a sobre, ja que molts llocs rurals, temples o petits onsens no accepten targeta.', completed: false }
+    { id: 'o1', text: '⚠️ No et deixis enredar per botigues/museus de figuretes i merxandatge (anime/manga), que n\'hi ha milers a tot arreu. El primer vídeo llarg de Tòquio n\'estava ple. Tot i així, segur que t\'hi acabaràs trobant igualment!', completed: false },
+    { id: 'o2', text: '💡 Consell: No cal deixar propina als restaurants al Japó; de fet, està mal vist i et perseguiran si te la deixes.', completed: false },
+    { id: 'o3', text: '💡 Consell: Porta sempre una bossa petita a sobre per guardar les teves escombraries (gairebé no hi ha papereres públiques al carrer).', completed: false },
+    { id: 'o4', text: '💡 Consell: Respecta el silenci al transport públic (posa el telèfon en silenci i evita parlar fort).', completed: false },
+    { id: 'o5', text: '💡 Consell: Porta sempre diners en efectiu a sobre, ja que molts llocs rurals, temples o petits onsens no accepten targeta.', completed: false }
 ];
 
 // --- APP STATE ---
@@ -450,6 +457,7 @@ const DEFAULT_OBSERVATIONS = [
 let state = {
     currentTab: 'itinerary',
     itineraryFilter: 'all',
+    budgetLimit: 2000,
     expenses: [],
     videos: [],
     tasks: [],
@@ -467,6 +475,7 @@ let routePolyline = null;
 // --- STATE MANAGEMENT (LOCAL STORAGE) ---
 
 function loadState() {
+    state.budgetLimit = parseInt(localStorage.getItem('japo_budget_limit')) || 2000;
     state.expenses = JSON.parse(localStorage.getItem('japo_expenses')) || DEFAULT_EXPENSES;
     state.videos = JSON.parse(localStorage.getItem('japo_videos')) || DEFAULT_VIDEOS;
     state.tasks = JSON.parse(localStorage.getItem('japo_tasks')) || DEFAULT_TASKS;
@@ -475,81 +484,81 @@ function loadState() {
     state.places = JSON.parse(localStorage.getItem('japo_places')) || DEFAULT_PLACES;
     state.observations = JSON.parse(localStorage.getItem('japo_observations')) || DEFAULT_OBSERVATIONS;
 
-    // Assegurar que la SIM card est├á present si l'usuari ja tenia dades guardades
+    // Assegurar que la SIM card està present si l'usuari ja tenia dades guardades
     const hasSimExpense = state.expenses.some(exp => exp.concept.toLowerCase().includes('sim'));
     if (!hasSimExpense) {
-        state.expenses.push({ id: 'sim-card-exp', category: 'Altres', concept: 'Targeta SIM internet Jap├│', amount: 100 });
+        state.expenses.push({ id: 'sim-card-exp', category: 'Altres', concept: 'Targeta SIM internet Japó', amount: 100, paid: false });
         saveState('expenses');
     }
 
     const hasSimTask = state.tasks.some(task => task.text.toLowerCase().includes('sim'));
     if (!hasSimTask) {
-        state.tasks.push({ id: 'sim-card-task', text: 'Comprar targeta SIM / eSIM per a internet al Jap├│ (~100 Ôé¼)', completed: false });
+        state.tasks.push({ id: 'sim-card-task', text: 'Comprar targeta SIM / eSIM per a internet al Japó (~100 €)', completed: false });
         saveState('tasks');
     }
 
-    // Afegir les noves tasques de maleta si no hi s├│n
+    // Afegir les noves tasques de maleta si no hi són
     const hasLuggageStrategy = state.tasks.some(task => task.id === 'luggage-strategy-task');
     if (!hasLuggageStrategy) {
-        state.tasks.push({ id: 'luggage-strategy-task', text: 'Decidir combinaci├│ de maletes (idealment 1 maleta de cabina + 1 motxilla per caminar)', completed: false });
-        state.tasks.push({ id: 'takkyubin-service-task', text: 'Consultar funcionament i preus del servei d\'enviament de maletes (Takkyubin / Yamato) per al Kumano', completed: false });
+        state.tasks.push({ id: 'luggage-strategy-task', text: 'Decidir combinació de maletes (idealment 1 maleta de cabina + 1 motxilla per caminar)', completed: false });
+        state.tasks.push({ id: 'takkyubin-service-task', text: 'Consultar funcionament i preus del servei d\'enviament de maletes (Ta-Q-Bin / Yamato)', completed: false });
         saveState('tasks');
     }
 
-    // Afegir la tasca dels bancs si no hi ├®s
+    // Afegir la tasca dels bancs si no hi és
     const hasBankTask = state.tasks.some(task => task.id === 'bank-commissions-task');
     if (!hasBankTask) {
-        state.tasks.push({ id: 'bank-commissions-task', text: 'Buscar targeta/banc sense comissions pel viatge (revisar Revolut, Wise o un compte de promoci├│ local)', completed: false });
+        state.tasks.push({ id: 'bank-commissions-task', text: 'Buscar targeta/banc sense comissions pel viatge (revisar Revolut, Wise o un compte de promoció local)', completed: false });
         saveState('tasks');
     }
 
-    // Afegir recursos de N26 si no hi s├│n
+    // Afegir recursos de N26 si no hi són
     const hasN26Resources = state.videos.some(vid => vid.id === 'n26-1');
     if (!hasN26Resources) {
         const n26Items = [
             {
                 id: 'n26-1',
-                title: 'Guia N26: Pagar amb targeta al Jap├│',
+                title: 'Guia N26: Pagar amb targeta al Japó',
                 url: 'https://n26.com/es-es/pagar-con-tarjeta-en-japon',
                 timestamp: '',
-                notes: 'Informaci├│ oficial sobre l\'├║s, tipus de canvi i comissions de la targeta N26 al Jap├│.'
+                notes: 'Informació oficial sobre l\'ús, tipus de canvi i comissions de la targeta N26 al Japó.'
             },
             {
                 id: 'n26-2',
-                title: 'Japonpedia: Targeta N26 al Jap├│',
+                title: 'Japonpedia: Targeta N26 al Japó',
                 url: 'https://japonpedia.com/tarjeta-n26-japon/',
                 timestamp: '',
-                notes: 'Guia pr├áctica de viatgers sobre l\'├║s de N26 en caixers i comer├ºos japonesos.'
+                notes: 'Guia pràctica de viatgers sobre l\'ús de N26 en caixers i comerços japonesos.'
             },
             {
                 id: 'n26-3',
                 title: 'Comiviajeros: Com funciona N26 a l\'estranger',
                 url: 'https://comiviajeros.com/tarjeta-n26-pagar-extranjero/',
                 timestamp: '',
-                notes: 'Comparativa i experi├¿ncies pr├áctiques d\'├║s de la targeta de viatge N26.'
+                notes: 'Comparativa i experiències pràctiques d\'ús de la targeta de viatge N26.'
             }
         ];
         state.videos.push(...n26Items);
         saveState('videos');
     }
 
-    // Afegir els nous elements de maleta si no hi s├│n
+    // Afegir els nous elements de maleta si no hi són
     const hasNewLuggageItems = state.luggage.some(item => item.id === 'l9');
     if (!hasNewLuggageItems) {
         const itemsToAdd = [
-            { id: 'l9', text: '1 o 2 maletes de cabina petites (idealment nom├®s 1 si ├®s possible)', completed: false },
-            { id: 'l10', text: 'Motxilla petita de dia (15-20L) per al senderisme a Kumano', completed: false },
-            { id: 'l11', text: 'Cantimplora o bossa d\'aigua (m├¡nim 1.5L, fa molta calor)', completed: false },
-            { id: 'l12', text: 'Bastons de trekking per a les baixades de pedra a Kumano', completed: false },
-            { id: 'l13', text: 'Roba interior i samarretes de secat r├ápid per rentar a m├á', completed: false },
+            { id: 'l9', text: '1 o 2 maletes de cabina petites (idealment només 1 si és possible)', completed: false },
+            { id: 'l10', text: 'Motxilla petita de dia (15-20L) per al senderisme', completed: false },
+            { id: 'l11', text: 'Cantimplora o bossa d\'aigua (mínim 1.5L, fa molta calor)', completed: false },
+            { id: 'l12', text: 'Bastons de trekking per a les baixades de muntanya', completed: false },
+            { id: 'l13', text: 'Roba interior i samarretes de secat ràpid per rentar a mà', completed: false },
             { id: 'l14', text: 'Gorra i ulleres de sol pel sol intens d\'agost', completed: false },
-            { id: 'l15', text: 'Protector solar resistent a la suor i repel┬Àlent de mosquits fort', completed: false }
+            { id: 'l15', text: 'Protector solar resistent a la suor i repel·lent de mosquits fort', completed: false }
         ];
         state.luggage.push(...itemsToAdd);
         saveState('luggage');
     }
 
-    // For├ºar l'actualitzaci├│ dels llocs per diferenciar recomanacions i afegir l'Osaka onsen
+    // Forçar l'actualització dels llocs per diferenciar recomanacions i afegir l'Osaka onsen
     const hasOsakaOnsen = state.places.some(item => item.id === 'p-osaka');
     const hasUriPrefix = state.places.some(item => item.text.includes('[Uri]'));
     if (!hasOsakaOnsen || !hasUriPrefix) {
@@ -559,6 +568,7 @@ function loadState() {
 }
 
 function saveState(key) {
+    if (key === 'budgetLimit' || !key) localStorage.setItem('japo_budget_limit', state.budgetLimit.toString());
     if (key === 'expenses' || !key) localStorage.setItem('japo_expenses', JSON.stringify(state.expenses));
     if (key === 'videos' || !key) localStorage.setItem('japo_videos', JSON.stringify(state.videos));
     if (key === 'tasks' || !key) localStorage.setItem('japo_tasks', JSON.stringify(state.tasks));
@@ -721,9 +731,10 @@ function initMap() {
         maxZoom: 20
     }).addTo(map);
 
-    // Filter out coordinates for plotting lines
+    // Filter out coordinates for plotting lines (Japan region only: Lat 30..46, Lng 128..146)
     const coordsList = DEFAULT_ITINERARY
         .filter(day => day.coords && day.coords.length === 2)
+        .filter(day => day.coords[0] >= 30 && day.coords[0] <= 46 && day.coords[1] >= 128 && day.coords[1] <= 146)
         .map(day => ({
             coords: day.coords,
             title: day.title,
@@ -782,15 +793,30 @@ function renderBudget() {
     tableBody.innerHTML = '';
 
     let totalSpent = 0;
+    let totalPaid = 0;
+    let totalPending = 0;
+    const limit = state.budgetLimit || 2000;
 
     state.expenses.forEach(exp => {
-        totalSpent += parseFloat(exp.amount);
+        const amt = parseFloat(exp.amount) || 0;
+        totalSpent += amt;
+        if (exp.paid) {
+            totalPaid += amt;
+        } else {
+            totalPending += amt;
+        }
 
         const row = document.createElement('tr');
+        const isPaid = exp.paid === true;
+        const statusBadge = isPaid 
+            ? `<button class="btn-toggle-paid paid" data-id="${exp.id}" style="background: rgba(80, 250, 123, 0.15); color: var(--accent-green); border: 1px solid rgba(80, 250, 123, 0.3); padding: 4px 10px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; font-weight: 600;">✅ Pagat</button>`
+            : `<button class="btn-toggle-paid pending" data-id="${exp.id}" style="background: rgba(255, 121, 198, 0.15); color: var(--accent-pink); border: 1px solid rgba(255, 121, 198, 0.3); padding: 4px 10px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; font-weight: 600;">⏳ Pendent</button>`;
+
         row.innerHTML = `
             <td><span class="expense-category-cell">${getCategoryEmoji(exp.category)} ${exp.category}</span></td>
             <td>${exp.concept}</td>
-            <td style="font-weight: 600;">${exp.amount} €</td>
+            <td style="font-weight: 600;">${amt.toLocaleString('ca-ES')} €</td>
+            <td>${statusBadge}</td>
             <td>
                 <button class="btn-delete-expense" data-id="${exp.id}" title="Eliminar despesa">
                     <i class="fa-regular fa-trash-can"></i>
@@ -800,28 +826,55 @@ function renderBudget() {
         tableBody.appendChild(row);
     });
 
-    // Update spent text and progress bar
-    document.getElementById('budget-spent-text').innerText = `${totalSpent.toLocaleString('ca-ES')} € gastats`;
-    
-    const limit = 1500;
+    // Update UI elements
+    const headerLimitEl = document.getElementById('budget-header-limit');
+    if (headerLimitEl) headerLimitEl.innerText = `${limit.toLocaleString('ca-ES')} €`;
+
+    const limitTextEl = document.getElementById('budget-limit-text');
+    if (limitTextEl) limitTextEl.innerText = `Límit: ${limit.toLocaleString('ca-ES')} €`;
+
+    const spentTextEl = document.getElementById('budget-spent-text');
+    if (spentTextEl) spentTextEl.innerText = `${totalSpent.toLocaleString('ca-ES')} € gastats`;
+
+    const paidTextEl = document.getElementById('budget-paid-text');
+    if (paidTextEl) paidTextEl.innerText = `✅ Pagat: ${totalPaid.toLocaleString('ca-ES')} €`;
+
+    const pendingTextEl = document.getElementById('budget-pending-text');
+    if (pendingTextEl) pendingTextEl.innerText = `⏳ Pendent: ${totalPending.toLocaleString('ca-ES')} €`;
+
     let percentage = (totalSpent / limit) * 100;
     if (percentage > 100) percentage = 100;
     
     const progressBar = document.getElementById('budget-progress-bar');
-    progressBar.style.width = `${percentage}%`;
+    if (progressBar) progressBar.style.width = `${percentage}%`;
 
     const statusMessage = document.getElementById('budget-status-message');
-    if (totalSpent > limit) {
-        progressBar.style.background = 'var(--accent-red)';
-        progressBar.style.boxShadow = '0 0 10px rgba(239, 68, 68, 0.5)';
-        statusMessage.innerHTML = `⚠️ Compte! Has superat el pressupost per <strong>${(totalSpent - limit)} €</strong>.`;
-        statusMessage.className = 'budget-status-message warning';
-    } else {
-        progressBar.style.background = 'linear-gradient(90deg, var(--accent-green), var(--accent-purple))';
-        progressBar.style.boxShadow = 'var(--glow-green)';
-        statusMessage.innerHTML = `Estàs dins del pressupost estimat! Et queden <strong>${(limit - totalSpent)} €</strong>.`;
-        statusMessage.className = 'budget-status-message';
+    if (statusMessage) {
+        if (totalSpent > limit) {
+            progressBar.style.background = 'var(--accent-red)';
+            progressBar.style.boxShadow = '0 0 10px rgba(239, 68, 68, 0.5)';
+            statusMessage.innerHTML = `⚠️ Compte! Has superat el pressupost per <strong>${(totalSpent - limit).toLocaleString('ca-ES')} €</strong>.`;
+            statusMessage.className = 'budget-status-message warning';
+        } else {
+            progressBar.style.background = 'linear-gradient(90deg, var(--accent-green), var(--accent-purple))';
+            progressBar.style.boxShadow = 'var(--glow-green)';
+            statusMessage.innerHTML = `Estàs dins del pressupost estimat! Et queden <strong>${(limit - totalSpent).toLocaleString('ca-ES')} €</strong>.`;
+            statusMessage.className = 'budget-status-message';
+        }
     }
+
+    // Toggle paid status listener
+    document.querySelectorAll('.btn-toggle-paid').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const id = btn.getAttribute('data-id');
+            const exp = state.expenses.find(e => e.id === id);
+            if (exp) {
+                exp.paid = !exp.paid;
+                saveState('expenses');
+                renderBudget();
+            }
+        });
+    });
 
     // Attach delete listeners
     document.querySelectorAll('.btn-delete-expense').forEach(btn => {
@@ -844,37 +897,59 @@ function getCategoryEmoji(cat) {
 
 function initBudgetForm() {
     const form = document.getElementById('expense-form');
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        const category = document.getElementById('expense-category').value;
-        const concept = document.getElementById('expense-concept').value;
-        const amount = parseFloat(document.getElementById('expense-amount').value);
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const category = document.getElementById('expense-category').value;
+            const concept = document.getElementById('expense-concept').value;
+            const amount = parseFloat(document.getElementById('expense-amount').value);
+            const paid = document.getElementById('expense-paid') ? document.getElementById('expense-paid').checked : false;
 
-        if (!concept || isNaN(amount)) return;
+            if (!concept || isNaN(amount)) return;
 
-        const newExpense = {
-            id: Date.now().toString(),
-            category,
-            concept,
-            amount
-        };
+            const newExpense = {
+                id: Date.now().toString(),
+                category,
+                concept,
+                amount,
+                paid
+            };
 
-        state.expenses.push(newExpense);
-        saveState('expenses');
-        renderBudget();
+            state.expenses.push(newExpense);
+            saveState('expenses');
+            renderBudget();
 
-        // Reset form
-        form.reset();
-    });
+            // Reset form
+            form.reset();
+        });
+    }
 
     const resetBtn = document.getElementById('btn-reset-expenses');
     if (resetBtn) {
         resetBtn.addEventListener('click', () => {
             if (confirm('Estàs segur que vols restablir les despeses per defecte? Es perdran els canvis manualment fets.')) {
-                state.expenses = [...DEFAULT_EXPENSES];
+                state.expenses = JSON.parse(JSON.stringify(DEFAULT_EXPENSES));
                 saveState('expenses');
                 renderBudget();
+            }
+        });
+    }
+
+    const editLimitBtn = document.getElementById('btn-edit-budget-limit');
+    if (editLimitBtn) {
+        editLimitBtn.addEventListener('click', () => {
+            const currentLimit = state.budgetLimit || 2000;
+            const newLimitStr = prompt('Introdueix el nou límit de pressupost (€):', currentLimit);
+            if (newLimitStr !== null) {
+                const newLimit = parseInt(newLimitStr);
+                if (!isNaN(newLimit) && newLimit > 0) {
+                    state.budgetLimit = newLimit;
+                    saveState('budgetLimit');
+                    renderBudget();
+                } else {
+                    alert('Si us plau, introdueix un número vàlid.');
+                }
             }
         });
     }
@@ -883,30 +958,34 @@ function initBudgetForm() {
 // 4. Videos Module
 function renderVideos() {
     const container = document.getElementById('video-cards-container');
+    if (!container) return;
     container.innerHTML = '';
 
     state.videos.forEach(vid => {
         const card = document.createElement('div');
         card.className = 'video-card glass-panel resource-card';
         
-        // Extract YouTube ID for potential thumbnail
         const ytId = getYoutubeId(vid.url);
-        const thumbHtml = ytId 
-            ? `<div style="background-image: url('https://img.youtube.com/vi/${ytId}/hqdefault.jpg'); height: 120px; background-size: cover; background-position: center; border-radius: 8px; margin-bottom: 12px; border: 1px solid var(--border-glass)"></div>`
-            : '';
+        let mediaHtml = '';
+
+        if (ytId) {
+            mediaHtml = `<div class="video-embed-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; margin-bottom: 12px; border: 1px solid var(--border-glass);">
+                <iframe src="https://www.youtube.com/embed/${ytId}" title="${vid.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top:0; left:0; width: 100%; height: 100%;"></iframe>
+            </div>`;
+        }
 
         card.innerHTML = `
             <div>
-                ${thumbHtml}
+                ${mediaHtml}
                 <div class="resource-top">
                     <h4>${vid.title}</h4>
                     ${vid.timestamp ? `<span class="resource-timestamp"><i class="fa-regular fa-clock"></i> Minut: ${vid.timestamp}</span>` : ''}
                 </div>
-                <p class="resource-notes">${vid.notes || 'Sense anotacions.'}</p>
+                <p class="resource-notes" style="margin-top: 8px;">${vid.notes || 'Sense anotacions.'}</p>
             </div>
-            <div class="resource-actions">
+            <div class="resource-actions" style="margin-top: 12px; display: flex; justify-content: space-between; align-items: center;">
                 <a href="${vid.url}" target="_blank" class="resource-link">
-                    <i class="fa-brands fa-youtube"></i> Veure vídeo
+                    <i class="fa-brands fa-youtube"></i> Obrir a YouTube
                 </a>
                 <button class="btn-delete-resource" data-id="${vid.id}" title="Eliminar recurs">
                     <i class="fa-regular fa-trash-can"></i>
