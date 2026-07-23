@@ -263,23 +263,23 @@ h1, h2, h3, .brand-text {
     background: var(--bg-card-hover);
 }
 
-/* Section Header with Small Japanese Image Badge */
+/* Section Header with 2-Floor Tall Japanese Image Badge */
 .section-header-clean {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 18px;
     margin-bottom: 24px;
-    padding-bottom: 14px;
+    padding-bottom: 16px;
     border-bottom: 2px solid rgba(214, 48, 49, 0.12);
 }
 
 .section-title-badge {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    border-radius: 16px;
     object-fit: cover;
     border: 3px solid var(--accent-red);
-    box-shadow: 0 6px 16px rgba(214, 48, 49, 0.2);
+    box-shadow: 0 6px 18px rgba(214, 48, 49, 0.15);
     flex-shrink: 0;
 }
 
@@ -382,19 +382,20 @@ h1, h2, h3, .brand-text {
     z-index: 5;
 }
 
-.timeline-item.overlap .timeline-marker {
-    background-color: var(--accent-purple);
-    box-shadow: 0 0 8px var(--accent-purple);
+.timeline-item.overlap .timeline-marker,
+.timeline-item.shared .timeline-marker {
+    background-color: var(--indigo-navy);
+    box-shadow: 0 0 6px rgba(27, 42, 74, 0.4);
 }
 
 .timeline-item.uri .timeline-marker {
-    background-color: var(--accent-green);
-    box-shadow: 0 0 8px var(--accent-green);
+    background-color: var(--accent-red);
+    box-shadow: 0 0 6px rgba(214, 48, 49, 0.4);
 }
 
 .timeline-item.banana .timeline-marker {
-    background-color: var(--accent-blue);
-    box-shadow: 0 0 8px var(--accent-blue);
+    background-color: var(--sumi-black);
+    box-shadow: 0 0 6px rgba(17, 19, 24, 0.4);
 }
 
 .day-card {
@@ -423,7 +424,7 @@ h1, h2, h3, .brand-text {
     font-size: 13px;
     font-weight: 700;
     text-transform: uppercase;
-    color: var(--accent-pink);
+    color: var(--accent-red);
     letter-spacing: 0.5px;
     display: block;
 }
