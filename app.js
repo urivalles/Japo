@@ -13,7 +13,12 @@ const DEFAULT_ITINERARY = [
         accommodation: '✈️ Vol internacional (a bord)',
         type: 'uri',
         badge: 'uri',
-        coords: [41.2974, 2.0833] // BCN
+        coords: [41.2974, 2.0833],
+        secretWisdom: {
+            kanji: "一期一会",
+            romaji: "Ichigo Ichie",
+            translation: "Cada trobada i cada viatge és únic i irrepetible. Viu el moment present com si fos l'únic a la teva vida."
+        }
     },
     {
         date: '2026-08-06',
@@ -28,7 +33,12 @@ const DEFAULT_ITINERARY = [
         accommodation: '🏨 Hostel Ueno / Asakusa',
         type: 'uri',
         badge: 'uri',
-        coords: [35.7111, 139.7770] // Ueno
+        coords: [35.7111, 139.7770],
+        secretWisdom: {
+            kanji: "初心",
+            romaji: "Shoshin",
+            translation: "La ment de principiant: mantén la ment oberta, neta i curiosa, lliure de judicis previs per deixar-te sorprendre."
+        }
     },
     {
         date: '2026-08-07',
@@ -42,7 +52,12 @@ const DEFAULT_ITINERARY = [
         accommodation: '🏨 Hostel Ueno / Asakusa',
         type: 'uri',
         badge: 'uri',
-        coords: [35.7147, 139.7967] // Asakusa
+        coords: [35.7147, 139.7967],
+        secretWisdom: {
+            kanji: "侘寂",
+            romaji: "Wabi-Sabi",
+            translation: "Troba la bellesa en la senzillesa, el pas del temps i les imperfeccions naturals del món."
+        }
     },
     {
         date: '2026-08-08',
@@ -56,7 +71,12 @@ const DEFAULT_ITINERARY = [
         accommodation: '🏨 Hostel Ueno / Asakusa',
         type: 'uri',
         badge: 'uri',
-        coords: [35.3192, 139.5467] // Kamakura
+        coords: [35.3192, 139.5467],
+        secretWisdom: {
+            kanji: "森林浴",
+            romaji: "Shinrin-yoku",
+            translation: "Bany de bosc: submergeix-te en el silenci dels arbres i deixa que la natura et renovi l'energia."
+        }
     },
     {
         date: '2026-08-09',
@@ -71,7 +91,12 @@ const DEFAULT_ITINERARY = [
         accommodation: '🏨 Guesthouse Estació Utsunomiya',
         type: 'uri',
         badge: 'uri',
-        coords: [36.5551, 139.8826] // Utsunomiya
+        coords: [36.5551, 139.8826],
+        secretWisdom: {
+            kanji: "生き甲斐",
+            romaji: "Ikigai",
+            translation: "La teva raó de ser: allò que et fa bategar el cor quan t'aixeques al matí amb ganes d'explorar."
+        }
     },
     {
         date: '2026-08-10',
@@ -85,7 +110,12 @@ const DEFAULT_ITINERARY = [
         accommodation: '🏨 Guesthouse Estació Utsunomiya',
         type: 'uri',
         badge: 'uri',
-        coords: [36.7645, 139.4912] // Mt Nantai
+        coords: [36.7645, 139.4912],
+        secretWisdom: {
+            kanji: "木漏れ日",
+            romaji: "Komorebi",
+            translation: "La llum del sol que filtra entre les fulles: aprèn a veure la poesia en els raigs de llum fugaços."
+        }
     },
     {
         date: '2026-08-11',
@@ -100,7 +130,12 @@ const DEFAULT_ITINERARY = [
         accommodation: '🏨 Guesthouse Estació Utsunomiya',
         type: 'uri',
         badge: 'uri',
-        coords: [36.7845, 139.4448] // Senjogahara
+        coords: [36.7845, 139.4448],
+        secretWisdom: {
+            kanji: "金継ぎ",
+            romaji: "Kintsugi",
+            translation: "Les taques i cicatrius del camí et fan més fort i valuós. L'art de la vida és omplir les esquerdes d'or."
+        }
     },
     {
         date: '2026-08-12',
@@ -114,7 +149,12 @@ const DEFAULT_ITINERARY = [
         accommodation: '🏨 Guesthouse Estació Utsunomiya',
         type: 'uri',
         badge: 'uri',
-        coords: [36.7581, 139.5989] // Nikko Toshogu
+        coords: [36.7581, 139.5989],
+        secretWisdom: {
+            kanji: "改善",
+            romaji: "Kaizen",
+            translation: "Millora contínua: un petit pas cada dia et porta a la cimera de la muntanya més alta."
+        }
     },
     {
         date: '2026-08-13',
@@ -128,7 +168,12 @@ const DEFAULT_ITINERARY = [
         accommodation: '🏨 IMANO TOKYO HOSTEL (Compartit)',
         type: 'overlap',
         badge: 'shared',
-        coords: [35.6938, 139.7032] // Shinjuku
+        coords: [35.6938, 139.7032],
+        secretWisdom: {
+            kanji: "幽玄",
+            romaji: "Yugen",
+            translation: "La bellesa profunda i misteriosa: hi ha coses que no s'expliquen amb paraules, sinó que se senten al cor."
+        }
     },
     {
         date: '2026-08-14',
@@ -142,7 +187,12 @@ const DEFAULT_ITINERARY = [
         accommodation: '🏨 IMANO TOKYO HOSTEL (Compartit)',
         type: 'overlap',
         badge: 'shared',
-        coords: [35.6580, 139.7016] // Shibuya
+        coords: [35.6580, 139.7016],
+        secretWisdom: {
+            kanji: "物の哀れ",
+            romaji: "Mono no Aware",
+            translation: "La bellesa d'allò efímer: com la flor del cirerer, valora la fragilitat d'un instant que no durarà per sempre."
+        }
     },
     {
         date: '2026-08-15',
@@ -156,7 +206,12 @@ const DEFAULT_ITINERARY = [
         accommodation: '🏨 CABIN HOUSE YADO FUJINOMIYA (Compartit)',
         type: 'overlap',
         badge: 'shared',
-        coords: [35.2238, 138.6133] // Fujinomiya
+        coords: [35.2238, 138.6133],
+        secretWisdom: {
+            kanji: "桜梅桃李",
+            romaji: "Oubaitori",
+            translation: "Cirerer, prunera, presseguer i albercoquer: no et comparis amb ningú; cadascú floreix a la seva manera."
+        }
     },
     {
         date: '2026-08-16',
@@ -169,7 +224,12 @@ const DEFAULT_ITINERARY = [
         accommodation: '🏨 CABIN HOUSE YADO FUJINOMIYA (Compartit)',
         type: 'overlap',
         badge: 'shared',
-        coords: [35.3606, 138.7274] // Mt Fuji
+        coords: [35.3606, 138.7274],
+        secretWisdom: {
+            kanji: "我慢",
+            romaji: "Gaman",
+            translation: "Perseverança digna: resisteix les pujades dures amb serenor, fortalesa interior i un somriure intern."
+        }
     },
     {
         date: '2026-08-17',
@@ -183,7 +243,12 @@ const DEFAULT_ITINERARY = [
         accommodation: '🏨 GUESTHOUSE OUKA (Uri)',
         type: 'uri',
         badge: 'uri',
-        coords: [36.1461, 137.2520] // Takayama
+        coords: [36.1461, 137.2520],
+        secretWisdom: {
+            kanji: "なんくるないさ",
+            romaji: "Nankurunaisa",
+            translation: "Amb el temps i l'actitud adequada, tot s'ordena. Fluixa amb el camí sense angoixar-te."
+        }
     },
     {
         date: '2026-08-17',
@@ -194,7 +259,12 @@ const DEFAULT_ITINERARY = [
         accommodation: 'Hostel a Odawara',
         type: 'banana',
         badge: 'banana',
-        coords: [35.2536, 139.1553] // Odawara
+        coords: [35.2536, 139.1553],
+        secretWisdom: {
+            kanji: "知足",
+            romaji: "Chisoku",
+            translation: "Saber que en tens prou: la veritable riquesa és gaudir plenament de la senzillesa de cada moment."
+        }
     },
     {
         date: '2026-08-18',
@@ -207,7 +277,12 @@ const DEFAULT_ITINERARY = [
         accommodation: '🏨 GUESTHOUSE OUKA (Uri)',
         type: 'uri',
         badge: 'uri',
-        coords: [36.1461, 137.2520]
+        coords: [36.1461, 137.2520],
+        secretWisdom: {
+            kanji: "和",
+            romaji: "Wa",
+            translation: "Harmonia: cerca l'equilibri entre la teva pau interior, els teus companys de ruta i el món."
+        }
     },
     {
         date: '2026-08-18',
@@ -218,7 +293,12 @@ const DEFAULT_ITINERARY = [
         accommodation: 'Hostel a Nagoya',
         type: 'banana',
         badge: 'banana',
-        coords: [35.1815, 136.9066] // Nagoya
+        coords: [35.1815, 136.9066],
+        secretWisdom: {
+            kanji: "無常",
+            romaji: "Mujo",
+            translation: "Impermanència: tot canvia constantment. Accepta el canvi com la millor oportunitat per aprendre."
+        }
     },
     {
         date: '2026-08-19',
@@ -232,7 +312,12 @@ const DEFAULT_ITINERARY = [
         accommodation: '🏨 GUESTHOUSE OUKA (Compartit)',
         type: 'overlap',
         badge: 'shared',
-        coords: [36.1461, 137.2520]
+        coords: [36.1461, 137.2520],
+        secretWisdom: {
+            kanji: "温故知新",
+            romaji: "Onko Chishin",
+            translation: "Aprendre del passat per entendre el futur: observa la història antiga per donar sentit al teu propi camí."
+        }
     },
     {
         date: '2026-08-20',
@@ -246,7 +331,12 @@ const DEFAULT_ITINERARY = [
         accommodation: '🏨 BLUE HOUR KANAZAWA (Uri)',
         type: 'uri',
         badge: 'uri',
-        coords: [36.5613, 136.6562] // Kanazawa
+        coords: [36.5613, 136.6562],
+        secretWisdom: {
+            kanji: "七転び八起き",
+            romaji: "Nana korobi ya oki",
+            translation: "Caure set cops, aixecar-se vuit: la perseverança no és no cansar-se mai, sinó tornar a començar sempre."
+        }
     },
     {
         date: '2026-08-20',
@@ -257,7 +347,12 @@ const DEFAULT_ITINERARY = [
         accommodation: 'Hostel a Kyoto',
         type: 'banana',
         badge: 'banana',
-        coords: [35.0116, 135.7681] // Kyoto
+        coords: [35.0116, 135.7681],
+        secretWisdom: {
+            kanji: "心技体",
+            romaji: "Shin-Gi-Tai",
+            translation: "Ment, tècnica i cos: l'equilibri perfecte per afrontar qualsevol repte amb èxit."
+        }
     },
     {
         date: '2026-08-21',
@@ -272,7 +367,12 @@ const DEFAULT_ITINERARY = [
         accommodation: '🏨 SHIJO GUESTHOUSE HIVE (Compartit)',
         type: 'overlap',
         badge: 'shared',
-        coords: [35.0116, 135.7681] // Kyoto
+        coords: [35.0116, 135.7681],
+        secretWisdom: {
+            kanji: "自他共栄",
+            romaji: "Jita Kyoei",
+            translation: "Prosperitat mútua: viatjar en equip és sumar forces, cuidar de l'altre i créixer junts."
+        }
     },
     {
         date: '2026-08-22',
@@ -285,7 +385,12 @@ const DEFAULT_ITINERARY = [
         accommodation: '🏨 SHIJO GUESTHOUSE HIVE (Compartit)',
         type: 'overlap',
         badge: 'shared',
-        coords: [34.9671, 135.7727] // Fushimi
+        coords: [34.9671, 135.7727],
+        secretWisdom: {
+            kanji: "不倒翁",
+            romaji: "Daruma Spirit",
+            translation: "L'esperit del Daruma: fixa un objectiu clar, mantén la mirada en el futur i no et rendeixis mai."
+        }
     },
     {
         date: '2026-08-23',
@@ -299,7 +404,12 @@ const DEFAULT_ITINERARY = [
         accommodation: '🏨 ACRO CAPSULE NAMBA (Compartit)',
         type: 'overlap',
         badge: 'shared',
-        coords: [34.6687, 135.5013] // Namba
+        coords: [34.6687, 135.5013],
+        secretWisdom: {
+            kanji: "花鳥風月",
+            romaji: "Kachou Fuugetsu",
+            translation: "Descobrir-se a un mateix en la natura: contempla la bellesa de les flors, els ocells, el vent i la lluna."
+        }
     },
     {
         date: '2026-08-24',
@@ -312,7 +422,12 @@ const DEFAULT_ITINERARY = [
         accommodation: '🏨 ACRO CAPSULE NAMBA (Compartit)',
         type: 'overlap',
         badge: 'shared',
-        coords: [34.6525, 135.5063] // Shinsekai
+        coords: [34.6525, 135.5063],
+        secretWisdom: {
+            kanji: "残心",
+            romaji: "Zanshin",
+            translation: "Atenció plena: quan acabis una etapa o un dia, mantén la ment desperta i conscient del moment."
+        }
     },
     {
         date: '2026-08-25',
@@ -702,6 +817,21 @@ function renderItinerary() {
             activitiesHtml += `<li class="day-activity-item">${act}</li>`;
         });
 
+        const secretHtml = day.secretWisdom ? `
+            <div class="secret-wisdom-wrapper">
+                <button class="btn-reveal-secret" data-day="${day.dayLabel}">
+                    <i class="fa-solid fa-scroll"></i> 🔮 Desvelar Consell Secret del Dia <span class="secret-tag">秘密</span>
+                </button>
+                <div class="secret-wisdom-card hidden" id="secret-${day.dayLabel}">
+                    <div class="secret-header">
+                        <span class="secret-kanji">${day.secretWisdom.kanji}</span>
+                        <span class="secret-romaji">${day.secretWisdom.romaji}</span>
+                    </div>
+                    <p class="secret-translation">"${day.secretWisdom.translation}"</p>
+                </div>
+            </div>
+        ` : '';
+
         item.innerHTML = `
             <div class="timeline-marker"></div>
             <div class="day-card glass-panel">
@@ -715,10 +845,29 @@ function renderItinerary() {
                     <h3 class="day-title">${day.title}</h3>
                     <ul class="day-activity-list">${activitiesHtml}</ul>
                     ${day.accommodation ? `<div class="day-accommodation"><i class="fa-solid fa-hotel"></i> ${day.accommodation}</div>` : ''}
+                    ${secretHtml}
                 </div>
             </div>
         `;
         container.appendChild(item);
+    });
+
+    // Attach click listeners to secret wisdom reveal buttons
+    document.querySelectorAll('.btn-reveal-secret').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const dayId = btn.getAttribute('data-day');
+            const card = document.getElementById(`secret-${dayId}`);
+            if (card) {
+                const isHidden = card.classList.contains('hidden');
+                if (isHidden) {
+                    card.classList.remove('hidden');
+                    btn.innerHTML = `<i class="fa-solid fa-book-open"></i> 📜 Consell Revelat <span class="secret-tag">秘密</span>`;
+                } else {
+                    card.classList.add('hidden');
+                    btn.innerHTML = `<i class="fa-solid fa-scroll"></i> 🔮 Desvelar Consell Secret del Dia <span class="secret-tag">秘密</span>`;
+                }
+            }
+        });
     });
 }
 

@@ -975,6 +975,84 @@ h1, h2, h3, .brand-text {
     }
 }
 
+/* Secret Wisdom Parchment Style */
+.secret-wisdom-wrapper {
+    margin-top: 14px;
+}
+
+.btn-reveal-secret {
+    background: rgba(214, 48, 49, 0.06);
+    color: var(--accent-red);
+    border: 1px dashed var(--accent-red);
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.25s ease;
+}
+
+.btn-reveal-secret:hover {
+    background: rgba(214, 48, 49, 0.12);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(214, 48, 49, 0.15);
+}
+
+.secret-tag {
+    background: var(--accent-red);
+    color: #ffffff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-left: 4px;
+}
+
+.secret-wisdom-card {
+    margin-top: 10px;
+    background: linear-gradient(135deg, #fffdf8 0%, #fdfbf5 100%);
+    border: 1.5px solid rgba(214, 48, 49, 0.3);
+    border-radius: 10px;
+    padding: 14px 18px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06), inset 0 0 10px rgba(214, 48, 49, 0.04);
+    animation: fadeIn 0.35s ease forwards;
+}
+
+.secret-wisdom-card.hidden {
+    display: none;
+}
+
+.secret-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 6px;
+}
+
+.secret-kanji {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--accent-red);
+}
+
+.secret-romaji {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--sumi-black);
+    font-style: italic;
+}
+
+.secret-translation {
+    font-size: 0.9rem;
+    color: var(--text-main);
+    line-height: 1.5;
+    margin: 0;
+}
+
 .add-task-bar input {
     flex-grow: 1;
     background-color: rgba(0, 0, 0, 0.2);
