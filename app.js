@@ -3,389 +3,400 @@
 const DEFAULT_ITINERARY = [
     {
         date: '2026-08-05',
-        dayLabel: 'Dia 1',
+        dayLabel: 'Dia 0',
         weekday: 'Dimecres',
-        title: 'Sortida cap al Japó (Tòquio)',
+        title: 'Sortida cap al Japó',
         activities: [
-            'Vol de sortida des de Barcelona (BCN) cap a Tòquio (entrada per Tòquio - Narita o Haneda, segons l\'estratègia open-jaw).',
-            'Nit a bord. Comença el viatge!'
+            'Vol de sortida des de Barcelona (BCN) cap a Tòquio (Shenzhen Airlines, 12:20h).',
+            'Nit a bord.'
         ],
         accommodation: '✈️ Vol internacional (a bord)',
-        type: 'kumano',
+        type: 'titon',
         badge: 'titon',
-        coords: [35.7767, 140.3864] // Tokyo Narita
+        coords: [41.2974, 2.0833] // BCN
     },
     {
         date: '2026-08-06',
-        dayLabel: 'Dia 2',
+        dayLabel: 'Dia 1',
         weekday: 'Dijous',
-        title: 'Arribada a Tòquio i trasllat a Tanabe',
+        title: 'Arribada a Narita i establiment a Ueno',
         activities: [
-            'Arribada a Tòquio de bon matí.',
-            'Trasllat en Shinkansen cap a Shin-Osaka i connexió amb el tren JR Kuroshio fins a <strong>Kii-Tanabe</strong>, la porta del Kumano Kodo.',
-            'Arribada al hostel, brífing del camí i descans.'
+            'Arribada a Narita a les 18:00h.',
+            'Tren Keisei Skyliner directe a Ueno (41 minuts).',
+            'Check-in, sopar de ramen i primer descans.'
         ],
-        accommodation: '🏨 Hostel a Tanabe',
-        type: 'kumano',
+        accommodation: '🏨 Hostel Ueno / Asakusa',
+        type: 'titon',
         badge: 'titon',
-        coords: [33.7285, 135.3768]
+        coords: [35.7111, 139.7770] // Ueno
     },
     {
         date: '2026-08-07',
-        dayLabel: 'Dia 3',
+        dayLabel: 'Dia 2',
         weekday: 'Divendres',
-        title: 'Kumano Kodo: Takijiri-oji a Tsugizakura-oji',
+        title: 'Tòquio: Asakusa i Matsuri',
         activities: [
-            'Agafar el bus local cap a <strong>Takijiri-oji</strong> (inici oficial del camí de pelegrinatge).',
-            'Primera caminada exigent pel bosc sagrat de Kumano, passant pel poblet de Takahara.',
-            'Arribada i descans a Tsugizakura.'
+            'Exploració dels mercats d\'Ueno (Ameyoko) i temple Sensō-ji d\'Asakusa.',
+            'Al vespre: Festival Hachioji Matsuri (carrosses, fanals i tambors Taiko).'
         ],
-        accommodation: '🏨 Minshuku local (Tsugizakura)',
-        type: 'kumano',
+        accommodation: '🏨 Hostel Ueno / Asakusa',
+        type: 'titon',
         badge: 'titon',
-        coords: [33.8055, 135.6122]
+        coords: [35.7147, 139.7967] // Asakusa
     },
     {
         date: '2026-08-08',
-        dayLabel: 'Dia 4',
+        dayLabel: 'Dia 3',
         weekday: 'Dissabte',
-        title: 'Kumano Kodo: Tsugizakura-oji a Kumano Hongu Taisha',
+        title: 'Excursió: Platja i Mar (Kamakura)',
         activities: [
-            'Etapa llarga de senderisme per camins de pedra i boscos de cedres gegants.',
-            'Arribada al gran santuari <strong>Kumano Hongu Taisha</strong>, el cor espiritual del Kumano.',
-            'Visita al Torii monumental d\'Oyunohara.'
+            'Tren directe JR Tokaido Line des d\'Ueno fins a la costa de Kamakura / Illa d\'Enoshima.',
+            'Passejada vora la platja, bosc humit i peix fresc.'
         ],
-        accommodation: '🏨 Minshuku / Guesthouse a Hongu',
-        type: 'kumano',
+        accommodation: '🏨 Hostel Ueno / Asakusa',
+        type: 'titon',
         badge: 'titon',
-        coords: [33.8403, 135.7738]
+        coords: [35.3192, 139.5467] // Kamakura
     },
     {
         date: '2026-08-09',
-        dayLabel: 'Dia 5',
+        dayLabel: 'Dia 4',
         weekday: 'Diumenge',
-        title: 'Kumano Kodo: Descans a Yunomine Onsen',
+        title: 'Cap a Utsunomiya (El Hub del Nord)',
         activities: [
-            'Caminada curta o transport fins a <strong>Yunomine Onsen</strong>, un dels pobles termals més antics del Japó.',
-            'Possibilitat de banyar-se al cèlebre onsen sagrat de <i>Tsuboyu</i> (Patrimoni de la Humanitat).',
-            'Cuinar ous i verdures a les aigües termals del riu.'
+            'Matí de passeig relaxat per Asakusa.',
+            'Migdia: tren local JR Utsunomiya Line directe a Utsunomiya.',
+            'Tarda: Check-in a la guesthouse. Visita al Bosc de Bambú de Wakayama Farm i la Cova Subterrània d\'Oya.'
         ],
-        accommodation: '🏨 Ryokan / Minshuku a Yunomine Onsen',
-        type: 'kumano',
+        accommodation: '🏨 Guesthouse Estació Utsunomiya',
+        type: 'titon',
         badge: 'titon',
-        coords: [33.8315, 135.7578]
+        coords: [36.5551, 139.8826] // Utsunomiya
     },
     {
         date: '2026-08-10',
-        dayLabel: 'Dia 6',
+        dayLabel: 'Dia 5',
         weekday: 'Dilluns',
-        title: 'Kumano Kodo: Koguchi',
+        title: 'Ascensió al Mont Nantai (Nikko)',
         activities: [
-            'Desplaçament o senderisme fins a la petita vall de <strong>Koguchi</strong>.',
-            'Vistes verges de rius cristal·lins i muntanyes rurals.',
-            'Descans en allotjament local de muntanya.'
+            'Tren local a Nikko + bus al Llac Chuzenji.',
+            'Ascensió al Mont Nantai (2.486 m). Volcà sagrat, estil Pedraforca.'
         ],
-        accommodation: '🏨 Lodge / Minshuku a Koguchi',
-        type: 'kumano',
+        accommodation: '🏨 Guesthouse Estació Utsunomiya',
+        type: 'titon',
         badge: 'titon',
-        coords: [33.7228, 135.8450]
+        coords: [36.7645, 139.4912] // Mt Nantai
     },
     {
         date: '2026-08-11',
-        dayLabel: 'Dia 7',
+        dayLabel: 'Dia 6',
         weekday: 'Dimarts',
-        title: 'Kumano Kodo: Koguchi a Nachisan (Cascada Nachi)',
+        title: 'Okunikko: Natura i Termes',
         activities: [
-            'L\'etapa final i més exigent de muntanya (creuant el famós pas d\'Ogumotori-goe).',
-            'Arribada espectacular a la cascada de <strong>Nachi Falls</strong> i el temple de tres pisos de color vermell.',
-            'Trasllat al vespre fins al poble coster de Katsuura.'
+            'Senderisme per la marjal de Senjogahara i cascades de Kegon.',
+            'Tarda de relaxació en un onsen a Yunomoto.',
+            'Sopar de gyozas tradicionals a Utsunomiya.'
         ],
-        accommodation: '🏨 Guesthouse a Katsuura',
-        type: 'kumano',
+        accommodation: '🏨 Guesthouse Estació Utsunomiya',
+        type: 'titon',
         badge: 'titon',
-        coords: [33.6750, 135.8856]
+        coords: [36.7845, 139.4448] // Senjogahara
     },
     {
         date: '2026-08-12',
-        dayLabel: 'Dia 8',
+        dayLabel: 'Dia 7',
         weekday: 'Dimecres',
-        title: 'Viatge en tren cap a Tòquio',
+        title: 'Nikko Patrimoni de la Humanitat',
         activities: [
-            'Visita opcional al mercat de peix de Katsuura al matí.',
-            'Trajecte de tren Shinkansen cap a <strong>Tòquio</strong> per establir el camp base.',
-            'Check-in al hostel i primera presa de contacte amb el Tòquio modern.'
+            'Recorregut cultural per l\'àrea dels temples (Toshogu) entre xipressos centenaris.',
+            'Camí de les estàtues Jizo de Kanmangafuchi.'
         ],
-        accommodation: '🏨 IMANO TOKYO HOSTEL (Shinjuku)',
-        type: 'kumano',
+        accommodation: '🏨 Guesthouse Estació Utsunomiya',
+        type: 'titon',
         badge: 'titon',
-        coords: [35.6938, 139.7032]
+        coords: [36.7581, 139.5989] // Nikko Toshogu
     },
     {
         date: '2026-08-13',
-        dayLabel: 'Dia 9',
+        dayLabel: 'Dia 8',
         weekday: 'Dijous',
         title: 'Tòquio: Trobada amb en Banana',
         activities: [
-            'Arribada d\'en Banana al Japó a la tarda (vol via Seül). Us trobeu al hostel.',
-            '<strong>19:30</strong>: Free tour per <strong>Shinjuku</strong> (Estació de Tochomae). Neons, vida nocturna i oci contemporani.'
+            'Checkout a Utsunomiya i tren local cap a Tòquio (Shinjuku).',
+            '17:30 h: Retrobament amb en Banana. Free tours per Shinjuku, Asakusa i Shibuya.'
         ],
         accommodation: '🏨 IMANO TOKYO HOSTEL (Compartit)',
         type: 'overlap',
         badge: 'shared',
-        coords: [35.6895, 139.6917]
+        coords: [35.6938, 139.7032] // Shinjuku
     },
     {
         date: '2026-08-14',
-        dayLabel: 'Dia 10',
+        dayLabel: 'Dia 9',
         weekday: 'Divendres',
-        title: 'Tòquio amb en Banana: Asakusa i Shibuya',
+        title: 'Tòquio compartit',
         activities: [
-            '<strong>9:30</strong>: Free Tour per <strong>Asakusa</strong> (Senso-ji i barris antics).',
-            'Migdia: Parc Ueno i passeig pel barri de la tecnologia de <strong>Akihabara</strong>.',
-            '<strong>18:30</strong>: Free Tour per <strong>Shibuya</strong> (l\'encreuament més famós).'
+            'Free Tour i visites guiades per la ciutat amb en Banana.',
+            'Continuació de visites per barris icònics.'
         ],
         accommodation: '🏨 IMANO TOKYO HOSTEL (Compartit)',
         type: 'overlap',
         badge: 'shared',
-        coords: [35.7147, 139.7967]
+        coords: [35.6580, 139.7016] // Shibuya
     },
     {
         date: '2026-08-15',
-        dayLabel: 'Dia 11',
+        dayLabel: 'Dia 10',
         weekday: 'Dissabte',
-        title: 'Tòquio modern i viatge a Fujinomiya',
+        title: 'Cap al Mont Fuji',
         activities: [
-            'Matí: Santuari Meiji i barri jove de Harajuku (Parc Yoyogi).',
-            'Migdia: Barri retro de Yanaka o vistes de la Torre de Tòquio.',
-            'Al vespre, darrer Shinkansen cap a la zona de Fujinomiya per preparar l\'excursió del Fuji.'
+            'Aproximació a Fujinomiya.',
+            'Preparació per a l\'ascens de l\'endemà. Base camp.'
         ],
-        accommodation: '🏨 Cabin House Yado Fujinomiya (Compartit)',
+        accommodation: '🏨 CABIN HOUSE YADO FUJINOMIYA (Compartit)',
         type: 'overlap',
         badge: 'shared',
-        coords: [35.2238, 138.6133]
+        coords: [35.2238, 138.6133] // Fujinomiya
     },
     {
         date: '2026-08-16',
-        dayLabel: 'Dia 12',
+        dayLabel: 'Dia 11',
         weekday: 'Diumenge',
-        title: 'Mont Fuji (Versió lleugera a Kawaguchiko)',
+        title: 'Cim del Mont Fuji',
         activities: [
-            '<strong>Titon (Tu)</strong>: Opció lleugera. Viatge cap als llacs de <strong>Kawaguchiko</strong> per veure el Mont Fuji reflectit al llac, estalviant la duresa física i el cost de fer nit a dalt.',
-            '<strong>Banana</strong>: Puja en bus a la 5a estació de Fujinomiya per fer el cim i dormir al refugi (Fujikan Hut a 3.740m).'
+            'Ascensió conjunta i descens al Mont Fuji (Ruta Fujinomiya).'
         ],
-        accommodation: '🏨 Cabin House Yado Fujinomiya (Titon)',
-        type: 'banana',
-        badge: 'titon',
-        coords: [35.5010, 138.7583] // Kawaguchiko
+        accommodation: '🏨 CABIN HOUSE YADO FUJINOMIYA (Compartit)',
+        type: 'overlap',
+        badge: 'shared',
+        coords: [35.3606, 138.7274] // Mt Fuji
     },
     {
         date: '2026-08-17',
-        dayLabel: 'Dia 13',
+        dayLabel: 'Dia 12',
         weekday: 'Dilluns',
-        title: 'Viatge cap a Kyoto (Solo)',
+        title: 'Arribada a Takayama i Ta-Q-Bin',
         activities: [
-            '<strong>Titon (Tu)</strong>: Viatge directe cap a <strong>Kyoto</strong> per començar el tram en solitari (saltant-te Hakone i Nagoya per centrar-te en un ritme més relaxat i cultural).',
-            'Check-in al guesthouse i primers passeigs de reconeixement de la capital tradicional.'
+            'Titon: Viatge a Takayama. Enviament de maleta gran a Kyoto via Ta-Q-Bin.',
+            'Banana: Viatja sol cap a Odawara.'
         ],
-        accommodation: '🏨 Hostel / Guesthouse a Kyoto (Titon)',
-        type: 'banana',
+        accommodation: '🏨 GUESTHOUSE OUKA (Titon)',
+        type: 'titon',
         badge: 'titon',
-        coords: [35.0116, 135.7681]
+        coords: [36.1461, 137.2520] // Takayama
+    },
+    {
+        date: '2026-08-17',
+        dayLabel: 'Banana 1',
+        weekday: 'Dilluns',
+        title: 'Banana a Odawara',
+        activities: ['Banana fa nit a Odawara.'],
+        accommodation: 'Hostel a Odawara',
+        type: 'banana',
+        badge: 'banana',
+        coords: [35.2536, 139.1553] // Odawara
     },
     {
         date: '2026-08-18',
-        dayLabel: 'Dia 14',
+        dayLabel: 'Dia 13',
         weekday: 'Dimarts',
-        title: 'Kyoto sol: Santuaris i carrerons històrics',
+        title: 'Relax a Takayama',
         activities: [
-            '<strong>Titon (Tu)</strong>: Exploració de Kyoto al teu propi ritme.',
-            'Free tours per a conèixer gent als barris històrics (Gion, Higashiyama) i fer un viatge més social amb altres viatgers.',
-            'Tarda-nit: Sopar barat o passeig pels canals il·luminats.'
+            'Pau, mercats matinals i natura pels voltants de Takayama.'
         ],
-        accommodation: '🏨 Hostel / Guesthouse a Kyoto (Titon)',
-        type: 'banana',
+        accommodation: '🏨 GUESTHOUSE OUKA (Titon)',
+        type: 'titon',
         badge: 'titon',
-        coords: [35.0116, 135.7681]
+        coords: [36.1461, 137.2520]
+    },
+    {
+        date: '2026-08-18',
+        dayLabel: 'Banana 2',
+        weekday: 'Dimarts',
+        title: 'Banana a Nagoya',
+        activities: ['Banana viatja a Nagoya.'],
+        accommodation: 'Hostel a Nagoya',
+        type: 'banana',
+        badge: 'banana',
+        coords: [35.1815, 136.9066] // Nagoya
     },
     {
         date: '2026-08-19',
-        dayLabel: 'Dia 15',
+        dayLabel: 'Dia 14',
         weekday: 'Dimecres',
-        title: 'Kyoto sol: Racons tranquils i cultura local',
+        title: 'Retrobament a Takayama',
         activities: [
-            '<strong>Titon (Tu)</strong>: Visita a temples menys transitats (com el Tofuku-ji), el bonic camí de la filosofia o el canal de Shirakawa.',
-            'Mantenint un pressupost ajustat i cuinant o menjant gyudon o konbini.'
+            'Banana arriba a Takayama per retrobar-se amb Titon.',
+            'Visita conjunta per la ciutat.'
         ],
-        accommodation: '🏨 Hostel / Guesthouse a Kyoto (Titon)',
-        type: 'banana',
-        badge: 'titon',
-        coords: [35.0116, 135.7681]
+        accommodation: '🏨 GUESTHOUSE OUKA (Compartit)',
+        type: 'overlap',
+        badge: 'shared',
+        coords: [36.1461, 137.2520]
     },
     {
         date: '2026-08-20',
-        dayLabel: 'Dia 16',
+        dayLabel: 'Dia 15',
         weekday: 'Dijous',
-        title: 'Rebuda d\'en Banana a Kyoto',
+        title: 'Shirakawa-go i Separació',
         activities: [
-            '<strong>Titon (Tu)</strong>: Ja coneixes Kyoto i fas de "guia" rebent en Banana (ell arriba des de Shirakawa-go).',
-            'Check-in al nou allotjament compartit i sopar pel barri de Pontocho.'
+            'Bus a Shirakawa-go junts (1h de trajecte).',
+            'Separació a les 15:00 h: Titon cap a Kanazawa, Banana cap a Kyoto.'
         ],
-        accommodation: '🏨 Shijo Guesthouse Hive (Compartit)',
-        type: 'overlap',
-        badge: 'shared',
-        coords: [35.0038, 135.7594]
+        accommodation: '🏨 BLUE HOUR KANAZAWA (Titon)',
+        type: 'titon',
+        badge: 'titon',
+        coords: [36.5613, 136.6562] // Kanazawa
+    },
+    {
+        date: '2026-08-20',
+        dayLabel: 'Banana 3',
+        weekday: 'Dijous',
+        title: 'Banana arriba a Kyoto',
+        activities: ['Banana fa el check-in a Kyoto.'],
+        accommodation: 'Hostel a Kyoto',
+        type: 'banana',
+        badge: 'banana',
+        coords: [35.0116, 135.7681] // Kyoto
     },
     {
         date: '2026-08-21',
-        dayLabel: 'Dia 17',
+        dayLabel: 'Dia 16',
         weekday: 'Divendres',
-        title: 'Kyoto amb en Banana: Temples i Free Tours',
+        title: 'Cap a Kyoto i retrobament',
         activities: [
-            '<strong>6:00</strong>: Visita matinera a <strong>Kiyomizu-dera</strong> i carrers històrics de Sannenzaka/Ninenzaka (sense aglomeracions).',
-            '<strong>10:30</strong>: Free Tour clàssic per Kyoto.',
-            '<strong>15:00</strong>: Segon Free Tour pel temple de plata (Ginkaku-ji).'
+            'Tren Thunderbird des de Kanazawa cap a Kyoto.',
+            'Recull de la maleta gran a l\'hostel enviada via Ta-Q-Bin.',
+            'Retrobament amb Banana.'
         ],
-        accommodation: '🏨 Shijo Guesthouse Hive (Compartit)',
+        accommodation: '🏨 SHIJO GUESTHOUSE HIVE (Compartit)',
         type: 'overlap',
         badge: 'shared',
-        coords: [35.0267, 135.7982]
+        coords: [35.0116, 135.7681] // Kyoto
     },
     {
         date: '2026-08-22',
-        dayLabel: 'Dia 18',
+        dayLabel: 'Dia 17',
         weekday: 'Dissabte',
-        title: 'Kyoto amb en Banana: Arashiyama i Fushimi Inari',
+        title: 'Kyoto Compartit',
         activities: [
-            'Matí: Bosc de bambú de <strong>Arashiyama</strong> i parc dels micos.',
-            'Migdia: Temple Daurat (Kinkaku-ji) o Castell de Nijo.',
-            '<strong>18:00</strong>: Free Tour al capvespre a les portes vermelles de <strong>Fushimi Inari-Taisha</strong>.'
+            'Visites conjuntes per Kyoto: temples, mercats i passejos.'
         ],
-        accommodation: '🏨 Shijo Guesthouse Hive (Compartit)',
+        accommodation: '🏨 SHIJO GUESTHOUSE HIVE (Compartit)',
         type: 'overlap',
         badge: 'shared',
-        coords: [34.9671, 135.7727]
+        coords: [34.9671, 135.7727] // Fushimi
     },
     {
         date: '2026-08-23',
-        dayLabel: 'Dia 19',
+        dayLabel: 'Dia 18',
         weekday: 'Diumenge',
-        title: 'De Kyoto a Osaka amb en Banana',
+        title: 'Cap a Osaka',
         activities: [
-            'Matí: Darrers racons de Kyoto (Mercat de Nishiki).',
-            'Migdia: Tren cap a <strong>Osaka</strong> (30 minuts).',
-            'Tarda-Nit: Explorar Shinsekai, Den Den Town i la bogeria nocturna de neons i street food a <strong>Dotonbori</strong>.'
+            'Tren cap a Osaka.',
+            'Dotonbori, vida nocturna i gastronomia de carrer.'
         ],
-        accommodation: '🏨 Acro Capsule Hotel Namba Dotonbori (Compartit)',
+        accommodation: '🏨 ACRO CAPSULE NAMBA (Compartit)',
         type: 'overlap',
         badge: 'shared',
-        coords: [34.6687, 135.5013]
+        coords: [34.6687, 135.5013] // Namba
     },
     {
         date: '2026-08-24',
-        dayLabel: 'Dia 20',
+        dayLabel: 'Dia 19',
         weekday: 'Dilluns',
-        title: 'Osaka contemporània i oci',
+        title: 'Osaka Urbana',
         activities: [
-            'Matí: Castell d\'Osaka i Mercat de Kuromon.',
-            'Tarda-Nit: Compres o passeig pel barri hipster de Nakazakicho, o ambient juvenil a Amerikamura.'
+            'Exploració del barri de Shinsekai, el mercat Kuromon i zones d\'oci.'
         ],
-        accommodation: '🏨 Acro Capsule Hotel Namba Dotonbori (Compartit)',
+        accommodation: '🏨 ACRO CAPSULE NAMBA (Compartit)',
         type: 'overlap',
         badge: 'shared',
-        coords: [34.7053, 135.4902]
+        coords: [34.6525, 135.5063] // Shinsekai
     },
     {
         date: '2026-08-25',
-        dayLabel: 'Dia 21',
+        dayLabel: 'Dia 20',
         weekday: 'Dimarts',
-        title: 'Osaka -> Hiroshima i illa de Miyajima',
+        title: 'Hiroshima i Miyajima',
         activities: [
-            '<strong>6:00</strong>: Tren bala Shinkansen cap a Hiroshima.',
-            'Matí-Tarda: Ferry cap a l\'illa de <strong>Miyajima</strong> per veure el cèlebre Torii flotant de l\'Itsukushima Shrine i pujar al Mount Misen.',
-            'Vespre: Sopar d\'Okonomiyaki tradicional a Hiroshima.'
+            'Shinkansen cap a Hiroshima.',
+            'Ferry a l\'Illa de Miyajima (cérvols i ascens al Mont Misen).'
         ],
-        accommodation: '🏨 WeBase Hiroshima (Compartit)',
+        accommodation: '🏨 WEBASE HIROSHIMA (Compartit)',
         type: 'overlap',
         badge: 'shared',
-        coords: [34.2965, 132.3206]
+        coords: [34.2965, 132.3206] // Miyajima
     },
     {
         date: '2026-08-26',
-        dayLabel: 'Dia 22',
+        dayLabel: 'Dia 21',
         weekday: 'Dimecres',
-        title: 'Hiroshima històrica i tornada a Osaka/Kansai',
+        title: 'Hiroshima de la Pau',
         activities: [
-            'Matí: Visita al <strong>Parc Memorial de la Pau</strong> i museu de la bomba atòmica per conèixer la història contemporània.',
-            'Tarda: Tren de tornada a la zona d\'Osaka/Kansai (establir allotjament proper a l\'aeroport).',
-            '<strong>Estalvi clau:</strong> No tornem a Tòquio, evitant un viatge de 119€ i un dia sencer perdut.'
+            'Visita profunda al Parc i Museu de la Pau per tancar el viatge.'
         ],
-        accommodation: '🏨 Hostel proper a l\'aeroport de Kansai o Osaka (Titon)',
+        accommodation: '🏨 WEBASE HIROSHIMA (Compartit)',
         type: 'overlap',
-        badge: 'titon',
-        coords: [34.6687, 135.5013] // Osaka area near Kansai Airport
+        badge: 'shared',
+        coords: [34.3927, 132.4526] // Hiroshima Peace Park
     },
     {
         date: '2026-08-27',
-        dayLabel: 'Dia 23',
+        dayLabel: 'Dia 22',
         weekday: 'Dijous',
-        title: 'Vol de tornada cap a Barcelona (Open-Jaw)',
+        title: 'Tornada (Vol des de Kansai)',
         activities: [
-            '<strong>Titon (Tu)</strong>: Vol de tornada cap a Barcelona (BCN) sortint directament des de l\'Aeroport de Kansai (KIX).',
-            'Final de l\'itinerari al Japó, volant de tornada sense haver de tornar a pujar a Tòquio.'
+            'Shinkansen Hiroshima → Shin-Osaka + Haruka Express → Aeroport KIX.',
+            'Vol de tornada cap a BCN a les 15:15 h (Shenzhen Airlines).'
         ],
-        accommodation: '✈️ Vol internacional (a bord)',
-        type: 'banana',
+        accommodation: '✈️ Vol',
+        type: 'titon',
         badge: 'titon',
-        coords: [34.4320, 135.2304] // Kansai Airport
-    },
-    {
-        date: '2026-08-28',
-        dayLabel: 'Dia 24',
-        weekday: 'Divendres',
-        title: 'Arribada a Barcelona',
-        activities: [
-            '<strong>Titon (Tu)</strong>: Arribada a Barcelona (BCN) i fi del viatge. Retorn a casa.'
-        ],
-        accommodation: '🏠 Casa teva',
-        type: 'overlap',
-        badge: 'titon',
-        coords: null
+        coords: [34.4320, 135.2304] // KIX
     }
 ];
+;
 
 const DEFAULT_EXPENSES = [
     { id: '1', category: 'Vols', concept: 'Vol Open-Jaw BCN-Tòquio / Kansai-BCN (Estimat)', amount: 850 },
-    { id: '2', category: 'Allotjament', concept: 'Kumano Kodo Minshukus (7 nits aprox)', amount: 210 },
-    { id: '3', category: 'Allotjament', concept: 'Hostels Tòquio / Kyoto / Osaka / Hiroshima (14 nits)', amount: 350 },
-    { id: '4', category: 'Transport', concept: 'Trens regionals i busos de muntanya', amount: 80 },
-    { id: '5', category: 'Transport', concept: 'Trens llargs (Tòquio-Kyoto i Osaka-Hiroshima-Osaka)', amount: 130 },
-    { id: '6', category: 'Menjar i oci', concept: 'Menjar barat diari (Konbinis / Gyudon)', amount: 200 }
+    { id: 'h-ueno', category: 'Allotjament', concept: 'Hostel Ueno / Asakusa', amount: 55 },
+    { id: 'h-utsunomiya', category: 'Allotjament', concept: 'Guesthouse Utsunomiya', amount: 89 },
+    { id: 'h-shinjuku', category: 'Allotjament', concept: 'Hostel Shinjuku (Tòquio)', amount: 52 },
+    { id: 'h-fuji', category: 'Allotjament', concept: 'Hostel Fuji', amount: 53 },
+    { id: 'h-takayama', category: 'Allotjament', concept: 'Hostel Takayama', amount: 55 },
+    { id: 'h-kanazawa', category: 'Allotjament', concept: 'Hostel Kanazawa', amount: 17 },
+    { id: 'h-kyoto', category: 'Allotjament', concept: 'Hostel Kyoto', amount: 34 },
+    { id: 'h-osaka', category: 'Allotjament', concept: 'Hostel Osaka', amount: 27 },
+    { id: 'h-hiroshima', category: 'Allotjament', concept: 'Hostel Hiroshima', amount: 36 },
+    { id: '4', category: 'Transport', concept: 'Trens regionals i de muntanya', amount: 80 },
+    { id: '5', category: 'Transport', concept: 'Trens llargs Shinkansen', amount: 130 },
+    { id: '6', category: 'Menjar i oci', concept: 'Menjar diari (Konbinis / Gyudon)', amount: 250 }
 ];
 
 const DEFAULT_VIDEOS = [
     {
         id: '1',
-        title: 'Guia Completa i Consells per fer el Kumano Kodo',
-        url: 'https://www.youtube.com/watch?v=yYJ4zNntDlk',
-        timestamp: '10:45',
-        notes: 'Explica com funciona el servei de transport de motxilles entre etapes de muntanya. Molt útil per caminar lleuger!'
+        title: 'Consells per a l\'ascensió al Mont Nantai (Nikko)',
+        url: 'https://www.youtube.com/watch?v=XXXXXXX',
+        timestamp: '02:15',
+        notes: 'Explica per on agafar el bus al Llac Chuzenji i el punt clau de les escales de pedra.'
     },
     {
         id: '2',
-        title: 'Kyoto sense turistes: Com visitar el Fushimi Inari de nit',
-        url: 'https://www.youtube.com/watch?v=yYJ4zNntDlk',
-        timestamp: '03:15',
-        notes: 'A partir del minut 3 mostra per què val molt la pena pujar fins a la part de dalt quan ja és fosc. Menys gent i ambient místic.'
+        title: 'Enviament de maletes Ta-Q-Bin al Japó',
+        url: 'https://www.youtube.com/watch?v=XXXXXXX',
+        timestamp: '05:30',
+        notes: 'Guia pas a pas de com emplenar el formulari de Yamato Transport per enviar la maleta de Takayama a Kyoto.'
     }
 ];
 
 const DEFAULT_TASKS = [
-    { id: '1', text: 'Buscar i reservar vols BCN - Japó (open-jaw: entrada Tòquio, sortida Osaka)', completed: false },
-    { id: '2', text: 'Reservar els allotjaments de muntanya pel Kumano Kodo a la web oficial de Tanabe', completed: false },
-    { id: '3', text: 'Confirmar exactament les dates disponibles de la parella per si s\'afegeix en algun punt', completed: false },
-    { id: '4', text: 'Comprar assegurança mèdica internacional (imprescindible per al Japó)', completed: false },
-    { id: '5', text: 'Mirar i reservar allotjaments barats a Kyoto (solo) i Osaka (compartit)', completed: false },
-    { id: '6', text: 'Tramitar el carnet de conduir internacional (per si de cas)', completed: false }
+    { id: '1', text: 'Reservar els vols definitius BCN - Japó (open-jaw o anada/tornada KIX/NRT)', completed: true },
+    { id: '2', text: 'Reservar Hostel a Ueno o Asakusa (06 - 09 Agost)', completed: false },
+    { id: '3', text: 'Posar alarma per comprar bitllet Nohi Bus (Takayama -> Shirakawa-go -> Kanazawa) un mes abans', completed: false },
+    { id: '4', text: 'Comprar assegurança mèdica internacional', completed: false },
+    { id: '5', text: 'Contractar eSIM de dades per al mòbil (ex: Ubigi o Holafly)', completed: false }
 ];
 
 // --- APP STATE ---
@@ -497,7 +508,7 @@ function renderItinerary() {
     const filteredData = DEFAULT_ITINERARY.filter(day => {
         if (state.itineraryFilter === 'all') return true;
         if (state.itineraryFilter === 'overlap') return day.type === 'overlap';
-        if (state.itineraryFilter === 'kumano') return day.type === 'kumano';
+        if (state.itineraryFilter === 'titon') return day.type === 'titon';
         return true;
     });
 
@@ -584,7 +595,7 @@ function initMap() {
     // Draw markers
     coordsList.forEach(point => {
         let color = '#ff79c6'; // Shared
-        if (point.type === 'kumano') color = '#50fa7b';
+        if (point.type === 'titon') color = '#50fa7b';
         if (point.type === 'banana') color = '#06b6d4';
 
         const marker = L.circleMarker(point.coords, {
@@ -607,16 +618,21 @@ function initMap() {
     });
 
     // Draw lines joining path
-    const polylineCoords = coordsList.map(p => p.coords);
-    routePolyline = L.polyline(polylineCoords, {
-        color: 'rgba(255, 121, 198, 0.4)',
-        weight: 3,
-        dashArray: '5, 10'
-    }).addTo(map);
+    const titonPath = coordsList.filter(p => p.type === 'titon' || p.type === 'overlap').map(p => p.coords);
+    const bananaPath = coordsList.filter(p => p.type === 'banana' || p.type === 'overlap').map(p => p.coords);
+
+    if (titonPath.length > 0) {
+        L.polyline(titonPath, { color: '#50fa7b', weight: 3, opacity: 0.7 }).addTo(map);
+    }
+    if (bananaPath.length > 0) {
+        L.polyline(bananaPath, { color: '#06b6d4', weight: 3, opacity: 0.7, dashArray: '5, 8' }).addTo(map);
+    }
 
     // Zoom map fit bounds
-    if (polylineCoords.length > 0) {
-        map.fitBounds(routePolyline.getBounds(), { padding: [30, 30] });
+    const allCoords = coordsList.map(p => p.coords);
+    if (allCoords.length > 0) {
+        const bounds = L.polyline(allCoords).getBounds();
+        map.fitBounds(bounds, { padding: [30, 30] });
     }
 }
 
@@ -711,6 +727,17 @@ function initBudgetForm() {
         // Reset form
         form.reset();
     });
+
+    const resetBtn = document.getElementById('btn-reset-expenses');
+    if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+            if (confirm('Estàs segur que vols restablir les despeses per defecte? Es perdran els canvis manualment fets.')) {
+                state.expenses = [...DEFAULT_EXPENSES];
+                saveState('expenses');
+                renderBudget();
+            }
+        });
+    }
 }
 
 // 4. Videos Module

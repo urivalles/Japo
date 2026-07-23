@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Japó 2026 | El meu Viatge Personalitzat</title>
-    <meta name="description" content="Aplicació interactiva per organitzar el meu viatge personalitzat al Japó de l'agost de 2026, incloent el Kumano Kodo i la ruta compartida amb en Banana.">
+    <meta name="description" content="Aplicació interactiva per organitzar el meu viatge personalitzat al Japó de l'agost de 2026. Pla Estratègic V5 d'en Titon.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,7 +36,11 @@
                 </button>
                 <button class="nav-btn" data-target="map" id="btn-nav-map">
                     <i class="fa-solid fa-map-location-dot"></i>
-                    <span>Mapa</span>
+                    <span>Mapa (OSM)</span>
+                </button>
+                <button class="nav-btn" data-target="mymaps" id="btn-nav-mymaps">
+                    <i class="fa-solid fa-map"></i>
+                    <span>My Maps</span>
                 </button>
                 <button class="nav-btn" data-target="budget" id="btn-nav-budget">
                     <i class="fa-solid fa-wallet"></i>
@@ -81,7 +85,7 @@
                     <div class="itinerary-filters">
                         <button class="filter-btn active" data-filter="all" id="btn-filter-all">Tot el viatge</button>
                         <button class="filter-btn" data-filter="overlap" id="btn-filter-overlap">Només coincidències</button>
-                        <button class="filter-btn" data-filter="kumano" id="btn-filter-kumano">Kumano Kodo</button>
+                        <button class="filter-btn" data-filter="titon" id="btn-filter-titon">Titon (Solitari)</button>
                     </div>
                     <div class="itinerary-timeline" id="timeline-container">
                         <!-- JS generated day-by-day items -->
@@ -91,16 +95,31 @@
                 <!-- 2. MAP SECTION -->
                 <section class="content-section" id="section-map">
                     <div class="section-header">
-                        <h2>🗺️ Mapa de la Ruta</h2>
-                        <p>Explora de forma interactiva els punts clau del viatge. Fes clic als marcadors per a més detalls.</p>
+                        <h2>🗺️ Mapa de la Ruta (OSM)</h2>
+                        <p>Explora de forma interactiva els punts clau del viatge. Comparativa entre la teva ruta i la d'en Banana.</p>
                     </div>
                     <div class="map-card glass-panel">
                         <div id="map-element"></div>
                     </div>
                     <div class="map-legend glass-panel">
-                        <div class="legend-item"><span class="legend-dot dot-kumano"></span> Kumano Kodo (Ruta pròpia)</div>
-                        <div class="legend-item"><span class="legend-dot dot-banana"></span> Ruta sol (Fuji i Kyoto)</div>
-                        <div class="legend-item"><span class="legend-dot dot-shared"></span> Trams compartits amb en Banana</div>
+                        <div class="legend-item"><span class="legend-dot dot-titon"></span> Titon (Ruta en solitari)</div>
+                        <div class="legend-item"><span class="legend-dot dot-banana"></span> Banana (Ruta en solitari)</div>
+                        <div class="legend-item"><span class="legend-dot dot-shared"></span> Trams compartits</div>
+                    </div>
+                </section>
+
+                <!-- 2.5 MY MAPS SECTION -->
+                <section class="content-section" id="section-mymaps">
+                    <div class="section-header">
+                        <h2>📍 El meu Google My Maps</h2>
+                        <p>Visualitza directament el teu mapa interactiu de Google amb totes les capes desades.</p>
+                    </div>
+                    <div class="mymaps-container glass-panel" style="padding: 10px; border-radius: 12px; height: 500px; display: flex; flex-direction: column;">
+                        <p style="text-align: center; color: var(--text-muted); margin-bottom: 10px; font-size: 0.9rem;"><em>Enganxa aquí el teu iFrame de Google My Maps (Pots editar l'index.html)</em></p>
+                        <div class="iframe-wrapper" style="flex-grow: 1; border-radius: 8px; overflow: hidden; position: relative;">
+                            <!-- Placeholder Map. Replace the src with your own Google My Maps embed link -->
+                            <iframe src="https://www.google.com/maps/d/embed?mid=1vX6sI-i8WfW9z4m-oHw4Y7P5YJw&hl=en" width="100%" height="100%" style="border:0; position: absolute; top:0; left:0;"></iframe>
+                        </div>
                     </div>
                 </section>
 
@@ -155,7 +174,10 @@
 
                     <!-- Expense List Table -->
                     <div class="expense-list-container glass-panel">
-                        <h3>Desglosament de Despeses</h3>
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
+                            <h3 style="margin-bottom: 0;">Desglosament de Despeses</h3>
+                            <button id="btn-reset-expenses" style="background: rgba(255,255,255,0.05); color: var(--text-muted); border: 1px solid var(--border-glass); padding: 6px 12px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s; font-size: 0.85rem;"><i class="fa-solid fa-rotate-left"></i> Restablir per defecte</button>
+                        </div>
                         <div class="table-responsive">
                             <table class="expense-table">
                                 <thead>
@@ -187,7 +209,7 @@
                             <form id="video-form">
                                 <div class="form-group">
                                     <label for="video-title">Títol del Vídeo / Nom</label>
-                                    <input type="text" id="video-title" placeholder="Ex: Guia pràctica Kumano Kodo" required>
+                                    <input type="text" id="video-title" placeholder="Ex: Guia pràctica Utsunomiya" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="video-url">Enllaç de YouTube</label>
@@ -243,6 +265,10 @@
             <button class="mobile-nav-btn" data-target="map" id="btn-mob-map">
                 <i class="fa-solid fa-map-location-dot"></i>
                 <span>Mapa</span>
+            </button>
+            <button class="mobile-nav-btn" data-target="mymaps" id="btn-mob-mymaps">
+                <i class="fa-solid fa-map"></i>
+                <span>MyMaps</span>
             </button>
             <button class="mobile-nav-btn" data-target="budget" id="btn-mob-budget">
                 <i class="fa-solid fa-wallet"></i>

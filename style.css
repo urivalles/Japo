@@ -19,7 +19,7 @@
     
     /* Accent Neon Colors */
     --accent-pink: #ff79c6;      /* Sakura */
-    --accent-green: #50fa7b;     /* Kumano Forest */
+    --accent-green: #50fa7b;     /* Titon Solo */
     --accent-purple: #8b5cf6;    /* Tokyo Neon */
     --accent-blue: #06b6d4;      /* Shinkansen Blue */
     --accent-red: #ef4444;       /* Torii Gate Red */
@@ -316,7 +316,7 @@ body {
     box-shadow: 0 0 8px var(--accent-purple);
 }
 
-.timeline-item.kumano .timeline-marker {
+.timeline-item.titon .timeline-marker {
     background-color: var(--accent-green);
     box-shadow: 0 0 8px var(--accent-green);
 }
@@ -473,9 +473,9 @@ body {
     border-radius: 50%;
 }
 
-.dot-kumano {
+.dot-titon {
     background-color: var(--accent-green);
-    box-shadow: 0 0 6px var(--accent-green);
+    box-shadow: 0 0 5px var(--accent-green);
 }
 
 .dot-banana {
