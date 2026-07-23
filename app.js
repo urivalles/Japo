@@ -751,7 +751,7 @@ function initMap() {
 
     // Draw markers
     coordsList.forEach(point => {
-        let color = '#1b2a4a'; // Shared Navy Blue
+        let color = '#1d4ed8'; // Shared Royal Indigo Blue
         if (point.type === 'uri') color = '#d63031'; // Uri Red
         if (point.type === 'banana') color = '#111318'; // Banana Black
 
@@ -788,7 +788,7 @@ function initMap() {
 
         const marker = L.circleMarker(shirakawaPoint.coords, {
             radius: 7,
-            fillColor: '#1b2a4a',
+            fillColor: '#1d4ed8',
             color: '#ffffff',
             weight: 2,
             opacity: 0.9,
@@ -799,7 +799,7 @@ function initMap() {
             <div class="map-popup-content">
                 <h3>Dia 15: Shirakawa-go (Excursió conjunta)</h3>
                 <p><strong>Data:</strong> 2026-08-20</p>
-                <p>Tipus de ruta: <span style="color:#1b2a4a; font-weight:bold;">OVERLAP</span></p>
+                <p>Tipus de ruta: <span style="color:#1d4ed8; font-weight:bold;">OVERLAP</span></p>
             </div>
         `);
         mapMarkers.push(marker);
@@ -837,7 +837,7 @@ function initMap() {
         [35.0116, 135.7681]  // Kyoto
     ];
 
-    // 3. Shared / Overlap Segments (Indigo Navy Blue #1b2a4a, weight 4)
+    // 3. Shared / Overlap Segments (Vibrant Royal Indigo Blue #1d4ed8, weight 4)
     const sharedSegment1 = [
         [35.6938, 139.7032], // Shinjuku
         [35.6580, 139.7016], // Shibuya
@@ -865,9 +865,9 @@ function initMap() {
     L.polyline(bananaSoloSegment1, { color: '#111318', weight: 3, opacity: 0.95 }).addTo(map);
     L.polyline(bananaSoloSegment2, { color: '#111318', weight: 3, opacity: 0.95 }).addTo(map);
 
-    // Draw Shared Lines (Indigo Navy Blue)
-    L.polyline(sharedSegment1, { color: '#1b2a4a', weight: 4, opacity: 0.95 }).addTo(map);
-    L.polyline(sharedSegment2, { color: '#1b2a4a', weight: 4, opacity: 0.95 }).addTo(map);
+    // Draw Shared Lines (Vibrant Royal Indigo Blue)
+    L.polyline(sharedSegment1, { color: '#1d4ed8', weight: 4, opacity: 0.95 }).addTo(map);
+    L.polyline(sharedSegment2, { color: '#1d4ed8', weight: 4, opacity: 0.95 }).addTo(map);
 
     // Zoom map fit bounds
     const allCoords = coordsList.map(p => p.coords);

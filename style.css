@@ -10,7 +10,7 @@
     --accent-red: #d63031;       /* 1. Torii Vermilion Red (朱色 Shu-iro) */
     --bg-deep: #f7f5ef;          /* 2. Pure Washi Off-White (雪色 Yuki-iro) */
     --sumi-black: #111318;       /* 3. Sumi Ink Charcoal Black (墨色 Sumi-iro) */
-    --indigo-navy: #1b2a4a;      /* 4. Indigo Navy Blue (藍染 Aizan) */
+    --indigo-navy: #1d4ed8;      /* 4. Vibrant Royal Indigo Blue (藍染 Aizan) */
     
     --bg-dark: #ffffff;
     --bg-card: #ffffff;
@@ -480,9 +480,10 @@ h1, h2, h3, .brand-text {
 }
 
 .badge.badge-shared {
-    background: rgba(27, 42, 74, 0.12);
-    border: 1px solid rgba(27, 42, 74, 0.3);
-    color: var(--indigo-navy);
+    background: rgba(29, 78, 216, 0.12);
+    border: 1px solid rgba(29, 78, 216, 0.35);
+    color: #1d4ed8;
+    font-weight: 600;
 }
 
 .day-title {
@@ -619,8 +620,8 @@ h1, h2, h3, .brand-text {
 }
 
 .dot-shared {
-    background-color: var(--indigo-navy);
-    box-shadow: 0 0 6px rgba(27, 42, 74, 0.4);
+    background-color: #1d4ed8;
+    box-shadow: 0 0 8px rgba(29, 78, 216, 0.5);
 }
 
 /* Leaflet Custom styling */
