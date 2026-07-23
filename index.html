@@ -93,11 +93,9 @@
                 
                 <!-- 1. ITINERARY SECTION -->
                 <section class="content-section active" id="section-itinerary">
-                    <div class="section-banner" style="background-image: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=1200');">
-                        <div class="section-banner-content">
-                            <h2>📅 Cronograma del Viatge <span class="kanji-subtitle" style="color: #ffffff;">日程</span></h2>
-                            <p>Descobreix la teva ruta personalitzada pel Japó: trams en solitari (verd/groc) i trams compartits amb en Banana (doble línia paral·lela).</p>
-                        </div>
+                    <div class="section-header-clean">
+                        <img src="assets/icons/bonsai.jpg" class="section-title-badge" alt="Bonsai">
+                        <h2>Cronograma del Viatge <span class="kanji-subtitle">日程</span></h2>
                     </div>
                     <div class="itinerary-filters">
                         <button class="filter-btn active" data-filter="all" id="btn-filter-all">Tot el viatge</button>
@@ -111,11 +109,9 @@
 
                 <!-- 2. MAP SECTION -->
                 <section class="content-section" id="section-map">
-                    <div class="section-banner" style="background-image: url('https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?q=80&w=1200');">
-                        <div class="section-banner-content">
-                            <h2>🗺️ Mapa de la Ruta <span class="kanji-subtitle" style="color: #ffffff;">地図</span></h2>
-                            <p>El teu mapa personalitzat de Google My Maps com a protagonista, i la comparativa interactiva a sota.</p>
-                        </div>
+                    <div class="section-header-clean">
+                        <img src="assets/icons/fuji.jpg" class="section-title-badge" alt="Mount Fuji">
+                        <h2>Mapa de la Ruta <span class="kanji-subtitle">地図</span></h2>
                     </div>
 
                     <!-- 1. Protagonist: Google My Maps Embed -->
@@ -139,20 +135,8 @@
                         <div class="map-card glass-panel" id="osm-map-card" style="transition: all 0.3s ease;">
                             <div id="map-element"></div>
                         </div>
-                        
-                        <!-- Google Maps external link button -->
-                        <div class="map-actions-container">
-                            <a href="https://www.google.es/maps/@36.478049,137.100974,6.03z?entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="map-google-link glass-panel">
-                                <i class="fa-solid fa-map-location-dot map-link-icon"></i>
-                                <div class="map-link-text">
-                                    <span class="map-link-title">Veure Ruta a Google Maps</span>
-                                    <span class="map-link-subtitle">Obre el mapa interactiu original amb tots els detalls de la ruta al Japó</span>
-                                </div>
-                                <i class="fa-solid fa-chevron-right map-link-arrow"></i>
-                            </a>
-                        </div>
 
-                        <div class="map-legend glass-panel">
+                        <div class="map-legend glass-panel" style="margin-top: 20px;">
                             <div class="legend-item"><span class="legend-dot dot-uri"></span> Uri (Ruta Verda)</div>
                             <div class="legend-item"><span class="legend-dot dot-banana"></span> Banana (Ruta Grova)</div>
                             <div class="legend-item"><span style="display: flex; gap: 3px; align-items: center;"><span class="legend-dot dot-uri"></span><span class="legend-dot dot-banana"></span></span> Trams compartits (Doble línia paral·lela)</div>
@@ -162,12 +146,12 @@
 
                 <!-- 3. BUDGET SECTION -->
                 <section class="content-section" id="section-budget">
-                    <div class="section-banner" style="background-image: url('https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1200'); justify-content: space-between; align-items: flex-end;">
-                        <div class="section-banner-content">
-                            <h2>💰 Control del Pressupost <span class="kanji-subtitle" style="color: #ffffff;">予算</span></h2>
-                            <p>Objectiu de despeses màximes: <strong id="budget-header-limit" style="color: var(--accent-gold);">2.500 €</strong>.</p>
+                    <div class="section-header-clean" style="justify-content: space-between;">
+                        <div style="display: flex; align-items: center; gap: 14px;">
+                            <img src="assets/icons/manekineko.jpg" class="section-title-badge" alt="Maneki-neko">
+                            <h2>Control del Pressupost <span class="kanji-subtitle">予算</span></h2>
                         </div>
-                        <button id="btn-edit-budget-limit" style="position: relative; z-index: 3; background: #ffffff; color: var(--accent-red); border: 1px solid #ffffff; padding: 8px 14px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; font-weight: 600; box-shadow: 0 4px 10px rgba(0,0,0,0.2);"><i class="fa-solid fa-pen-to-square"></i> Canviar Límit</button>
+                        <button id="btn-edit-budget-limit" style="background: rgba(214, 48, 49, 0.08); color: var(--accent-red); border: 1px solid var(--accent-red); padding: 8px 14px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; font-weight: 600;"><i class="fa-solid fa-pen-to-square"></i> Canviar Límit</button>
                     </div>
                     <div class="budget-grid">
                         <!-- Progress Card -->
@@ -247,11 +231,9 @@
 
                 <!-- 4. VIDEOS AND RESOURCES SECTION -->
                 <section class="content-section" id="section-videos">
-                    <div class="section-banner" style="background-image: url('https://images.unsplash.com/photo-1503899036084-c55cdd92da26?q=80&w=1200');">
-                        <div class="section-banner-content">
-                            <h2>🎥 Vídeos de YouTube i Recursos <span class="kanji-subtitle" style="color: #ffffff;">動画</span></h2>
-                            <p>Guarda i organitza enllaços a parts específiques de vídeos interessants de YouTube.</p>
-                        </div>
+                    <div class="section-header-clean">
+                        <img src="assets/icons/lantern.jpg" class="section-title-badge" alt="Red Lantern">
+                        <h2>Vídeos de YouTube i Recursos <span class="kanji-subtitle">動画</span></h2>
                     </div>
                     <div class="resources-grid">
                         <!-- Add Video Card -->
@@ -289,11 +271,9 @@
 
                 <!-- 5. TASKS CHECKLIST SECTION -->
                 <section class="content-section" id="section-tasks">
-                    <div class="section-banner" style="background-image: url('https://images.unsplash.com/photo-1528164344705-475426879e0d?q=80&w=1200');">
-                        <div class="section-banner-content">
-                            <h2>📋 Tasques Pendents <span class="kanji-subtitle" style="color: #ffffff;">作業</span></h2>
-                            <p>Mantén controlades les reserves i accions imprescindibles abans de marxar.</p>
-                        </div>
+                    <div class="section-header-clean">
+                        <img src="assets/icons/crane.jpg" class="section-title-badge" alt="Japanese Crane">
+                        <h2>Tasques Pendents <span class="kanji-subtitle">作業</span></h2>
                     </div>
                     <div class="tasks-card glass-panel">
                         <div class="add-task-bar">
@@ -308,11 +288,9 @@
 
                 <!-- 6. LUGGAGE SECTION -->
                 <section class="content-section" id="section-luggage">
-                    <div class="section-banner" style="background-image: url('https://images.unsplash.com/photo-1516298773066-c48f8e9bd92b?q=80&w=1200');">
-                        <div class="section-banner-content">
-                            <h2>🧳 Equipatge i Maleta <span class="kanji-subtitle" style="color: #ffffff;">荷物</span></h2>
-                            <p>Llista de comprovar tot el que necessites emportar-te al Japó.</p>
-                        </div>
+                    <div class="section-header-clean">
+                        <img src="assets/icons/bamboo.jpg" class="section-title-badge" alt="Bamboo">
+                        <h2>Equipatge i Maleta <span class="kanji-subtitle">荷物</span></h2>
                     </div>
                     <div class="tasks-card glass-panel">
                         <div class="add-task-bar">
@@ -327,11 +305,9 @@
 
                 <!-- 7. SHOPPING LIST SECTION -->
                 <section class="content-section" id="section-shopping">
-                    <div class="section-banner" style="background-image: url('https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=1200');">
-                        <div class="section-banner-content">
-                            <h2>🛍️ Llista de Compres <span class="kanji-subtitle" style="color: #ffffff;">買物</span></h2>
-                            <p>Souvenirs, regals i compres especials a fer durant el viatge.</p>
-                        </div>
+                    <div class="section-header-clean">
+                        <img src="assets/icons/koicarp.jpg" class="section-title-badge" alt="Koi Carp">
+                        <h2>Llista de Compres <span class="kanji-subtitle">買物</span></h2>
                     </div>
                     <div class="tasks-card glass-panel">
                         <div class="add-task-bar">
@@ -346,11 +322,9 @@
 
                 <!-- 8. OTHER PLACES SECTION -->
                 <section class="content-section" id="section-places">
-                    <div class="section-banner" style="background-image: url('https://images.unsplash.com/photo-1503899036084-c55cdd92da26?q=80&w=1200');">
-                        <div class="section-banner-content">
-                            <h2>🧭 Altres Llocs a Visitar <span class="kanji-subtitle" style="color: #ffffff;">名所</span></h2>
-                            <p>Extensions de ruta i excursions recomanades a fer des de les teves bases (Tòquio, Kyoto, Osaka).</p>
-                        </div>
+                    <div class="section-header-clean">
+                        <img src="assets/icons/panda.jpg" class="section-title-badge" alt="Panda">
+                        <h2>Altres Llocs a Visitar <span class="kanji-subtitle">名所</span></h2>
                     </div>
                     <div class="tasks-card glass-panel">
                         <div class="add-task-bar">
@@ -365,11 +339,9 @@
 
                 <!-- 9. OBSERVATIONS SECTION -->
                 <section class="content-section" id="section-observations">
-                    <div class="section-banner" style="background-image: url('https://images.unsplash.com/photo-1522383225653-ed111181a951?q=80&w=1200');">
-                        <div class="section-banner-content">
-                            <h2>ℹ️ Observacions i Consells <span class="kanji-subtitle" style="color: #ffffff;">備忘録</span></h2>
-                            <p>Apunts, reflexions i consells clau per al dia a dia durant el viatge al Japó.</p>
-                        </div>
+                    <div class="section-header-clean">
+                        <img src="assets/icons/sakura.jpg" class="section-title-badge" alt="Sakura">
+                        <h2>Observacions i Consells <span class="kanji-subtitle">備忘録</span></h2>
                     </div>
                     <div class="tasks-card glass-panel">
                         <div class="add-task-bar">
