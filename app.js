@@ -774,16 +774,63 @@ function initMap() {
         mapMarkers.push(marker);
     });
 
-    // Draw lines joining path
-    const titonPath = coordsList.filter(p => p.type === 'uri' || p.type === 'overlap').map(p => p.coords);
-    const bananaPath = coordsList.filter(p => p.type === 'banana' || p.type === 'overlap').map(p => p.coords);
+    // Define explicit polyline segments for clear visualization
+    
+    // 1. Uri Solo Segments (Green #50fa7b, solid, weight 4)
+    const uriSolo1 = [
+        [35.7111, 139.7770], // Ueno
+        [35.7147, 139.7967], // Asakusa
+        [35.3192, 139.5467], // Kamakura
+        [36.5551, 139.8826], // Utsunomiya
+        [36.7645, 139.4912], // Mt Nantai
+        [36.7845, 139.4448], // Senjogahara
+        [36.7581, 139.5989], // Nikko Toshogu
+        [35.6938, 139.7032]  // Shinjuku (rejoins Banana)
+    ];
 
-    if (titonPath.length > 0) {
-        L.polyline(titonPath, { color: '#50fa7b', weight: 3, opacity: 0.7 }).addTo(map);
-    }
-    if (bananaPath.length > 0) {
-        L.polyline(bananaPath, { color: '#06b6d4', weight: 3, opacity: 0.7, dashArray: '5, 8' }).addTo(map);
-    }
+    const uriSolo2 = [
+        [36.1461, 137.2520], // Takayama (separates)
+        [36.5613, 136.6562], // Kanazawa
+        [35.0116, 135.7681]  // Kyoto (rejoins Banana)
+    ];
+
+    // 2. Shared / Overlap Segments (Vibrant Sakura Pink #ff79c6, solid, weight 5)
+    const sharedSegment1 = [
+        [35.6938, 139.7032], // Shinjuku
+        [35.6580, 139.7016], // Shibuya
+        [35.2238, 138.6133], // Fujinomiya
+        [35.3606, 138.7274], // Mt Fuji
+        [36.1461, 137.2520]  // Takayama
+    ];
+
+    const sharedSegment2 = [
+        [35.0116, 135.7681], // Kyoto
+        [34.9671, 135.7727], // Fushimi
+        [34.6687, 135.5013], // Namba Osaka
+        [34.6525, 135.5063], // Shinsekai
+        [34.2965, 132.3206], // Miyajima
+        [34.3927, 132.4526], // Hiroshima Peace Park
+        [34.4320, 135.2304]  // KIX
+    ];
+
+    // 3. Banana Solo Segment (Cyan Blue #06b6d4, SOLID line - NO dashes!, weight 4)
+    const bananaSoloSegment = [
+        [35.2238, 138.6133], // Fujinomiya
+        [35.2536, 139.1553], // Odawara
+        [35.1815, 136.9066], // Nagoya
+        [36.1461, 137.2520]  // Takayama
+    ];
+
+    // Draw Uri Solo Lines (Green)
+    L.polyline(uriSolo1, { color: '#50fa7b', weight: 4, opacity: 0.95 }).addTo(map);
+    L.polyline(uriSolo2, { color: '#50fa7b', weight: 4, opacity: 0.95 }).addTo(map);
+
+    // Draw Banana Solo Line (Cyan Blue - SOLID, NO DASHES!)
+    L.polyline(bananaSoloSegment, { color: '#06b6d4', weight: 4, opacity: 0.95 }).addTo(map);
+
+    // Draw Shared Lines (Pink Sakura - Thick & Glowing)
+    L.polyline(sharedSegment1, { color: '#ff79c6', weight: 5, opacity: 1.0 }).addTo(map);
+    L.polyline(sharedSegment2, { color: '#ff79c6', weight: 5, opacity: 1.0 }).addTo(map);
 
     // Zoom map fit bounds
     const allCoords = coordsList.map(p => p.coords);
