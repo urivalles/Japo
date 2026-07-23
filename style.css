@@ -5,6 +5,7 @@
     padding: 0;
 }
 
+:root {
     /* The 4 Traditional Colors of Japan (四つの伝統色) */
     --accent-red: #d63031;       /* 1. Torii Vermilion Red (朱色 Shu-iro) */
     --bg-deep: #f7f5ef;          /* 2. Pure Washi Off-White (雪色 Yuki-iro) */
