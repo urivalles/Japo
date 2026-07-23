@@ -369,9 +369,15 @@ const DEFAULT_EXPENSES = [
     { id: 'h-kyoto', category: 'Allotjament', concept: 'Shijo Guesthouse Hive Kyoto (21-23 Agost)', amount: 34, paid: false },
     { id: 'h-osaka', category: 'Allotjament', concept: 'Acro Capsule Namba Osaka (23-25 Agost)', amount: 27, paid: false },
     { id: 'h-hiroshima', category: 'Allotjament', concept: 'Webase Hiroshima (25-27 Agost)', amount: 36, paid: false },
-    { id: 't-regional', category: 'Transport', concept: 'Trens regionals i busos V5 (Nikko, Nohi Bus, Thunderbird)', amount: 170, paid: false },
-    { id: 't-shinkansen', category: 'Transport', concept: 'Shinkansen Osaka-Hiroshima + Express KIX', amount: 140, paid: false },
-    { id: '6', category: 'Menjar i oci', concept: 'Menjar diari (Konbinis / Gyudon / Ramen)', amount: 250, paid: false }
+    { id: 't-airports', category: 'Transport', concept: 'Trens Aeroports (Keisei Skyliner + KIX Haruka Express)', amount: 35, paid: false },
+    { id: 't-tokyo-nikko', category: 'Transport', concept: 'Trens i Busos Nikko / Nantai / Okunikko (JR + Kanto/Tobu bus)', amount: 107, paid: false },
+    { id: 't-fuji-takayama', category: 'Transport', concept: 'Shinjuku -> Fujinomiya + Bus 5a Estació Fuji + Trajecte Takayama', amount: 89, paid: false },
+    { id: 't-nohi-thunder', category: 'Transport', concept: 'Nohi Bus (Takayama->Shirakawa-go->Kanazawa) + Thunderbird a Kyoto', amount: 60, paid: false },
+    { id: 't-shinkansen-hiro', category: 'Transport', concept: 'Shinkansen Osaka <-> Hiroshima (Anada/Tornada) + Ferry Miyajima + Cablecar', amount: 146, paid: false },
+    { id: 't-taqbin-local', category: 'Transport', concept: 'Metro urbà (Tòquio/Kyoto/Osaka) + Enviament Maleta Ta-Q-Bin', amount: 63, paid: false },
+    { id: 'food-daily', category: 'Menjar i oci', concept: 'Menjar diari (Konbinis, Ramen, Gyudon, Izakayas - 21 dies @ 24€/dia)', amount: 504, paid: false },
+    { id: 'leisure-temples', category: 'Menjar i oci', concept: 'Entrades Temples Nikko, Onsens, Cova Oya, Museu Pau', amount: 96, paid: false },
+    { id: 'esim-data', category: 'Altres', concept: 'eSIM de dades mòbil (Ubigi / Holafly 21 dies)', amount: 30, paid: false }
 ];
 
 const DEFAULT_VIDEOS = [
@@ -457,7 +463,7 @@ const DEFAULT_OBSERVATIONS = [
 let state = {
     currentTab: 'itinerary',
     itineraryFilter: 'all',
-    budgetLimit: 2000,
+    budgetLimit: 2500,
     expenses: [],
     videos: [],
     tasks: [],
@@ -475,7 +481,7 @@ let routePolyline = null;
 // --- STATE MANAGEMENT (LOCAL STORAGE) ---
 
 function loadState() {
-    state.budgetLimit = parseInt(localStorage.getItem('japo_budget_limit')) || 2000;
+    state.budgetLimit = parseInt(localStorage.getItem('japo_budget_limit')) || 2500;
     state.expenses = JSON.parse(localStorage.getItem('japo_expenses')) || DEFAULT_EXPENSES;
     state.videos = JSON.parse(localStorage.getItem('japo_videos')) || DEFAULT_VIDEOS;
     state.tasks = JSON.parse(localStorage.getItem('japo_tasks')) || DEFAULT_TASKS;
