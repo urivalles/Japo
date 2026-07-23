@@ -6,47 +6,47 @@
 }
 
 :root {
-    /* Color Palette */
-    --bg-deep: #0a0c10;
-    --bg-dark: #121620;
-    --bg-card: rgba(22, 28, 45, 0.65);
-    --bg-card-hover: rgba(29, 37, 58, 0.8);
-    --border-glass: rgba(255, 255, 255, 0.08);
-    --border-glass-focus: rgba(255, 121, 198, 0.4);
+    /* Japanese Traditional Red & White Color Palette (朱色 Shu-iro & 雪色 Yuki-iro) */
+    --bg-deep: #f7f5ef;          /* Wabi-Sabi Cream Washi Paper */
+    --bg-dark: #ffffff;          /* Pure Snow White */
+    --bg-card: #ffffff;          /* White Card Surface */
+    --bg-card-hover: #fdfbf7;    /* Subtle Warm Hover */
+    --border-glass: rgba(214, 48, 49, 0.15); /* Vermilion Red Border */
+    --border-glass-focus: rgba(214, 48, 49, 0.5);
     
-    --text-main: #f3f4f6;
-    --text-muted: #9ca3af;
+    --text-main: #1e272e;        /* Sumi Ink Dark Charcoal */
+    --text-muted: #636e72;       /* Slate Charcoal Muted Text */
     
-    /* Accent Neon Colors */
-    --accent-pink: #ff79c6;      /* Sakura */
-    --accent-orange: #ffb86c;    /* Shared Orange */
-    --accent-yellow: #f1fa8c;    /* Banana Yellow */
-    --accent-green: #50fa7b;     /* Uri Solo */
-    --accent-purple: #8b5cf6;    /* Tokyo Neon */
-    --accent-blue: #06b6d4;      /* Shinkansen Blue */
-    --accent-red: #e63946;       /* Torii Gate Vermilion Red */
-    --accent-gold: #ffd700;      /* Kin-haku Gold */
+    /* Traditional Accent Colors */
+    --accent-red: #d63031;       /* Japanese Torii Vermilion Red (Shu-iro) */
+    --accent-crimson: #c0392b;   /* Deep Crimson Red */
+    --accent-green: #10b981;     /* Bamboo / Jade Green (Uri) */
+    --accent-yellow: #f59e0b;    /* Kin-haku Gold / Yellow (Banana) */
+    --accent-orange: #f97316;    /* Warm Orange */
+    --accent-pink: #d63031;      /* Replaced Pink with Torii Red */
+    --accent-purple: #8e44ad;    /* Imperial Purple */
+    --accent-blue: #0984e3;      /* Indigo Blue */
     
-    /* Shadow & Glow */
-    --shadow-soft: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    --glow-pink: 0 0 15px rgba(255, 121, 198, 0.3);
-    --glow-green: 0 0 15px rgba(80, 250, 123, 0.3);
-    --glow-red: 0 0 15px rgba(230, 57, 70, 0.4);
+    /* Shadow & Atmosphere */
+    --shadow-soft: 0 6px 20px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(214, 48, 49, 0.05);
+    --glow-pink: 0 4px 14px rgba(214, 48, 49, 0.2);
+    --glow-green: 0 4px 14px rgba(16, 185, 129, 0.2);
+    --glow-red: 0 4px 14px rgba(214, 48, 49, 0.25);
     
     /* System Sizes */
     --sidebar-width: 260px;
     --header-height: 80px;
-    --border-radius: 16px;
-    --transition-speed: 0.3s;
+    --border-radius: 14px;
+    --transition-speed: 0.25s;
 }
 
 body {
-    font-family: 'Zen Kaku Gothic New', 'Inter', sans-serif;
-    background-color: #08090d;
+    font-family: 'Zen Kaku Gothic New', 'Inter', -apple-system, sans-serif;
+    background-color: var(--bg-deep);
     background-image: 
-        radial-gradient(circle at 15% 20%, rgba(230, 57, 70, 0.05) 0%, transparent 40%),
-        radial-gradient(circle at 85% 80%, rgba(80, 250, 123, 0.04) 0%, transparent 40%),
-        url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.015'%3E%3Cpath d='M0 0h80v80H0z' fill='none'/%3E%3Cpath d='M40 40c0-11.046-8.954-20-20-20S0 28.954 0 40s8.954 20 20 20 20-8.954 20-20zm40 0c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z'/%3E%3C/g%3E%3C/svg%3E");
+        radial-gradient(circle at 50% 0%, rgba(214, 48, 49, 0.06) 0%, transparent 60%),
+        radial-gradient(circle at 100% 100%, rgba(214, 48, 49, 0.04) 0%, transparent 50%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d63031' fill-opacity='0.02'%3E%3Cpath d='M30 30c0-8.284-6.716-15-15-15S0 21.716 0 30s6.716 15 15 15 15-6.716 15-15zm30 0c0-8.284-6.716-15-15-15s-15 6.716-15 15 6.716 15 15 15 15-6.716 15-15z'/%3E%3C/g%3E%3C/svg%3E");
     color: var(--text-main);
     overflow-x: hidden;
     line-height: 1.6;
@@ -91,7 +91,7 @@ h1, h2, h3, .brand-text {
 /* Desktop Sidebar */
 .sidebar {
     width: var(--sidebar-width);
-    background-color: var(--bg-dark);
+    background-color: #ffffff; box-shadow: 2px 0 15px rgba(0,0,0,0.03);
     border-right: 1px solid var(--border-glass);
     display: flex;
     flex-direction: column;
@@ -118,9 +118,9 @@ h1, h2, h3, .brand-text {
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 1px;
-    background: linear-gradient(to right, var(--accent-pink), var(--accent-purple));
+    color: var(--accent-red);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--accent-red); -webkit-text-fill-color: var(--accent-red);
 }
 
 .sidebar-nav {
@@ -159,11 +159,15 @@ h1, h2, h3, .brand-text {
 }
 
 .nav-btn.active {
-    background: linear-gradient(135deg, rgba(255, 121, 198, 0.15), rgba(139, 92, 246, 0.15));
-    border: 1px solid rgba(255, 121, 198, 0.3);
-    color: var(--accent-pink);
+    background: var(--accent-red);
+    border: 1px solid var(--accent-red);
+    color: #ffffff;
     font-weight: 600;
-    box-shadow: var(--glow-pink);
+    box-shadow: 0 4px 14px rgba(214, 48, 49, 0.3);
+}
+
+.nav-btn.active i {
+    color: #ffffff;
 }
 
 .sidebar-footer {
@@ -230,14 +234,17 @@ h1, h2, h3, .brand-text {
 
 /* Glass Panels */
 .glass-panel {
-    background: var(--bg-card);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid var(--border-glass);
+    background: #ffffff;
+    border: 1px solid rgba(214, 48, 49, 0.14);
     border-radius: var(--border-radius);
     padding: 24px;
-    box-shadow: var(--shadow-soft);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(214, 48, 49, 0.05);
     transition: transform var(--transition-speed) ease, border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.glass-panel:hover {
+    border-color: rgba(214, 48, 49, 0.3);
+    box-shadow: 0 6px 20px rgba(214, 48, 49, 0.1);
 }
 
 .glass-panel:hover {
@@ -280,7 +287,7 @@ h1, h2, h3, .brand-text {
 }
 
 .filter-btn {
-    background: rgba(255, 255, 255, 0.05);
+    background: #fdfbf7;
     border: 1px solid var(--border-glass);
     color: var(--text-muted);
     padding: 8px 16px;
@@ -362,7 +369,7 @@ h1, h2, h3, .brand-text {
 }
 
 .day-header {
-    background: rgba(255, 255, 255, 0.03);
+    background: #fdfbf7;
     padding: 12px;
     border-radius: 8px;
     text-align: center;
@@ -391,9 +398,15 @@ h1, h2, h3, .brand-text {
 }
 
 .day-body {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    font-family: 'Zen Kaku Gothic New', 'Inter', -apple-system, sans-serif;
+    background-color: var(--bg-deep);
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(214, 48, 49, 0.06) 0%, transparent 60%),
+        radial-gradient(circle at 100% 100%, rgba(214, 48, 49, 0.04) 0%, transparent 50%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d63031' fill-opacity='0.02'%3E%3Cpath d='M30 30c0-8.284-6.716-15-15-15S0 21.716 0 30s6.716 15 15 15 15-6.716 15-15zm30 0c0-8.284-6.716-15-15-15s-15 6.716-15 15 6.716 15 15 15 15-6.716 15-15z'/%3E%3C/g%3E%3C/svg%3E");
+    color: var(--text-main);
+    overflow-x: hidden;
+    line-height: 1.6;
 }
 
 .route-badges {
@@ -757,7 +770,7 @@ h1, h2, h3, .brand-text {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255, 255, 255, 0.05);
+    background: #fdfbf7;
     padding: 4px 10px;
     border-radius: 20px;
     font-size: 12px;
@@ -992,7 +1005,7 @@ h1, h2, h3, .brand-text {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: var(--bg-dark);
+    background-color: #ffffff; box-shadow: 2px 0 15px rgba(0,0,0,0.03);
     border-top: 1px solid var(--border-glass);
     height: 60px;
     z-index: 100;
