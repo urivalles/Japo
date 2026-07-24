@@ -475,24 +475,23 @@ const DEFAULT_ITINERARY = [
 
 const DEFAULT_EXPENSES = [
     { id: '1', category: 'Vols', concept: 'Vol Open-Jaw BCN-Tòquio / Kansai-BCN (Confirmat)', amount: 850, paid: true },
-    { id: 'h-ueno', category: 'Allotjament', concept: 'Hostel Ueno / Asakusa (06-09 Agost - 3 nits)', amount: 55, paid: true },
-    { id: 'h-utsunomiya', category: 'Allotjament', concept: 'Guesthouse Utsunomiya (09-13 Agost - 4 nits)', amount: 89, paid: true },
-    { id: 'h-shinjuku', category: 'Allotjament', concept: 'IMANO Tokyo Hostel Shinjuku (13-15 Agost)', amount: 52, paid: false },
+    { id: 'h-ueno', category: 'Allotjament', concept: 'Tomariya Ueno Hostel (06-09 Agost - 3 nits)', amount: 55, paid: true },
+    { id: 'h-utsunomiya', category: 'Allotjament', concept: 'Guesthouse Utsunomiya (09-13 Agost - 4 nits)', amount: 90, paid: true },
+    { id: 'h-shinjuku', category: 'Allotjament', concept: 'IMANO Tokyo Hostel Shinjuku (13-15 Agost)', amount: 58, paid: false },
     { id: 'h-fuji', category: 'Allotjament', concept: 'Cabin House Yado Fujinomiya (15-17 Agost)', amount: 53, paid: false },
     { id: 'h-takayama', category: 'Allotjament', concept: 'Guesthouse Ouka Takayama (17-20 Agost)', amount: 55, paid: false },
     { id: 'h-kanazawa', category: 'Allotjament', concept: 'Blue Hour Kanazawa (20-21 Agost)', amount: 17, paid: false },
     { id: 'h-kyoto', category: 'Allotjament', concept: 'Shijo Guesthouse Hive Kyoto (21-23 Agost)', amount: 34, paid: false },
     { id: 'h-osaka', category: 'Allotjament', concept: 'Acro Capsule Namba Osaka (23-25 Agost)', amount: 27, paid: false },
     { id: 'h-hiroshima', category: 'Allotjament', concept: 'Webase Hiroshima (25-27 Agost)', amount: 36, paid: false },
-    { id: 't-airports', category: 'Transport', concept: 'Trens Aeroports (Keisei Skyliner + KIX Haruka Express)', amount: 35, paid: false },
-    { id: 't-tokyo-nikko', category: 'Transport', concept: 'Trens i Busos Nikko / Nantai / Okunikko (JR + Kanto/Tobu bus)', amount: 107, paid: false },
-    { id: 't-fuji-takayama', category: 'Transport', concept: 'Shinjuku -> Fujinomiya + Bus 5a Estació Fuji + Trajecte Takayama', amount: 89, paid: false },
-    { id: 't-nohi-thunder', category: 'Transport', concept: 'Nohi Bus (Takayama->Shirakawa-go->Kanazawa) + Thunderbird a Kyoto', amount: 60, paid: false },
-    { id: 't-shinkansen-hiro', category: 'Transport', concept: 'Shinkansen Osaka <-> Hiroshima (Anada/Tornada) + Ferry Miyajima + Cablecar', amount: 146, paid: false },
-    { id: 't-taqbin-local', category: 'Transport', concept: 'Metro urbà (Tòquio/Kyoto/Osaka) + Enviament Maleta Ta-Q-Bin', amount: 63, paid: false },
+    { id: 't-week1', category: 'Transport', concept: 'Setmana 1: Tòquio, Kamakura, Utsunomiya, Nikko (Skyliner + Tobu Bus)', amount: 97, paid: false },
+    { id: 't-week2', category: 'Transport', concept: 'Setmana 2: Fuji, Takayama, Nohi Bus, Kanazawa, Thunderbird a Kyoto', amount: 182, paid: false },
+    { id: 't-week3', category: 'Transport', concept: 'Setmana 3: Kyoto, Osaka, Shinkansen Hiroshima, Ferry Miyajima, Haruka KIX', amount: 218, paid: false },
+    { id: 't-taqbin', category: 'Transport', concept: 'Enviament Maleta Gran Ta-Q-Bin (Takayama -> Kyoto)', amount: 16, paid: false },
     { id: 'food-daily', category: 'Menjar i oci', concept: 'Menjar diari (Konbinis, Ramen, Gyudon, Izakayas - 21 dies @ 24€/dia)', amount: 504, paid: false },
     { id: 'leisure-temples', category: 'Menjar i oci', concept: 'Entrades Temples Nikko, Onsens, Cova Oya, Museu Pau', amount: 96, paid: false },
-    { id: 'esim-data', category: 'Altres', concept: 'eSIM de dades mòbil (Ubigi / Holafly 21 dies)', amount: 30, paid: false }
+    { id: 'esim-data', category: 'Altres', concept: 'eSIM de dades mòbil (Ubigi / Holafly 21 dies)', amount: 30, paid: false },
+    { id: 'insurance-heymondo', category: 'Altres', concept: 'Assegurança de viatge Heymondo (Pla Tranquilidad)', amount: 80.49, paid: true }
 ];
 
 const DEFAULT_VIDEOS = [
@@ -523,24 +522,24 @@ const DEFAULT_TASKS = [
     { id: '1', text: 'Reservar els vols definitius BCN - Japó (open-jaw o anada/tornada KIX/NRT)', completed: true },
     { id: '2', text: 'Reservar Hostel a Ueno o Asakusa (06 - 09 Agost)', completed: false },
     { id: '3', text: 'Posar alarma per comprar bitllet Nohi Bus (Takayama -> Shirakawa-go -> Kanazawa) un mes abans', completed: false },
-    { id: '4', text: 'Comprar assegurança mèdica internacional', completed: false },
+    { id: '4', text: 'Comprar assegurança mèdica internacional (Heymondo - 80,49 €)', completed: true },
     { id: '5', text: 'Contractar eSIM de dades per al mòbil (ex: Ubigi o Holafly)', completed: false }
 ];
 
 const DEFAULT_LUGGAGE = [
     { id: 'l1', text: 'Motxilla de senderisme principal (30-40L)', completed: false },
-    { id: 'l2', text: 'Calçat de trekking / trail running ja usat (crucial pel Kumano)', completed: false },
-    { id: 'l3', text: 'Paravents / Impermeable lleuger (plou sovint a Kumano)', completed: false },
-    { id: 'l4', text: 'Roba tècnica transpirable (per a la calor i humitat de l\'agost)', completed: false },
-    { id: 'l5', text: 'Tovallola de microfibra de secat ràpid', completed: false },
-    { id: 'l6', text: 'Farmaciola bàsica (tiretes, antiinflamatoris, vaselina pels peus)', completed: false },
+    { id: 'l2', text: 'Calçat de trekking / trail running ja usat (crucial pel volcà Mont Nantai a Nikko i Fuji)', completed: false },
+    { id: 'l3', text: 'Paravents / Impermeable lleuger (plou sovint a la muntanya i a Nikko)', completed: false },
+    { id: 'l4', text: 'Roba tècnica transpirable (per a la calor i humitat intensa de l\'agost)', completed: false },
+    { id: 'l5', text: 'Tovallola de microfibra de secat ràpid (imprescindible per als onsens/banys termals)', completed: false },
+    { id: 'l6', text: 'Farmaciola bàsica (tiretes, antiinflamatoris, vaselina pels peus, Fortasec)', completed: false },
     { id: 'l7', text: 'Adaptador d\'endoll tipus A (Japó)', completed: false },
-    { id: 'l8', text: 'Passaport en vigor i còpia física/digital', completed: false },
-    { id: 'l9', text: '1 o 2 maletes de cabina petites (idealment només 1 si és possible)', completed: false },
-    { id: 'l10', text: 'Motxilla petita de dia (15-20L) per al senderisme a Kumano', completed: false },
+    { id: 'l8', text: 'Passaport original en vigor (obligatori dur-lo a sobre per llei i Tax-Free)', completed: false },
+    { id: 'l9', text: '1 maleta de cabina + 1 motxilla de dia (15-20L) per al senderisme i excursions', completed: false },
+    { id: 'l10', text: 'Picarol d\'os (Kuma-suzu) per al senderisme a Nikko i zones de muntanya', completed: false },
     { id: 'l11', text: 'Cantimplora o bossa d\'aigua (mínim 1.5L, fa molta calor)', completed: false },
-    { id: 'l12', text: 'Bastons de trekking per a les baixades de pedra a Kumano', completed: false },
-    { id: 'l13', text: 'Roba interior i samarretes de secat ràpid per rentar a mà', completed: false },
+    { id: 'l12', text: 'Bastons de trekking per a les baixades del Mont Nantai i Fuji', completed: false },
+    { id: 'l13', text: 'Roba interior i samarretes de secat ràpid per rentar a mà si cal', completed: false },
     { id: 'l14', text: 'Gorra i ulleres de sol pel sol intens d\'agost', completed: false },
     { id: 'l15', text: 'Protector solar resistent a la suor i repel·lent de mosquits fort', completed: false }
 ];
@@ -579,6 +578,10 @@ let state = {
     currentTab: 'itinerary',
     itineraryFilter: 'all',
     budgetLimit: 2500,
+    budgetFilterStatus: 'all',
+    budgetFilterCategory: 'all',
+    budgetSortBy: 'default',
+    budgetSortOrder: 'desc',
     expenses: [],
     videos: [],
     tasks: [],
@@ -609,6 +612,26 @@ function loadState() {
     const hasSimExpense = state.expenses.some(exp => exp.concept.toLowerCase().includes('sim'));
     if (!hasSimExpense) {
         state.expenses.push({ id: 'sim-card-exp', category: 'Altres', concept: 'Targeta SIM internet Japó', amount: 100, paid: false });
+        saveState('expenses');
+    }
+
+    // Assegurar que l'assegurança Heymondo està present i pagada
+    const hasHeymondoExpense = state.expenses.some(exp => exp.id === 'insurance-heymondo' || exp.concept.toLowerCase().includes('heymondo'));
+    if (!hasHeymondoExpense) {
+        state.expenses.push({ id: 'insurance-heymondo', category: 'Altres', concept: 'Assegurança de viatge Heymondo (Pla Tranquilidad)', amount: 80.49, paid: true });
+        saveState('expenses');
+    }
+
+    // Actualitzar les despeses de transport al desglossament V6 de 513 €
+    const hasOldTransport = state.expenses.some(exp => exp.id === 't-airports' || exp.id === 't-tokyo-nikko');
+    if (hasOldTransport) {
+        state.expenses = state.expenses.filter(exp => !exp.id.startsWith('t-'));
+        state.expenses.push(
+            { id: 't-week1', category: 'Transport', concept: 'Setmana 1: Tòquio, Kamakura, Utsunomiya, Nikko (Skyliner + Tobu Bus)', amount: 97, paid: false },
+            { id: 't-week2', category: 'Transport', concept: 'Setmana 2: Fuji, Takayama, Nohi Bus, Kanazawa, Thunderbird a Kyoto', amount: 182, paid: false },
+            { id: 't-week3', category: 'Transport', concept: 'Setmana 3: Kyoto, Osaka, Shinkansen Hiroshima, Ferry Miyajima, Haruka KIX', amount: 218, paid: false },
+            { id: 't-taqbin', category: 'Transport', concept: 'Enviament Maleta Gran Ta-Q-Bin (Takayama -> Kyoto)', amount: 16, paid: false }
+        );
         saveState('expenses');
     }
 
@@ -706,13 +729,39 @@ const SECTION_META = {
     itinerary: { title: 'Cronograma del Viatge', kanji: '日程', icon: 'assets/icons/bonsai.jpg' },
     map: { title: 'Mapa de la Ruta', kanji: '地図', icon: 'assets/icons/fuji.jpg' },
     budget: { title: 'Control del Pressupost', kanji: '予算', icon: 'assets/icons/manekineko.jpg' },
-    videos: { title: 'Vídeos de YouTube i Recursos', kanji: '動画', icon: 'assets/icons/lantern.jpg' },
+    transports: { title: 'Transports i Trajectes', kanji: '交通', icon: 'assets/icons/fuji.jpg' },
     tasks: { title: 'Tasques Pendents', kanji: '作業', icon: 'assets/icons/crane.jpg' },
-    luggage: { title: 'Equipatge i Maleta', kanji: '荷物', icon: 'assets/icons/bamboo.jpg' },
-    shopping: { title: 'Llista de Compres', kanji: '買物', icon: 'assets/icons/koicarp.jpg' },
-    places: { title: 'Altres Llocs a Visitar', kanji: '名所', icon: 'assets/icons/panda.jpg' },
-    observations: { title: 'Observacions i Consells', kanji: '備忘録', icon: 'assets/icons/sakura.jpg' }
+    practical: { title: 'Guia Pràctica, Maleta i Notes', kanji: '準備', icon: 'assets/icons/bamboo.jpg' },
+    emergencies: { title: 'Dades Importants i Emergències', kanji: '緊急', icon: 'assets/icons/lantern.jpg' },
+    videos: { title: 'Vídeos de YouTube i Recursos', kanji: '動画', icon: 'assets/icons/lantern.jpg' }
 };
+
+function initPracticalSubtabs() {
+    document.addEventListener('click', (e) => {
+        const btn = e.target.closest('.practical-subnav-btn');
+        if (!btn) return;
+
+        e.preventDefault();
+        const target = btn.getAttribute('data-subtab');
+        if (!target) return;
+
+        const subBtns = document.querySelectorAll('.practical-subnav-btn');
+        const subContents = document.querySelectorAll('.practical-subtab-content');
+
+        subBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        subContents.forEach(content => {
+            if (content.id === `practical-sub-${target}`) {
+                content.classList.add('active');
+                content.style.display = 'block';
+            } else {
+                content.classList.remove('active');
+                content.style.display = 'none';
+            }
+        });
+    });
+}
 
 function initTabSwitching() {
     const navButtons = document.querySelectorAll('.nav-btn, .mobile-nav-btn');
@@ -1113,35 +1162,80 @@ function renderBudget() {
     let totalSpent = 0;
     let totalPaid = 0;
     let totalPending = 0;
-    const limit = state.budgetLimit || 2000;
+    const limit = state.budgetLimit || 2500;
 
+    // Overall totals for full budget metric bar
     state.expenses.forEach(exp => {
         const amt = parseFloat(exp.amount) || 0;
         totalSpent += amt;
-        if (exp.paid) {
-            totalPaid += amt;
+        if (exp.paid) totalPaid += amt;
+        else totalPending += amt;
+    });
+
+    // 1. Filter expenses
+    let displayExpenses = state.expenses.filter(exp => {
+        if (state.budgetFilterStatus === 'paid' && !exp.paid) return false;
+        if (state.budgetFilterStatus === 'pending' && exp.paid) return false;
+        if (state.budgetFilterCategory !== 'all' && exp.category !== state.budgetFilterCategory) return false;
+        return true;
+    });
+
+    // 2. Sort expenses
+    if (state.budgetSortBy === 'amount-desc') {
+        displayExpenses.sort((a, b) => b.amount - a.amount);
+    } else if (state.budgetSortBy === 'amount-asc') {
+        displayExpenses.sort((a, b) => a.amount - b.amount);
+    } else if (state.budgetSortBy === 'amount') {
+        displayExpenses.sort((a, b) => state.budgetSortOrder === 'desc' ? b.amount - a.amount : a.amount - b.amount);
+    } else if (state.budgetSortBy === 'category') {
+        displayExpenses.sort((a, b) => state.budgetSortOrder === 'desc' ? b.category.localeCompare(a.category) : a.category.localeCompare(b.category));
+    } else if (state.budgetSortBy === 'concept') {
+        displayExpenses.sort((a, b) => state.budgetSortOrder === 'desc' ? b.concept.localeCompare(a.concept) : a.concept.localeCompare(b.concept));
+    } else if (state.budgetSortBy === 'paid') {
+        displayExpenses.sort((a, b) => state.budgetSortOrder === 'desc' ? (b.paid === a.paid ? 0 : b.paid ? 1 : -1) : (a.paid === b.paid ? 0 : a.paid ? 1 : -1));
+    }
+
+    if (displayExpenses.length === 0) {
+        const emptyRow = document.createElement('tr');
+        emptyRow.innerHTML = `<td colspan="5" style="text-align: center; padding: 20px; color: var(--text-muted);">No s'ha trobat cap despesa amb els filtres seleccionats.</td>`;
+        tableBody.appendChild(emptyRow);
+    } else {
+        displayExpenses.forEach(exp => {
+            const amt = parseFloat(exp.amount) || 0;
+            const row = document.createElement('tr');
+            const isPaid = exp.paid === true;
+            const statusBadge = isPaid 
+                ? `<button class="btn-toggle-paid paid" data-id="${exp.id}" style="background: rgba(29, 78, 216, 0.12); color: var(--indigo-navy); border: 1px solid rgba(29, 78, 216, 0.35); padding: 4px 10px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; font-weight: 600;">☑️ Pagat</button>`
+                : `<button class="btn-toggle-paid pending" data-id="${exp.id}" style="background: rgba(214, 48, 49, 0.12); color: var(--accent-red); border: 1px solid rgba(214, 48, 49, 0.35); padding: 4px 10px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; font-weight: 600;">⏳ Pendent</button>`;
+
+            row.innerHTML = `
+                <td><span class="expense-category-cell">${getCategoryEmoji(exp.category)} ${exp.category}</span></td>
+                <td>${exp.concept}</td>
+                <td style="font-weight: 600;">${amt.toLocaleString('ca-ES')} €</td>
+                <td>${statusBadge}</td>
+                <td>
+                    <button class="btn-delete-expense" data-id="${exp.id}" title="Eliminar despesa">
+                        <i class="fa-regular fa-trash-can"></i>
+                    </button>
+                </td>
+            `;
+            tableBody.appendChild(row);
+        });
+    }
+
+    // Update TH sort icons
+    document.querySelectorAll('.sortable-th').forEach(th => {
+        const key = th.getAttribute('data-sort-key');
+        const icon = th.querySelector('.sort-icon');
+        if (!icon) return;
+        if (state.budgetSortBy === key || (key === 'amount' && (state.budgetSortBy === 'amount-desc' || state.budgetSortBy === 'amount-asc'))) {
+            th.classList.add('active-sort');
+            const isDesc = state.budgetSortBy === 'amount-desc' || state.budgetSortOrder === 'desc';
+            icon.className = isDesc ? 'fa-solid fa-sort-down sort-icon' : 'fa-solid fa-sort-up sort-icon';
         } else {
-            totalPending += amt;
+            th.classList.remove('active-sort');
+            icon.className = 'fa-solid fa-sort sort-icon';
         }
-
-        const row = document.createElement('tr');
-        const isPaid = exp.paid === true;
-        const statusBadge = isPaid 
-            ? `<button class="btn-toggle-paid paid" data-id="${exp.id}" style="background: rgba(29, 78, 216, 0.12); color: var(--indigo-navy); border: 1px solid rgba(29, 78, 216, 0.35); padding: 4px 10px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; font-weight: 600;">☑️ Pagat</button>`
-            : `<button class="btn-toggle-paid pending" data-id="${exp.id}" style="background: rgba(214, 48, 49, 0.12); color: var(--accent-red); border: 1px solid rgba(214, 48, 49, 0.35); padding: 4px 10px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; font-weight: 600;">⏳ Pendent</button>`;
-
-        row.innerHTML = `
-            <td><span class="expense-category-cell">${getCategoryEmoji(exp.category)} ${exp.category}</span></td>
-            <td>${exp.concept}</td>
-            <td style="font-weight: 600;">${amt.toLocaleString('ca-ES')} €</td>
-            <td>${statusBadge}</td>
-            <td>
-                <button class="btn-delete-expense" data-id="${exp.id}" title="Eliminar despesa">
-                    <i class="fa-regular fa-trash-can"></i>
-                </button>
-            </td>
-        `;
-        tableBody.appendChild(row);
     });
 
     // Update UI elements
@@ -1213,6 +1307,26 @@ function getCategoryEmoji(cat) {
     return '🎒';
 }
 
+function initBudgetFilters() {
+    document.addEventListener('click', (e) => {
+        const th = e.target.closest('.sortable-th');
+        if (!th) return;
+
+        const key = th.getAttribute('data-sort-key');
+        if (!key) return;
+
+        if (state.budgetSortBy === key || (key === 'amount' && (state.budgetSortBy === 'amount-desc' || state.budgetSortBy === 'amount-asc'))) {
+            state.budgetSortOrder = state.budgetSortOrder === 'asc' ? 'desc' : 'asc';
+            if (key === 'amount') state.budgetSortBy = state.budgetSortOrder === 'desc' ? 'amount-desc' : 'amount-asc';
+        } else {
+            state.budgetSortBy = key;
+            state.budgetSortOrder = 'desc';
+            if (key === 'amount') state.budgetSortBy = 'amount-desc';
+        }
+        renderBudget();
+    });
+}
+
 function initBudgetForm() {
     const form = document.getElementById('expense-form');
     if (form) {
@@ -1240,17 +1354,6 @@ function initBudgetForm() {
 
             // Reset form
             form.reset();
-        });
-    }
-
-    const resetBtn = document.getElementById('btn-reset-expenses');
-    if (resetBtn) {
-        resetBtn.addEventListener('click', () => {
-            if (confirm('Estàs segur que vols restablir les despeses per defecte? Es perdran els canvis manualment fets.')) {
-                state.expenses = JSON.parse(JSON.stringify(DEFAULT_EXPENSES));
-                saveState('expenses');
-                renderBudget();
-            }
         });
     }
 
@@ -1794,6 +1897,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initItineraryFilters();
     
     renderBudget();
+    initBudgetFilters();
     initBudgetForm();
     
     renderVideos();
@@ -1813,6 +1917,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderObservations();
     initObservationsForm();
+
+    initPracticalSubtabs();
 });
 
 // Register PWA Service Worker for offline support and standalone app installation

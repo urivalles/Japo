@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Japó 2026 | El meu Viatge Personalitzat</title>
-    <meta name="description" content="Aplicació interactiva per organitzar el meu viatge personalitzat al Japó de l'agost de 2026. Pla Estratègic V5 d'en Uri.">
+    <meta name="description" content="Aplicació interactiva per organitzar el meu viatge personalitzat al Japó de l'agost de 2026. Pla Estratègic V6 Definitiu d'en Uri.">
     
     <!-- Google Fonts: Inter & Noto Serif JP & Zen Kaku Gothic New -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,29 +54,21 @@
                     <i class="fa-solid fa-wallet"></i>
                     <span>Pressupost</span>
                 </button>
+                <button class="nav-btn" data-target="transports" id="btn-nav-transports">
+                    <i class="fa-solid fa-train-subway"></i>
+                    <span>Transports</span>
+                </button>
+                <button class="nav-btn" data-target="practical" id="btn-nav-practical">
+                    <i class="fa-solid fa-suitcase"></i>
+                    <span>Guia Pràctica i Maleta</span>
+                </button>
+                <button class="nav-btn" data-target="emergencies" id="btn-nav-emergencies">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Emergències</span>
+                </button>
                 <button class="nav-btn" data-target="videos" id="btn-nav-videos">
                     <i class="fa-solid fa-video"></i>
                     <span>Vídeos i Info</span>
-                </button>
-                <button class="nav-btn" data-target="tasks" id="btn-nav-tasks">
-                    <i class="fa-solid fa-list-check"></i>
-                    <span>Tasques</span>
-                </button>
-                <button class="nav-btn" data-target="luggage" id="btn-nav-luggage">
-                    <i class="fa-solid fa-suitcase"></i>
-                    <span>Maleta</span>
-                </button>
-                <button class="nav-btn" data-target="shopping" id="btn-nav-shopping">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                    <span>Compres</span>
-                </button>
-                <button class="nav-btn" data-target="places" id="btn-nav-places">
-                    <i class="fa-solid fa-compass"></i>
-                    <span>Possibles Llocs</span>
-                </button>
-                <button class="nav-btn" data-target="observations" id="btn-nav-observations">
-                    <i class="fa-solid fa-circle-info"></i>
-                    <span>Observacions</span>
                 </button>
             </nav>
             <div class="sidebar-footer">
@@ -216,16 +208,16 @@
                     <div class="expense-list-container glass-panel">
                         <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
                             <h3 style="margin-bottom: 0;">Desglosament de Despeses</h3>
-                            <button id="btn-reset-expenses" style="background: rgba(255,255,255,0.05); color: var(--text-muted); border: 1px solid var(--border-glass); padding: 6px 12px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: all 0.2s; font-size: 0.85rem;"><i class="fa-solid fa-rotate-left"></i> Restablir per defecte</button>
                         </div>
+
                         <div class="table-responsive">
                             <table class="expense-table">
                                 <thead>
                                     <tr>
-                                        <th>Categoria</th>
-                                        <th>Concepte</th>
-                                        <th>Import</th>
-                                        <th>Estat</th>
+                                        <th class="sortable-th" data-sort-key="category" title="Flic per ordenar per Categoria">Categoria <i class="fa-solid fa-sort sort-icon"></i></th>
+                                        <th class="sortable-th" data-sort-key="concept" title="Clic per ordenar per Concepte">Concepte <i class="fa-solid fa-sort sort-icon"></i></th>
+                                        <th class="sortable-th" data-sort-key="amount" title="Clic per ordenar per Import">Import <i class="fa-solid fa-sort sort-icon"></i></th>
+                                        <th class="sortable-th" data-sort-key="paid" title="Clic per ordenar per Estat">Estat <i class="fa-solid fa-sort sort-icon"></i></th>
                                         <th>Acció</th>
                                     </tr>
                                 </thead>
@@ -273,68 +265,550 @@
                     </div>
                 </section>
 
-                <!-- 5. TASKS CHECKLIST SECTION -->
-                <section class="content-section" id="section-tasks">
-                    <div class="tasks-card glass-panel">
-                        <div class="add-task-bar">
-                            <input type="text" id="new-task-input" placeholder="Nova tasca... (ex: Contractar assegurança mèdica)">
-                            <button id="btn-add-task"><i class="fa-solid fa-plus"></i> Afegir</button>
+                <!-- 6. PRACTICAL GUIDE, LUGGAGE, TASKS, SHOPPING & NOTES SECTION -->
+                <section class="content-section" id="section-practical">
+                    <div class="practical-container">
+                        <!-- Sub-tab Navigation Bar -->
+                        <div class="practical-subnav glass-panel">
+                            <button class="practical-subnav-btn active" data-subtab="luggage" id="subbtn-luggage">
+                                <i class="fa-solid fa-suitcase"></i> Maleta & Equipatge
+                            </button>
+                            <button class="practical-subnav-btn" data-subtab="tasks" id="subbtn-tasks">
+                                <i class="fa-solid fa-list-check"></i> Tasques Viatge
+                            </button>
+                            <button class="practical-subnav-btn" data-subtab="shopping" id="subbtn-shopping">
+                                <i class="fa-solid fa-bag-shopping"></i> Compres Exclusives
+                            </button>
+                            <button class="practical-subnav-btn" data-subtab="places" id="subbtn-places">
+                                <i class="fa-solid fa-compass"></i> Visites i Alternatives
+                            </button>
+                            <button class="practical-subnav-btn" data-subtab="obs" id="subbtn-obs">
+                                <i class="fa-solid fa-lightbulb"></i> Observacions & Consells
+                            </button>
                         </div>
-                        <ul class="tasks-list" id="tasks-list-container">
-                            <!-- JS generated tasks -->
-                        </ul>
+
+                        <!-- Sub-tab 1: LUGGAGE -->
+                        <div class="practical-subtab-content active" id="practical-sub-luggage">
+                            <div class="tasks-card glass-panel">
+                                <div class="add-task-bar">
+                                    <input type="text" id="new-luggage-input" placeholder="Afegir a la maleta... (ex: Picarol d'os pel Mont Nantai)">
+                                    <button id="btn-add-luggage"><i class="fa-solid fa-plus"></i> Afegir</button>
+                                </div>
+                                <ul class="tasks-list" id="luggage-list-container">
+                                    <!-- JS generated luggage items -->
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Sub-tab 2: TASKS FOR THE TRIP -->
+                        <div class="practical-subtab-content" id="practical-sub-tasks">
+                            <div class="tasks-card glass-panel">
+                                <div class="add-task-bar">
+                                    <input type="text" id="new-task-input" placeholder="Nova tasca durant el viatge... (ex: Reclamar Tax-Free al Don Quijote)">
+                                    <button id="btn-add-task"><i class="fa-solid fa-plus"></i> Afegir Tasca</button>
+                                </div>
+                                <ul class="tasks-list" id="tasks-list-container">
+                                    <!-- JS generated tasks -->
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Sub-tab 3: SHOPPING -->
+                        <div class="practical-subtab-content" id="practical-sub-shopping">
+                            <div class="tasks-card glass-panel" style="margin-bottom: 20px;">
+                                <div class="add-task-bar">
+                                    <input type="text" id="new-shopping-input" placeholder="Afegir idea de record... (ex: Matcha d'Uji)">
+                                    <button id="btn-add-shopping"><i class="fa-solid fa-plus"></i> Afegir</button>
+                                </div>
+                                <ul class="tasks-list" id="shopping-list-container">
+                                    <!-- JS generated shopping items -->
+                                </ul>
+                            </div>
+
+                            <!-- Curated Unique Shopping Guide Card -->
+                            <div class="glass-panel" style="padding: 20px;">
+                                <h4 style="margin: 0 0 12px 0; color: var(--accent-pink); font-size: 1.05rem;"><i class="fa-solid fa-gem"></i> Compres Exclusives Recomanades per Zones</h4>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; font-size: 0.85rem; color: var(--text-muted);">
+                                    <div class="sub-contact-pill">
+                                        <i class="fa-solid fa-store" style="color: var(--accent-green);"></i>
+                                        <div>
+                                            <strong style="color:#fff;">Utsunomiya / Tochigi</strong>
+                                            <span>Ceràmica de Mashiko (<em>Mashiko-yaki</em>) i artesanía local.</span>
+                                        </div>
+                                    </div>
+                                    <div class="sub-contact-pill">
+                                        <i class="fa-solid fa-mug-hot" style="color: var(--accent-blue);"></i>
+                                        <div>
+                                            <strong style="color:#fff;">Fuji / Shizuoka</strong>
+                                            <span>Te verd de fulla de Shizuoka i artesanía de fusta de Fuji.</span>
+                                        </div>
+                                    </div>
+                                    <div class="sub-contact-pill">
+                                        <i class="fa-solid fa-whiskey-glass" style="color: #f59e0b;"></i>
+                                        <div>
+                                            <strong style="color:#fff;">Takayama / Hida</strong>
+                                            <span>Sake artesà de destil·leria tradicional, lacats <em>Hida Shunkei</em> i mentol <em>Kyusoku Jikan</em>.</span>
+                                        </div>
+                                    </div>
+                                    <div class="sub-contact-pill">
+                                        <i class="fa-solid fa-coins" style="color: var(--accent-pink);"></i>
+                                        <div>
+                                            <strong style="color:#fff;">Kanazawa</strong>
+                                            <span>Fulla d'or artesanal <em>Kanazawahaku</em> i te torrat <em>Kaga Bōcha</em>.</span>
+                                        </div>
+                                    </div>
+                                    <div class="sub-contact-pill">
+                                        <i class="fa-solid fa-leaf" style="color: var(--accent-green);"></i>
+                                        <div>
+                                            <strong style="color:#fff;">Kyoto / Uji</strong>
+                                            <span>Te Matcha d'alta selecció d'Uji, incens de sàndal i llibreta <em>Goshuincho</em> per als temples.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sub-tab 3: PLACES & ALTERNATIVES (PLAN B) -->
+                        <div class="practical-subtab-content" id="practical-sub-places">
+                            <div class="tasks-card glass-panel">
+                                <div class="add-task-bar">
+                                    <input type="text" id="new-place-input" placeholder="Afegir lloc o alternativa... (ex: Museu d'Art Contemporani Kanazawa)">
+                                    <button id="btn-add-place"><i class="fa-solid fa-plus"></i> Afegir</button>
+                                </div>
+                                <ul class="tasks-list" id="places-list-container">
+                                    <!-- JS generated places -->
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Sub-tab 4: OBSERVATIONS -->
+                        <div class="practical-subtab-content" id="practical-sub-obs">
+                            <div class="tasks-card glass-panel">
+                                <div class="add-task-bar">
+                                    <input type="text" id="new-observation-input" placeholder="Afegir consell/observació... (ex: Dur sempre efectiu)">
+                                    <button id="btn-add-observation"><i class="fa-solid fa-plus"></i> Afegir</button>
+                                </div>
+                                <ul class="tasks-list" id="observations-list-container">
+                                    <!-- JS generated observations -->
+                                </ul>
+                            </div>
+                        </div>
+
                     </div>
                 </section>
 
-                <!-- 6. LUGGAGE SECTION -->
-                <section class="content-section" id="section-luggage">
-                    <div class="tasks-card glass-panel">
-                        <div class="add-task-bar">
-                            <input type="text" id="new-luggage-input" placeholder="Afegir a la maleta... (ex: Calçat de trekking)">
-                            <button id="btn-add-luggage"><i class="fa-solid fa-plus"></i> Afegir</button>
+                <!-- 10. EMERGENCIES AND IMPORTANT DATA SECTION -->
+                <section class="content-section" id="section-emergencies">
+                    <div class="emergencies-grid">
+                        
+                        <!-- Block 1: Fast Emergency Contacts -->
+                        <div class="emergencies-card glass-panel wide-card">
+                            <h3><i class="fa-solid fa-phone-volume" style="color: #ef4444;"></i> Telèfons d'Emergència i Assistència Ràpida</h3>
+                            <div class="emergency-buttons-grid">
+                                <a href="tel:110" class="emergency-btn btn-danger">
+                                    <div class="emergency-icon"><i class="fa-solid fa-user-shield"></i></div>
+                                    <div class="emergency-info">
+                                        <strong>Policia Japó</strong>
+                                        <span>110</span>
+                                        <small>Emergències policials directes</small>
+                                    </div>
+                                </a>
+                                <a href="tel:119" class="emergency-btn btn-danger">
+                                    <div class="emergency-icon"><i class="fa-solid fa-truck-medical"></i></div>
+                                    <div class="emergency-info">
+                                        <strong>Bombers i Ambulàncies</strong>
+                                        <span>119</span>
+                                        <small>Incendis i urgències mèdiques</small>
+                                    </div>
+                                </a>
+                                <a href="tel:+818043682817" class="emergency-btn btn-warning">
+                                    <div class="emergency-icon"><i class="fa-solid fa-building-columns"></i></div>
+                                    <div class="emergency-info">
+                                        <strong>Emergència Consular Espanya</strong>
+                                        <span>080-4368-2817 (+81)</span>
+                                        <small>Exclusiu 24/7 (Accidents / Greus)</small>
+                                    </div>
+                                </a>
+                                <a href="tel:+815038162787" class="emergency-btn btn-info">
+                                    <div class="emergency-icon"><i class="fa-solid fa-headset"></i></div>
+                                    <div class="emergency-info">
+                                        <strong>Atenció Turística JNTO</strong>
+                                        <span>050-3816-2787 (+81)</span>
+                                        <small>Assistència 24h (Anglès)</small>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <div class="medical-contacts-row" style="margin-top: 15px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
+                                <div class="sub-contact-pill">
+                                    <i class="fa-solid fa-hospital" style="color: var(--accent-blue);"></i>
+                                    <div>
+                                        <strong>Info Mèdica Tòquio</strong>
+                                        <span>03-5285-8181 (09:00 - 20:00h)</span>
+                                    </div>
+                                </div>
+                                <div class="sub-contact-pill">
+                                    <i class="fa-solid fa-language" style="color: var(--accent-green);"></i>
+                                    <div>
+                                        <strong>Traducció Mèdica Fukuoka</strong>
+                                        <span>092-286-9595 (24h)</span>
+                                    </div>
+                                </div>
+                                <div class="sub-contact-pill">
+                                    <i class="fa-solid fa-comments" style="color: var(--accent-pink);"></i>
+                                    <div>
+                                        <strong>Suport TELL (Anglès)</strong>
+                                        <span>03-5774-0992 (09:00 - 23:00h)</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <ul class="tasks-list" id="luggage-list-container">
-                            <!-- JS generated luggage items -->
-                        </ul>
+
+                        <!-- Block 2: Heymondo Insurance Card -->
+                        <div class="emergencies-card glass-panel wide-card heymondo-panel">
+                            <div class="heymondo-header">
+                                <div class="heymondo-title">
+                                    <i class="fa-solid fa-heart-pulse" style="color: var(--accent-pink); font-size: 1.4rem;"></i>
+                                    <div>
+                                        <h3 style="margin:0; font-size:1.1rem;">Assegurança Heymondo (Pla Tranquilidad)</h3>
+                                        <span class="heymondo-badge">Contractada & Pagada (80,49 €)</span>
+                                    </div>
+                                </div>
+                                <div class="heymondo-app-callout">
+                                    <i class="fa-solid fa-mobile-screen-button"></i> App Heymondo amb Xat Mèdic 24h
+                                </div>
+                            </div>
+                            <div class="heymondo-details-grid">
+                                <div class="heymondo-item">
+                                    <i class="fa-solid fa-notes-medical"></i>
+                                    <span>Cobertura Mèdica: <strong>Fins a 1.000.000 €</strong></span>
+                                </div>
+                                <div class="heymondo-item">
+                                    <i class="fa-solid fa-phone-volume"></i>
+                                    <span>Trucades d'emergència gratuïtes des de l'App</span>
+                                </div>
+                                <div class="heymondo-item">
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                    <span>Documents oficials disponibles al projecte:</span>
+                                </div>
+                            </div>
+                            <div class="pdf-links-bar">
+                                <a href="Heymondo resumen.pdf" target="_blank" class="pdf-link-btn">
+                                    <i class="fa-regular fa-file-pdf"></i> Resum de la Pòlissa PDF
+                                </a>
+                                <a href="CCGG_Viaje_Tranquilidad_Sin_Anulacion_IMA_IN_ES_v25.1.pdf" target="_blank" class="pdf-link-btn">
+                                    <i class="fa-solid fa-book-bookmark"></i> Condicions Generals PDF
+                                </a>
+                                <a href="Japó 2026 - Dades Importants, Seguretat i Contactes d'Emergència.pdf" target="_blank" class="pdf-link-btn">
+                                    <i class="fa-solid fa-shield-halved"></i> Guia Completa d'Emergència PDF
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Block 3: Embassy and Consulates -->
+                        <div class="emergencies-card glass-panel">
+                            <h3><i class="fa-solid fa-landmark" style="color: var(--accent-blue);"></i> Embaixada i Consulats d'Espanya</h3>
+                            <div class="embassy-box">
+                                <h4>Embaixada a Tòquio (Cancillería)</h4>
+                                <p><i class="fa-solid fa-location-dot"></i> <strong>Adreça:</strong> 1-3-29 Roppongi, Minato-ku, Tokio 106-0032</p>
+                                <p><i class="fa-solid fa-train-subway"></i> <strong>Metro:</strong> Kamiyacho (Línia Hibiya) / Roppongi-itchome (Línia Namboku)</p>
+                                <p><i class="fa-solid fa-phone"></i> <strong>Telèfons:</strong> +81 3 3583 8531 / +81 3 3583 8532</p>
+                                <p><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> <a href="mailto:emb.tokio.sc@maec.es">emb.tokio.sc@maec.es</a></p>
+                            </div>
+                            <div class="consulates-list" style="margin-top: 15px;">
+                                <h4 style="font-size: 0.9rem; margin-bottom: 8px; color: var(--text-muted);">Consulats Honoraris</h4>
+                                <ul class="consulates-ul">
+                                    <li><strong>Osaka (Kinki):</strong> +81 6 6344 2900 | ch.osaka@maec.es</li>
+                                    <li><strong>Fukuoka (Kyushu):</strong> +81 92 712 2211 | ch.fukuoka@maec.es</li>
+                                    <li><strong>Takamatsu (Shikoku/Chugoku):</strong> +81 87 825 1721 | ch.takamatsu@maec.es</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Block 4: Regulations and Passport -->
+                        <div class="emergencies-card glass-panel">
+                            <h3><i class="fa-solid fa-scale-balanced" style="color: var(--accent-green);"></i> Normativa Legal i Passaport</h3>
+                            <ul class="info-checklist">
+                                <li>
+                                    <i class="fa-solid fa-id-card info-icon"></i>
+                                    <div>
+                                        <strong>Passaport en tot moment:</strong> Obligatori dur el passaport original a sobre per llei (policia i Tax-Free).
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-passport info-icon"></i>
+                                    <div>
+                                        <strong>Visat Turístic:</strong> No cal visat per a estances inferiors a 90 dies (estrictament prohibit treballar).
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-gavel info-icon" style="color: #ef4444;"></i>
+                                    <div>
+                                        <strong>Drogues i Armes:</strong> Tolerància zero absoluta amb qualsevol droga (presó fins a 5 anys). Prohibit dur ganivets/fulles > 5,5 cm.
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-capsules info-icon" style="color: #f59e0b;"></i>
+                                    <div>
+                                        <strong>Medicació Prohibida:</strong> Atenció amb Gelocatil Flu / Frenadol (pseudoefedrina prohibida/restringida). Consultar yakkan@mhlw.go.jp si cal tractament específic.
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-martini-glass-citrus info-icon"></i>
+                                    <div>
+                                        <strong>Oci Nocturn (Kabukicho / Roppongi):</strong> No acceptis invitacions de desconeguts a bars al carrer (risc de begudes adulterades / estafes).
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Block 5: Hiking, Nature & Apps -->
+                        <div class="emergencies-card glass-panel wide-card">
+                            <h3><i class="fa-solid fa-mountain-sun" style="color: var(--accent-pink);"></i> Natura, Senderisme i Apps Recomanades</h3>
+                            <div class="nature-apps-grid">
+                                <div class="nature-box">
+                                    <h4><i class="fa-solid fa-bell"></i> Picarol d'Os (Kuma-suzu)</h4>
+                                    <p>Molt recomanable per al senderisme a Nikko i zones de muntanya per fer soroll constant. Es compra localment per 500-1.000 iens.</p>
+                                    <small style="display: block; margin-top: 6px; color: var(--accent-red);"><i class="fa-solid fa-ban"></i> Drons: Prohibits a la majoria de ciutats i zones turístiques.</small>
+                                </div>
+                                <div class="apps-box">
+                                    <h4><i class="fa-solid fa-mobile-retro"></i> Apps Mòbils d'Emergència</h4>
+                                    <ul class="apps-list">
+                                        <li><strong>Safety Tips:</strong> App oficial de turisme per a alertes d'emergència i refugis en anglès.</li>
+                                        <li><strong>Japan Shelter Guide:</strong> Localitzador de centres d'evacuació en cas de desastre.</li>
+                                        <li><strong>Yurekuru Call:</strong> Alertes prèvies de terratrèmols imminents.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </section>
 
-                <!-- 7. SHOPPING LIST SECTION -->
-                <section class="content-section" id="section-shopping">
-                    <div class="tasks-card glass-panel">
-                        <div class="add-task-bar">
-                            <input type="text" id="new-shopping-input" placeholder="Afegir idea de record... (ex: Campaneta Furin)">
-                            <button id="btn-add-shopping"><i class="fa-solid fa-plus"></i> Afegir</button>
-                        </div>
-                        <ul class="tasks-list" id="shopping-list-container">
-                            <!-- JS generated shopping items -->
-                        </ul>
-                    </div>
-                </section>
+                <!-- 11. TRANSPORTS AND ROUTES SECTION -->
+                <section class="content-section" id="section-transports">
+                    <div class="transports-container">
+                        
+                        <!-- Top Cards Summary -->
+                        <div class="transports-summary-grid">
+                            <div class="transport-summary-card glass-panel">
+                                <div class="t-card-header">
+                                    <span class="t-week-tag">Setmana 1</span>
+                                    <h4>Tòquio & Utsunomiya</h4>
+                                </div>
+                                <div class="t-card-price">97 €</div>
+                                <small>Skyliner, Hachioji, Kamakura, Nikko (Tobu Bus)</small>
+                            </div>
 
-                <!-- 8. OTHER PLACES SECTION -->
-                <section class="content-section" id="section-places">
-                    <div class="tasks-card glass-panel">
-                        <div class="add-task-bar">
-                            <input type="text" id="new-place-input" placeholder="Afegir lloc... (ex: Kamakura)">
-                            <button id="btn-add-place"><i class="fa-solid fa-plus"></i> Afegir</button>
-                        </div>
-                        <ul class="tasks-list" id="places-list-container">
-                            <!-- JS generated places -->
-                        </ul>
-                    </div>
-                </section>
+                            <div class="transport-summary-card glass-panel">
+                                <div class="t-card-header">
+                                    <span class="t-week-tag">Setmana 2</span>
+                                    <h4>Fuji, Alps & Kanazawa</h4>
+                                </div>
+                                <div class="t-card-price">182 €</div>
+                                <small>Kodama Shinkansen, Ltd Exp Hida, Nohi Bus, Thunderbird</small>
+                            </div>
 
-                <!-- 9. OBSERVATIONS SECTION -->
-                <section class="content-section" id="section-observations">
-                    <div class="tasks-card glass-panel">
-                        <div class="add-task-bar">
-                            <input type="text" id="new-observation-input" placeholder="Afegir consell/observació... (ex: Dur sempre efectiu)">
-                            <button id="btn-add-observation"><i class="fa-solid fa-plus"></i> Afegir</button>
+                            <div class="transport-summary-card glass-panel">
+                                <div class="t-card-header">
+                                    <span class="t-week-tag">Setmana 3</span>
+                                    <h4>Kansai, Hiroshima & KIX</h4>
+                                </div>
+                                <div class="t-card-price">218 €</div>
+                                <small>JR Rapid, Sanyo Shinkansen, Ferry Miyajima, Ltd Exp Haruka</small>
+                            </div>
+
+                            <div class="transport-summary-card glass-panel highlight-card">
+                                <div class="t-card-header">
+                                    <span class="t-week-tag" style="background: rgba(255,121,198,0.2); color: var(--accent-pink); border-color: var(--accent-pink);">Total Estimat</span>
+                                    <h4>Pressupost Transports</h4>
+                                </div>
+                                <div class="t-card-price" style="color: var(--accent-pink);">513 €</div>
+                                <small>Inclou 16 € d'enviament de maleta (Ta-Q-Bin)</small>
+                            </div>
                         </div>
-                        <ul class="tasks-list" id="observations-list-container">
-                            <!-- JS generated observations -->
-                        </ul>
+
+                        <!-- Schedule Table -->
+                        <div class="transports-table-card glass-panel" style="margin-top: 25px;">
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
+                                <h3 style="margin: 0;"><i class="fa-solid fa-route" style="color: var(--accent-blue);"></i> Trajectes, Mitjans i Preus Estimats</h3>
+                                <a href="Transports Japó.pdf" target="_blank" class="pdf-link-btn" style="font-size: 0.85rem;">
+                                    <i class="fa-regular fa-file-pdf"></i> Obrir PDF Transports Japó
+                                </a>
+                            </div>
+
+                            <div class="table-responsive">
+                                <table class="expense-table transport-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Data</th>
+                                            <th>Trajecte / Concepte</th>
+                                            <th>Mitjà de Transport</th>
+                                            <th>Preu Estimat</th>
+                                            <th>On / Com Comprar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Setmana 1 -->
+                                        <tr class="table-section-divider"><td colspan="5">🟢 Setmana 1: Arribada, Tòquio i Hub Utsunomiya / Nikko (06 – 13 Agost)</td></tr>
+                                        <tr>
+                                            <td><strong>06/08</strong></td>
+                                            <td>Aeroport Narita ➔ Ueno</td>
+                                            <td>Keisei Skyliner (41 min)</td>
+                                            <td>~2.570 JPY (16 €)</td>
+                                            <td><span class="t-badge t-badge-station">Guixeta Narita</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>07/08</strong></td>
+                                            <td>Ueno ↔ Hachioji (Matsuri)</td>
+                                            <td>JR Chuo Line (Anada/Tornada)</td>
+                                            <td>~1.800 JPY (11 €)</td>
+                                            <td><span class="t-badge t-badge-suica">Suica / Pasmo</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>08/08</strong></td>
+                                            <td>Ueno ↔ Kamakura / Platja</td>
+                                            <td>JR Tokaido / Shonan-Shinjuku</td>
+                                            <td>~1.900 JPY (12 €)</td>
+                                            <td><span class="t-badge t-badge-suica">Suica / Pasmo</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>09/08</strong></td>
+                                            <td>Tòquio (Ueno) ➔ Utsunomiya</td>
+                                            <td>JR Utsunomiya Line (Tren local)</td>
+                                            <td>~1.980 JPY (12 €)</td>
+                                            <td><span class="t-badge t-badge-suica">Suica / Pasmo</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>10/08 - 12/08</strong></td>
+                                            <td>Utsunomiya ↔ Nikko / Chuzenji / Okunikko</td>
+                                            <td>JR Nikko Line + Tobu Bus (3 dies)</td>
+                                            <td>~4.500 JPY (28 €)</td>
+                                            <td><span class="t-badge t-badge-pass">Suica + Tobu Bus Pass</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>13/08</strong></td>
+                                            <td>Utsunomiya ➔ Tòquio (Shinjuku)</td>
+                                            <td>JR Shonan-Shinjuku Line</td>
+                                            <td>~1.980 JPY (12 €)</td>
+                                            <td><span class="t-badge t-badge-suica">Suica / Pasmo</span></td>
+                                        </tr>
+
+                                        <!-- Setmana 2 -->
+                                        <tr class="table-section-divider"><td colspan="5">🟡 Setmana 2: Fuji, Alps Japonesos i Kanazawa (15 – 21 Agost)</td></tr>
+                                        <tr>
+                                            <td><strong>15/08</strong></td>
+                                            <td>Tòquio (Tokyo St.) ➔ Shin-Fuji / Fujinomiya</td>
+                                            <td>Shinkansen Kodama + JR Minobu</td>
+                                            <td>~5.500 JPY (34 €)</td>
+                                            <td><span class="t-badge t-badge-station">Màquina JR 1-2 dies abans</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>16/08</strong></td>
+                                            <td>Fujinomiya ↔ 5a Estació Fuji</td>
+                                            <td>Bus local de muntanya (Anada/Tornada)</td>
+                                            <td>~3.200 JPY (20 €)</td>
+                                            <td><span class="t-badge t-badge-station">Estació Bus Fujinomiya</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>17/08</strong></td>
+                                            <td>Fujinomiya ➔ Takayama (Trajecte complet)</td>
+                                            <td>JR Minobu + Shinkansen Kodama + Ltd Exp Hida</td>
+                                            <td>~10.500 JPY (65 €)</td>
+                                            <td><span class="t-badge t-badge-narita">Guixeta JR Narita (06/08)</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>17/08</strong></td>
+                                            <td>📦 Enviament Maleta Gran (Ta-Q-Bin)</td>
+                                            <td>Takayama ➔ Hostel Kyoto (Yamato Transport)</td>
+                                            <td>~2.500 JPY (16 €)</td>
+                                            <td><span class="t-badge t-badge-taqbin">Recepció Hostel Takayama</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>20/08</strong></td>
+                                            <td>Takayama ➔ Shirakawa-go (08:50h - 09:40h)</td>
+                                            <td>Bus regional (Nohi Bus)</td>
+                                            <td>~2.600 JPY (16 €)</td>
+                                            <td><span class="t-badge t-badge-online">Reserva Online Japan Bus</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>20/08</strong></td>
+                                            <td>Shirakawa-go ➔ Kanazawa (14:30h - 15:45h)</td>
+                                            <td>Bus regional (Nohi / Hokutetsu)</td>
+                                            <td>~2.600 JPY (16 €)</td>
+                                            <td><span class="t-badge t-badge-online">Reserva Online Japan Bus</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>21/08</strong></td>
+                                            <td>Kanazawa ➔ Kyoto</td>
+                                            <td>Hokuriku Shinkansen (Tsuruga) + Ltd Exp Thunderbird</td>
+                                            <td>~5.000 JPY (31 €)</td>
+                                            <td><span class="t-badge t-badge-station">Màquina JR Kanazawa (20/08)</span></td>
+                                        </tr>
+
+                                        <!-- Setmana 3 -->
+                                        <tr class="table-section-divider"><td colspan="5">🔴 Setmana 3: Kansai, Hiroshima i Tornada (23 – 27 Agost)</td></tr>
+                                        <tr>
+                                            <td><strong>23/08</strong></td>
+                                            <td>Kyoto ➔ Osaka</td>
+                                            <td>JR Special Rapid Service (~30 min)</td>
+                                            <td>~580 JPY (4 €)</td>
+                                            <td><span class="t-badge t-badge-suica">Suica / Pasmo</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>25/08</strong></td>
+                                            <td>Osaka ➔ Hiroshima</td>
+                                            <td>Shinkansen Sanyo</td>
+                                            <td>~10.500 JPY (65 €)</td>
+                                            <td><span class="t-badge t-badge-station">Màquina JR 1-2 dies abans</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>25/08</strong></td>
+                                            <td>Hiroshima ↔ Illa de Miyajima</td>
+                                            <td>JR Sanyo Line + Ferry Miyajima</td>
+                                            <td>~1.000 JPY (6 €)</td>
+                                            <td><span class="t-badge t-badge-suica">Suica / Pasmo</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>27/08</strong></td>
+                                            <td>Hiroshima ➔ Aeroport Osaka Kansai (KIX)</td>
+                                            <td>Shinkansen Sanyo (Shin-Osaka) + Ltd Exp Haruka</td>
+                                            <td>~12.500 JPY (78 €)</td>
+                                            <td><span class="t-badge t-badge-station">Màquina JR 2 dies abans</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Reservation Strategy Guide -->
+                        <div class="transports-guide-grid" style="margin-top: 25px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                            <div class="t-guide-card glass-panel">
+                                <h4><i class="fa-solid fa-laptop" style="color: var(--accent-pink);"></i> 1. Reserva Online Anticipada (Internet)</h4>
+                                <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 8px;"><strong>Única reserva obligatòria abans de viatjar:</strong></p>
+                                <ul style="font-size: 0.85rem; color: var(--text-muted); padding-left: 18px; margin: 0;">
+                                    <li><strong>Dia 20/08:</strong> Bus Nohi Takayama ➔ Shirakawa-go (08:50h - 09:40h) i Bus Shirakawa-go ➔ Kanazawa (14:30h - 15:45h) a través del portal oficial <em>Japan Bus Online</em> (comprar 1 mes abans).</li>
+                                </ul>
+                            </div>
+
+                            <div class="t-guide-card glass-panel">
+                                <h4><i class="fa-solid fa-ticket" style="color: var(--accent-green);"></i> 2. Al Guixeta JR Narita (Aterratge 06/08)</h4>
+                                <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 8px;"><strong>Reserva clau de muntanya:</strong></p>
+                                <ul style="font-size: 0.85rem; color: var(--text-muted); padding-left: 18px; margin: 0;">
+                                    <li>Aterratge el 06/08 a Narita: Anar a la guixeta oficial JR per reservar els bitllets de la línia de muntanya del dia 17/08 (Fujinomiya ➔ Takayama via <em>Ltd Exp Hida</em>).</li>
+                                </ul>
+                            </div>
+
+                            <div class="t-guide-card glass-panel">
+                                <h4><i class="fa-solid fa-mobile-screen" style="color: var(--accent-blue);"></i> 3. Durant la Ruta al Japó</h4>
+                                <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 8px;"><strong>Gestió diària de transport:</strong></p>
+                                <ul style="font-size: 0.85rem; color: var(--text-muted); padding-left: 18px; margin: 0;">
+                                    <li><strong>Suica / Pasmo al Mòbil:</strong> Trens locals, metros urbans de Tòquio/Kyoto/Osaka i busos de Nikko/Kamakura.</li>
+                                    <li><strong>Màquines JR d'Estació (1-3 dies abans):</strong> Bitllets de Shinkansen (Fuji, Kanazawa-Kyoto, Hiroshima, KIX) seleccionant l'opció amb espai per a maleta gran.</li>
+                                </ul>
+                            </div>
+                        </div>
+
                     </div>
                 </section>
 
@@ -355,29 +829,21 @@
                 <i class="fa-solid fa-wallet"></i>
                 <span>Preu</span>
             </button>
+            <button class="mobile-nav-btn" data-target="transports" id="btn-mob-transports">
+                <i class="fa-solid fa-train-subway"></i>
+                <span>Trens</span>
+            </button>
+            <button class="mobile-nav-btn" data-target="practical" id="btn-mob-practical">
+                <i class="fa-solid fa-suitcase"></i>
+                <span>Guia</span>
+            </button>
+            <button class="mobile-nav-btn" data-target="emergencies" id="btn-mob-emergencies">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>SOS</span>
+            </button>
             <button class="mobile-nav-btn" data-target="videos" id="btn-mob-videos">
                 <i class="fa-solid fa-video"></i>
                 <span>Vídeos</span>
-            </button>
-            <button class="mobile-nav-btn" data-target="tasks" id="btn-mob-tasks">
-                <i class="fa-solid fa-list-check"></i>
-                <span>Tasques</span>
-            </button>
-            <button class="mobile-nav-btn" data-target="luggage" id="btn-mob-luggage">
-                <i class="fa-solid fa-suitcase"></i>
-                <span>Maleta</span>
-            </button>
-            <button class="mobile-nav-btn" data-target="shopping" id="btn-mob-shopping">
-                <i class="fa-solid fa-bag-shopping"></i>
-                <span>Compres</span>
-            </button>
-            <button class="mobile-nav-btn" data-target="places" id="btn-mob-places">
-                <i class="fa-solid fa-compass"></i>
-                <span>Visites</span>
-            </button>
-            <button class="mobile-nav-btn" data-target="observations" id="btn-mob-observations">
-                <i class="fa-solid fa-circle-info"></i>
-                <span>Notes</span>
             </button>
         </nav>
         
