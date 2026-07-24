@@ -1,5 +1,27 @@
-// --- INITIAL DATA & SEEDING ---
+/* ==========================================================================
+   🇯🇵 GUIA DIDÀCTICA DE PROGRAMACIÓ - JAPÓ 2026 (app.js) 🇯🇵
+   ==========================================================================
+   Hola Uri! Aquest fitxer conté tota la "intel·ligència" i la lògica interactiva
+   de la teva web-app del viatge al Japó.
 
+   💡 COM FUNCIONA AQUEST FITXER?
+   1. CONSTANTS (Dades per defecte): Guardem les llistes de l'itinerari, despeses,
+      tasques, maleta, etc. en estructuresanomenades "Arrays d'Objectes".
+   2. ESTAT (State): Una variable anomenada `state` que manté el control de què
+      s'està mostrant a la pantalla i quines dades té l'usuari actualment.
+   3. MEMÒRIA (LocalStorage): Funcions com `loadState()` i `saveState()` que
+      guarden automàticament tot el que afegeixes o modifiques a la memòria local
+      del teu navegador (ordinador o mòbil) perquè no es perdi mai.
+   4. RENDERITZACIÓ (Render): Funcions que agafen les dades i construeixen el codi
+      visual HTML dinàmicament per pintar-ho a la teva pantalla.
+   5. ESDEVENIMENTS (Events / Listeners): Detecció de clics en botons, capçaleres,
+      sub-pestanyes o formularis per executar accions a l'instant.
+
+   NOTA: Els comentaris com aquest (que comencen amb // o /*) són 100% INOFENSIUS.
+   El navegador els ignora completament en executar la pàgina web.
+   ========================================================================== */
+
+// --- 1. DADES INICIALS DE LA RUTA (ARRAY D'OBJECTES ITINERARI) ---
 const DEFAULT_ITINERARY = [
     {
         date: '2026-08-05',
@@ -603,8 +625,9 @@ const DEFAULT_OBSERVATIONS = [
     { id: 'o24', text: '🔌 Adaptador tipus A i Powerbank: Endolls de 2 clavilles planes (100V Japó). Carrega la bateria externa Powerbank cada nit per no quedar-te sense mòbil durant la ruta.', completed: false }
 ];
 
-// --- APP STATE ---
-
+// --- 2. ESTAT GLOBAL DE L'APLICACIÓ (STATE) ---
+// L'objecte `state` és com la "memòria de treball" de l'aplicació mentre està oberta.
+// Recorda quina pestanya estàs veient, quins filtres tens activats i conté les llistes de dades.
 let state = {
     currentTab: 'itinerary',
     itineraryFilter: 'all',
@@ -759,6 +782,8 @@ function loadState() {
     }
 }
 
+// `saveState(key)` agafa les dades de l'objecte `state` i les converteix en text (JSON)
+// per desar-les al `localStorage` del navegador.
 function saveState(key) {
     if (key === 'budgetLimit' || !key) localStorage.setItem('japo_budget_limit', state.budgetLimit.toString());
     if (key === 'expenses' || !key) localStorage.setItem('japo_expenses', JSON.stringify(state.expenses));
@@ -770,9 +795,9 @@ function saveState(key) {
     if (key === 'observations' || !key) localStorage.setItem('japo_observations', JSON.stringify(state.observations));
 }
 
-// --- RENDERING FUNCTIONS ---
+// --- 4. CONTROL DE NAVEGACIÓ I PESTANYES (UI NAVIGATION) ---
 
-// Tab Switching
+// Metadades visuals de la capçalera (Títol, Kanji en japonès i imatge decorativa per a cada secció)
 const SECTION_META = {
     itinerary: { title: 'Cronograma del Viatge', kanji: '日程', icon: 'assets/icons/bonsai.jpg' },
     map: { title: 'Mapa de la Ruta', kanji: '地図', icon: 'assets/icons/fuji.jpg' },
@@ -784,6 +809,7 @@ const SECTION_META = {
     videos: { title: 'Vídeos de YouTube i Recursos', kanji: '動画', icon: 'assets/icons/lantern.jpg' }
 };
 
+// Funció que activa la sub-pestanya interna triada a la secció "Guia Pràctica" (Maleta, Tasques, Compres, Visites, Consells)
 function initPracticalSubtabs() {
     document.addEventListener('click', (e) => {
         const btn = e.target.closest('.practical-subnav-btn');
@@ -811,6 +837,7 @@ function initPracticalSubtabs() {
     });
 }
 
+// Funció principal de canvi de pestanyes de la barra lateral i mòbil
 function initTabSwitching() {
     const navButtons = document.querySelectorAll('.nav-btn, .mobile-nav-btn');
     const sections = document.querySelectorAll('.content-section');
@@ -1931,8 +1958,12 @@ function initObservationsForm() {
     });
 }
 
-// --- INIT APP ---
-
+// --- 5. ARRANCADA I INICIALITZACIÓ AUTOMÀTICA DE LA WEB (DOM CONTENT LOADED) ---
+// L'esdeveniment `DOMContentLoaded` s'executa automàticament just quan el navegador
+// ha acabat de llegir l'HTML. És el "punt d'arribada" on s'engega tota l'aplicació:
+// 1. Carrega la memòria (`loadState()`).
+// 2. Activa la navegació i esdeveniments de clics (`initTabSwitching()`, `initPracticalSubtabs()`).
+// 3. Pinta a la pantalla cada mòdul (`renderItinerary()`, `renderBudget()`, etc.).
 document.addEventListener('DOMContentLoaded', () => {
     loadState();
     
@@ -1969,7 +2000,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initPracticalSubtabs();
 });
 
-// Register PWA Service Worker for offline support and standalone app installation
+// --- 6. FUNCIONALITAT OFFLINE I PWA (SERVICE WORKER) ---
+// Registrem el Service Worker (`sw.js`). Això és el que permet que la web-app es pugui
+// guardar al mòbil com una app independent i funcioni 100% SENSE INTERNET durant el viatge!
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('./sw.js')
