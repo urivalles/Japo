@@ -519,57 +519,88 @@ const DEFAULT_VIDEOS = [
 ];
 
 const DEFAULT_TASKS = [
-    { id: '1', text: 'Reservar els vols definitius BCN - Japó (open-jaw o anada/tornada KIX/NRT)', completed: true },
-    { id: '2', text: 'Reservar Hostel a Ueno o Asakusa (06 - 09 Agost)', completed: false },
-    { id: '3', text: 'Posar alarma per comprar bitllet Nohi Bus (Takayama -> Shirakawa-go -> Kanazawa) un mes abans', completed: false },
-    { id: '4', text: 'Comprar assegurança mèdica internacional (Heymondo - 80,49 €)', completed: true },
-    { id: '5', text: 'Contractar eSIM de dades per al mòbil (ex: Ubigi o Holafly)', completed: false }
+    { id: '1', text: 'Reclamar Tax-Free a la caixa mostrant el passaport original', completed: false },
+    { id: '2', text: 'Comprovar reserva del bus Nohi (20/08) Takayama -> Shirakawa-go -> Kanazawa', completed: false }
 ];
 
 const DEFAULT_LUGGAGE = [
     { id: 'l1', text: 'Motxilla de senderisme principal (30-40L)', completed: false },
-    { id: 'l2', text: 'Calçat de trekking / trail running ja usat (crucial pel volcà Mont Nantai a Nikko i Fuji)', completed: false },
-    { id: 'l3', text: 'Paravents / Impermeable lleuger (plou sovint a la muntanya i a Nikko)', completed: false },
-    { id: 'l4', text: 'Roba tècnica transpirable (per a la calor i humitat intensa de l\'agost)', completed: false },
-    { id: 'l5', text: 'Tovallola de microfibra de secat ràpid (imprescindible per als onsens/banys termals)', completed: false },
-    { id: 'l6', text: 'Farmaciola bàsica (tiretes, antiinflamatoris, vaselina pels peus, Fortasec)', completed: false },
-    { id: 'l7', text: 'Adaptador d\'endoll tipus A (Japó)', completed: false },
-    { id: 'l8', text: 'Passaport original en vigor (obligatori dur-lo a sobre per llei i Tax-Free)', completed: false },
-    { id: 'l9', text: '1 maleta de cabina + 1 motxilla de dia (15-20L) per al senderisme i excursions', completed: false },
-    { id: 'l10', text: 'Picarol d\'os (Kuma-suzu) per al senderisme a Nikko i zones de muntanya', completed: false },
-    { id: 'l11', text: 'Cantimplora o bossa d\'aigua (mínim 1.5L, fa molta calor)', completed: false },
-    { id: 'l12', text: 'Bastons de trekking per a les baixades del Mont Nantai i Fuji', completed: false },
-    { id: 'l13', text: 'Roba interior i samarretes de secat ràpid per rentar a mà si cal', completed: false },
-    { id: 'l14', text: 'Gorra i ulleres de sol pel sol intens d\'agost', completed: false },
-    { id: 'l15', text: 'Protector solar resistent a la suor i repel·lent de mosquits fort', completed: false }
+    { id: 'l2', text: 'Calçat de trekking / trail running ja usat (crucial pel volcà Mont Nantai a Nikko i Fuji; mai estrenar calçat nou)', completed: false },
+    { id: 'l3', text: 'Paravents / Impermeable lleuger de muntanya (a la muntanya i Nikko el temps pot canviar en 15 minuts)', completed: false },
+    { id: 'l4', text: 'Roba tècnica transpirable de secat ràpid (per a la calor i humitat intensa de l\'agost)', completed: false },
+    { id: 'l5', text: 'Tovallola de microfibra de secat ràpid (imprescindible per als onsens/banys termals i lavabos sense paperets)', completed: false },
+    { id: 'l6', text: 'Farmaciola bàsica (tiretes per a nafres Compeed, Ibuprofè, Fortasec, suero de rehidratació oral i vaselina pels peus)', completed: false },
+    { id: 'l7', text: 'Adaptador d\'endoll tipus A (2 clavilles planes paral·leles, 100V Japó)', completed: false },
+    { id: 'l8', text: 'Passaport original en vigor (obligatori dur-lo a sobre per llei al Japó i imprescindible per a compres Tax-Free)', completed: false },
+    { id: 'l9', text: '1 maleta de cabina + 1 motxilla de dia lleugera (15-20L) per a excursions i senderisme', completed: false },
+    { id: 'l10', text: 'Picarol d\'os (Kuma-suzu) per al senderisme a Nikko i Okunikko (recomanat per la policia local)', completed: false },
+    { id: 'l11', text: 'Cantimplora o bossa d\'aigua reomplible de 1.5L (la humitat a l\'agost requereix hidratació constant)', completed: false },
+    { id: 'l12', text: 'Bastons de trekking telescòpics per a les baixades pedregoses del Mont Nantai i Fuji', completed: false },
+    { id: 'l13', text: 'Frontal o llanterna petita per si es camina a la vora del capvespre', completed: false },
+    { id: 'l14', text: 'Bateria externa Powerbank (10.000 - 20.000 mAh) per als dies llargs d\'excursió', completed: false },
+    { id: 'l15', text: 'Roba interior i samarretes de secat ràpid per rentar a mà fàcilment a l\'hostel', completed: false },
+    { id: 'l16', text: 'Gorra/sombrero i ulleres de sol pel sol alpí intens d\'agost', completed: false },
+    { id: 'l17', text: 'Protector solar FPS 50+ resistent a la suor i repel·lent de mosquits fort (DEET/Picaridina)', completed: false },
+    { id: 'l18', text: 'Bossa impermeable / zip-lock per a protegir telèfon i passaport si plou fort a la muntanya', completed: false },
+    { id: 'l19', text: 'Bossa de tela plegable per a compres o menjar de konbini', completed: false }
 ];
 
 const DEFAULT_SHOPPING = [
-    { id: 's1', text: 'Goshuincho i segells cal·ligràfics (Shuin) als temples (~15 € llibreta, ~3-4 € cada segell)', completed: false },
-    { id: 's2', text: 'Tenugui (Mocador de cotó tradicional molt versàtil, ~5-10 €)', completed: false },
-    { id: 's3', text: 'Hashi (Bastonets de fusta personalitzats gravats amb el teu nom, ~10-15 €)', completed: false },
-    { id: 's4', text: 'Furin (Campaneta de vent tradicional japonesa de vidre o ferro, ~5-10 €)', completed: false },
-    { id: 's5', text: 'Llibretes o quaderns de papereria japonesa (Midori, Apica, ~3-7 €)', completed: false },
-    { id: 's6', text: 'Pegats de mentol per als peus (Kyusoku Jikan, molt útil pel senderisme, ~5 €)', completed: false },
-    { id: 's7', text: 'Te verd o Matcha local comprat directament en cooperatives rurals (~5-10 €)', completed: false }
+    { id: 's1', text: '📖 Goshuincho: Llibreta oficial per recollir els segells cal·ligràfics (Goshuin) fets a mà pels monjos de cada temple/santuari (~15 € llibreta, ~3-4 € segell)', completed: false },
+    { id: 's2', text: '🍶 Sake artesà d\'Hida Takayama: Ampolles petites de les destil·leries tradicionals del barri vell de Sanmachi Suji (Funasaka o Harada Brewery)', completed: false },
+    { id: 's3', text: '🥢 Hashi personalitzats: Bastonets de fusta artesana gravats amb el teu nom al moment (~10-15 €)', completed: false },
+    { id: 's4', text: '🪵 Lacats en fusta Hida Shunkei (Takayama): Cuinera o caixetes de fusta d\'auró vernissada transparent tradicional dels Alps Japonesos', completed: false },
+    { id: 's5', text: '✨ Fulla d\'or Kanazawahaku (Kanazawa): Cosmètica, dolços o petits detalls decorats amb la mítica fulla d\'or artesanal', completed: false },
+    { id: 's6', text: '🍵 Te Matcha d\'alta selecció d\'Uji (Kyoto): Matcha de grau cerimonial comprat a botigues centenàries d\'Uji o Kyoto', completed: false },
+    { id: 's7', text: '🍂 Te torrat Kaga Bōcha (Kanazawa): Te torrat de tija exclusiu de la regió d\'Ishikawa amb aroma de fruits secs', completed: false },
+    { id: 's8', text: '🌿 Te verd de Shizuoka / Fuji: Te de fulla de les faldilles del Mont Fuji', completed: false },
+    { id: 's9', text: '🪨 Ceràmica de Mashiko (Mashiko-yaki): Terrissa artesanal tradicional de Tochigi / Utsunomiya', completed: false },
+    { id: 's10', text: '🔪 Ganivets artesanals japonesos (Osaka Doguyasuji o Seki): Ganivets de cuina d\'alta precisió gravats amb el teu nom', completed: false },
+    { id: 's11', text: '🪔 Incens de sàndal de Kyoto: Incens natural de botigues tradicionals centenàries (com Shoyeido a Kyoto)', completed: false },
+    { id: 's12', text: '🍁 Momiji Manju (Miyajima): Dolç en forma de fulla d\'adzeroler farcit de pasta de mongeta dolça (anko) o xocolata', completed: false },
+    { id: 's13', text: '🎏 Tenugui: Mocador de cotó tradicional estampat a mà molt versàtil (~5-10 €)', completed: false },
+    { id: 's14', text: '🎐 Furin: Campaneta de vent tradicional japonesa de vidre o ferro closca (~5-10 €)', completed: false },
+    { id: 's15', text: '🦶 Pegats de mentol Kyusoku Jikan: Pegats refrescants pels peus descostats després de caminar 20 km (a qualsevol farmàcia, ~5 €)', completed: false },
+    { id: 's16', text: '📝 Papereria de gamma alta: Llibretes Midori, Apica o Stology de paper d\'alta textura (~3-8 €)', completed: false }
 ];
 
 const DEFAULT_PLACES = [
-    { id: 'p1', text: '⛩️ [Uri] Nara: Parc ple de cérvols lliures (els cérvols sagrats que demanen menjar reverenciant-te) i el temple Todai-ji.', completed: false },
-    { id: 'p-osaka', text: '⛩️ [Uri] Osaka: Banys termals / Onsen on et pots vestir amb yukata o kimono (ex: parc temàtic de banys Spa World o onsens tradicionals per comprovar si mola).', completed: false },
-    { id: 'p2', text: '💡 [IA] Kamakura: El Gran Buda de bronze a l\'aire lliure (Daibutsu) i temples històrics de bosc (excursió fàcil des de Tòquio).', completed: false },
-    { id: 'p3', text: '💡 [IA] Nikko: Mausoleus daurats dels shoguns Tokugawa, cascada Kegon i natura alpina espectacular (excursió des de Tòquio).', completed: false },
-    { id: 'p4', text: '💡 [IA] Himeji: El cèlebre castell de la Garça Blanca, el castell feudal original més espectacular i millor conservat de tot el Japó.', completed: false },
-    { id: 'p5', text: '💡 [IA] Uji: Bressol del te verd matcha històric i el temple Byodoin (l\'edifici imprès a la moneda de 10 iens). Prop de Kyoto.', completed: false },
-    { id: 'p6', text: '💡 [IA] Koyasan: El mont sagrat budista, dormir en un temple gestionat pels monjos (shukubo) i recórrer el cementiri místic d\'Okunoin.', completed: false }
+    { id: 'p1', text: '🏛️ [Pla B Nikko/Utsunomiya] Oya History Museum (Cova d\'Oya): Pedrera subterrània gegantina de pedra volcànica a 15 min d\'Utsunomiya. Catedral subterrània a 13°C (ideal si plou o fa molta calor)', completed: false },
+    { id: 'p2', text: '🎨 [Pla B Kanazawa] 21st Century Museum of Contemporary Art: Museu d\'art modern d\'arquitectura circular mundialment famós (amb la piscina de Leandro Erlich). Perfecte si plou als jardins Kenroku-en', completed: false },
+    { id: 'p3', text: '🍵 [Pla B Kyoto] Temple Byodoin a Uji: El temple imprès a les monedes de 10 iens i tast de Matcha fresc al costat del riu Uji (a 20 min en tren de Kyoto)', completed: false },
+    { id: 'p4', text: '🏯 [Excursió des d\'Osaka/Kyoto] Castell d\'Himeji (La Garça Blanca): El castell feudal original més espectacular i millor conservat del Japó (a 30 min en Shinkansen)', completed: false },
+    { id: 'p5', text: '🦌 [Excursió des de Kyoto] Nara & Temple Todai-ji: Parc dels cérvols sagrats lliures que et saluden i l\'edifici de fusta més gran del món amb el Gran Buda', completed: false },
+    { id: 'p6', text: '♨️ [Pla B Osaka] Spa World / World Onsen: Complex termal indoor d\'Osaka amb banys tematitzats asiàtics i europeus per provar l\'onsen si plou', completed: false },
+    { id: 'p7', text: '🌊 [Excursió des de Tòquio] Illa d\'Enoshima & Kamakura: Platja, coves marítimes d\'Iwaya i vistes del Fuji des de la costa', completed: false },
+    { id: 'p8', text: '🏮 [Pla B Tòquio] Barri històric de Yanaka & Nezu Shrine: El Tòquio tradicional que va sobreviure als bombardeigs, amb carrers tranquils i templis de fusta', completed: false },
+    { id: 'p9', text: '🏔️ [Miyajima Extra] Ascensió al Mont Misen: Pujada a peu o en telecabina fins al cim de l\'illa de Miyajima amb vistes 360° del Mar Interior de Seto', completed: false }
 ];
 
 const DEFAULT_OBSERVATIONS = [
-    { id: 'o1', text: '⚠️ No et deixis enredar per botigues/museus de figuretes i merxandatge (anime/manga), que n\'hi ha milers a tot arreu. El primer vídeo llarg de Tòquio n\'estava ple. Tot i així, segur que t\'hi acabaràs trobant igualment!', completed: false },
-    { id: 'o2', text: '💡 Consell: No cal deixar propina als restaurants al Japó; de fet, està mal vist i et perseguiran si te la deixes.', completed: false },
-    { id: 'o3', text: '💡 Consell: Porta sempre una bossa petita a sobre per guardar les teves escombraries (gairebé no hi ha papereres públiques al carrer).', completed: false },
-    { id: 'o4', text: '💡 Consell: Respecta el silenci al transport públic (posa el telèfon en silenci i evita parlar fort).', completed: false },
-    { id: 'o5', text: '💡 Consell: Porta sempre diners en efectiu a sobre, ja que molts llocs rurals, temples o petits onsens no accepten targeta.', completed: false }
+    { id: 'o1', text: '💴 Efectiu en Iens imprescindible: Cal dur sempre entre 5.000 i 10.000 JPY en efectiu a sobre. Màquines de bitllets rurals, busos de muntanya, entrades a temples, onsens i restaurants de ramen NOMÉS accepten efectiu.', completed: false },
+    { id: 'o2', text: '🏦 On treure diners sense comissions: Utilitza les targetes N26 o Revolut als caixers 7-Bank (supermercats 7-Eleven) o E-net (FamilyMart). Tenen el menú en anglès/espanyol i la millor taxa de canvi.', completed: false },
+    { id: 'o3', text: '💳 IC Card al Mòbil (Suica / Pasmo): Pots afegir la Suica/Pasmo directament a l\'Apple Wallet o Google Wallet per pagar metros, busos, vending machines i taquilles d\'estació amb un sol toc.', completed: false },
+    { id: 'o4', text: '🛍️ Compres Tax-Free (10% Descompte): Duu SEMPRE el passaport original a sobre. En compres superiors a 5.000 JPY (~32 €) a la mateixa botiga t\'apliquen el 10% de descompte d\'impostos directament a la caixa.', completed: false },
+    { id: 'o5', text: '🚫 Mai no es deixa propina: La propina no existeix al Japó i es considera un insult o un error. Si te la deixes a la taula, el cambrer sortirà corrent al carrer per retornar-te els diners.', completed: false },
+    { id: 'o6', text: '🍣 Menjar de Konbini (7-Eleven, FamilyMart, Lawson): Menjar d\'altíssima frescor i qualitat molt barat. Must try: Onigiri de salmó/tonyina (~1 €), sandvitx d\'ou Tamago Sando (~1.50 €) i FamiChiki.', completed: false },
+    { id: 'o7', text: '🍜 Ordre a les màquines de Ramen (Ticket Vending Machines): Als restaurants tradicionals de ramen selecciones el plat a la màquina de l\'entrada, pagues en efectiu i lliures el tiquet de paper al xef.', completed: false },
+    { id: 'o8', text: '🥢 Mai no clavar els bastonets en vertical a l\'arròs (Tsukitate-bashi): Aquest gest només es fa en rituals funeraris. Deixa els bastonets sobre el suport de ceràmica (hashi-oki).', completed: false },
+    { id: 'o9', text: '🍜 Fer soroll al menjar fideus (Slurping): Absorbir fideus de ramen, soba o udon fent soroll és socialment acceptat i indica que el plat està boníssim, a més de refredar el caldo.', completed: false },
+    { id: 'o10', text: '💧 Aigua i te gratuïts als restaurants: A gairebé tots els restaurants locals et serviran un vas d\'aigua amb gel (Ohiya) o te verd calent (Ocha) totalment gratuït només seure (Okawari).', completed: false },
+    { id: 'o11', text: '🤫 Silenci al Transport Públic: Als trens i metros està mal vist parlar per telèfon o a crits. Posa el telèfon en mode silenciós (Manner Mode). Per parlar al Shinkansen ves als vestíbuls.', completed: false },
+    { id: 'o12', text: '🗑️ Guardar les escombraries a la motxilla: Gairebé no hi ha papereres públiques als carrers. Porta una bossa de plàstic a la motxilla. Utilitza les papereres de llaunes al costat de les vending machines.', completed: false },
+    { id: 'o13', text: '🚫 No caminar menjar o bevent pel carrer: A la cultura japonesa no es camina mentre es menja. Consumeix l\'snack al costat del konbini o vending machine on l\'hagis comprat o busca un banc.', completed: false },
+    { id: 'o14', text: '👟 Sabates fora a les entrades (Genkan): En Ryokans, molts hostals, temples i zones amb tatami cal treure\'s les sabates al graó d\'entrada (genkan) i anar amb mitjons nets sense forats.', completed: false },
+    { id: 'o15', text: '🚶 Escales mecàniques (Tòquio vs Kansai): A Tòquio la gent s\'atura a la part esquerra deixant la dreta lliure. A Kansai (Osaka/Kyoto) és a la inversa (s\'aturen a la dreta).', completed: false },
+    { id: 'o16', text: '🧳 Taquilles d\'Estació (Coin Lockers): Totes les estacions tenen taquilles de diferents mides pagables amb Suica o monedes de 100 JPY per deixar la motxilla o maleta unes hores.', completed: false },
+    { id: 'o17', text: '🥵 Calor i Humitat d\'Agost (Natsubate): L\'agost és molt humit i calorós (33-38°C). Beu aigua constantment, compra begudes isotòniques com Pocari Sweat o Aquarius i fes pauses amb aire condicionat.', completed: false },
+    { id: 'o18', text: '♨️ Etiqueta als Onsens: Dutxa\'t i renta\'t 100% amb sabó abans d\'entrar a l\'aigua calenta. S\'entra 100% nu (sense banyador). Si tens tatuatges grans, cobreix-los amb un adhesiu.', completed: false },
+    { id: 'o19', text: '🐻 Picarol d\'Os a la Muntanya (Nikko / Alps): Als camins de bosc de Nikko, Okunikko i els Alps hi ha ossos negres japonesos. Porta el picarol (Kuma-suzu) penjat de la motxilla.', completed: false },
+    { id: 'o20', text: '🦟 Repel·lent de mosquits i protector solar: Els mosquits d\'estiu (ka) són agressius en zones de muntanya i humides. Aplica protector solar FPS 50+ i repel·lent fort.', completed: false },
+    { id: 'o21', text: '🗺️ Google Maps i Google Lens: Google Maps indica el vagó exacte de tren, la sortida exacta d\'estació i el preu. Google Lens és essencial per traduir menús de fusta amb la càmera.', completed: false },
+    { id: 'o22', text: '🧳 Servei d\'enviament de maletes (Ta-Q-Bin / Yamato): Enviar la maleta gran des de Takayama cap a Kyoto per ~16 € permet viatjar ultralleuger als busos de muntanya de Shirakawa-go.', completed: false },
+    { id: 'o23', text: '🚨 Apps d\'Emergència: Descarrega l\'app Safety Tips (alertes de terratrèmols i calor en anglès) i guarda el número de l\'Ambaixada d\'Espanya a Tòquio (+81 80 4368 2817).', completed: false },
+    { id: 'o24', text: '🔌 Adaptador tipus A i Powerbank: Endolls de 2 clavilles planes (100V Japó). Carrega la bateria externa Powerbank cada nit per no quedar-te sense mòbil durant la ruta.', completed: false }
 ];
 
 // --- APP STATE ---
@@ -702,12 +733,29 @@ function loadState() {
         saveState('luggage');
     }
 
-    // Forçar l'actualització dels llocs per diferenciar recomanacions i afegir l'Osaka onsen
-    const hasOsakaOnsen = state.places.some(item => item.id === 'p-osaka');
-    const hasUriPrefix = state.places.some(item => item.text.includes('[Uri]'));
-    if (!hasOsakaOnsen || !hasUriPrefix) {
+    // Forçar l'actualització de les llistes enriquides V6
+    const hasV6Luggage = state.luggage.some(item => item.id === 'l19');
+    if (!hasV6Luggage) {
+        state.luggage = DEFAULT_LUGGAGE;
+        saveState('luggage');
+    }
+
+    const hasV6Shopping = state.shopping.some(item => item.id === 's16');
+    if (!hasV6Shopping) {
+        state.shopping = DEFAULT_SHOPPING;
+        saveState('shopping');
+    }
+
+    const hasV6Places = state.places.some(item => item.id === 'p9');
+    if (!hasV6Places) {
         state.places = DEFAULT_PLACES;
         saveState('places');
+    }
+
+    const hasV6Obs = state.observations.some(item => item.id === 'o24');
+    if (!hasV6Obs) {
+        state.observations = DEFAULT_OBSERVATIONS;
+        saveState('observations');
     }
 }
 
